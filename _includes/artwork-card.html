@@ -1,0 +1,66 @@
+
+<body onload="filterSelect('all')"></body>
+
+<div class="btn-group" > 
+<button class="btn" onclick="filterSelect('all')"> Show all</button>
+<button class="btn" onclick="filterSelect('render')"> Render</button>
+<button class="btn" onclick="filterSelect('sketch')"> Sketch</button>
+</div>
+
+
+<section id="artwork-card">
+
+<script src="assets\js\photoswipe.umd.min.js"></script>
+<script src="assets\js\photoswipe-lightbox.umd.min.js"></script>
+
+<div class="test-gallery">
+<div class="fbox">
+  {% for artwork in site.data.artworks %}
+  {% if artwork.category == "render" %}
+  <div class="artworks render" >
+    <div class="has-background-black card">
+  <a href= "{{artwork.image}}" data-pswp-width="{{ artwork.width }}" data-pswp-height="{{ artwork.height }}">
+    <img src= "{{artwork.image}}" alt="" width=100%/>
+    <div class="card-content has-background-black">
+    <h1 class="title has-text-white is-size-4">{{ artwork.name }}</h1>
+    <p class="has-text-white has-text-weight-light content">{{ artwork.description | truncate: 80}}</p>
+</div>
+</div>
+</a>
+</div>
+
+
+{% endif %}
+{% endfor %}
+
+{% for artwork in site.data.artworks %}
+{% if artwork.category == "sketch" %}
+<div class="artworks sketch" >
+  <div class="has-background-black card">
+<a href= "{{artwork.image}}" data-pswp-width="{{ artwork.width }}" data-pswp-height="{{ artwork.height }}">
+  <img src= "{{artwork.image}}" alt="" width=100%/>
+  <div class="card-content has-background-black">
+  <h1 class="title has-text-white is-size-4">{{ artwork.name }}</h1>
+  <p class="has-text-white has-text-weight-light content">{{ artwork.description | truncate: 80}}</p>
+</div>
+</div>
+</a>
+</div>
+
+
+{% endif %}
+{% endfor %}
+
+</div>
+</section>
+
+
+<script type="text/javascript">
+  var lightbox = new PhotoSwipeLightbox({
+    gallery: '.test-gallery',
+    children: 'a',
+    // dynamic import is not supported in UMD version
+    pswpModule: PhotoSwipe 
+  });
+  lightbox.init();
+</script>

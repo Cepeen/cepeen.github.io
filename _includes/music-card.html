@@ -1,0 +1,104 @@
+<!-- td: make this responsible -->
+<audio></audio>
+<div class="mplayer">
+<div class="wrapper">
+
+<div class="headers"><div class="hd_playlist">Playlist:</div><div class="hd_analyser"></div><div class="hd_details">Now playing:</div></div>
+    <div class="modules"> 
+      <div class="playlist"> 
+        <ol>
+    
+          <button class ="listButton" id="memories" ondblclick="forcePlay()">Memories</li>
+          <button class ="listButton" id="change" ondblclick="forcePlay()" >Change</li>
+
+
+        </ol> 
+      </div>
+      <canvas id="canvas"></canvas>
+      <div class="info">  <div class="details">
+        <div class="track-name">Track Name</div>
+        <div class="track-artist">Track Artist</div>
+          <div class="now-playing">PLAYING x OF y</div>
+          <div class="download" onclick="downloadFile(track_index)">
+            <i class="fa fa-download fa-2x" aria-hidden="true"></i>
+         </div>
+        </div></div>
+      
+     </div>
+  <div class="slider_container">
+    <div class="current-time">00:00</div>
+     <input type="range" min="1" max="100" value="0" class="slider_seek" onchange="seekTo()">
+     <div class="total-duration">00:00</div>
+</div>
+
+
+
+  <div class="buttons">
+      <div class="random-track" onclick="randomTrack()">
+          <i class="fas fa-random fa-2x" title="random"></i>
+      </div>
+      <div class="prev-track" onclick="prevTrack()">
+           <i class="fa fa-step-backward fa-2x"></i>
+       </div>
+       <div class="playpause-track" onclick="playpauseTrack()">
+           <i class="fa fa-play-circle fa-3x"></i>
+       </div>
+       <div class="next-track" onclick="nextTrack()">
+           <i class="fa fa-step-forward fa-2x"></i>
+       </div>
+       <div class="repeat-track" onclick="repeatTrack()">
+           <i class="fa fa-repeat fa-2x" title="repeat"></i>
+       </div>
+       <div class="bars" onclick="drawBarsAnalyser()">
+        <i class="fa-sharp fa-solid fa-chart-simple fa-2x" title="baranalyser"></i>
+      </div>
+       <div class="osciloscope" onclick="drawOscAnalyser()">
+        <i class="fa-solid fa-wave-square fa-2x" title="osciloscope"></i>
+     </div>
+       <div class="slider_container_vol">
+        <i class="fa fa-volume-down"></i>
+         <input type="range" min="1" max="100" value="99" class="slider_volume" onchange="setVolume()">
+         <i class="fa fa-volume-up"></i>
+    </div>
+  </div>
+</div>  
+</div>  
+
+
+<div class="soundcloud">
+
+      <p>
+      <br>
+      Disclaimer! Everything I've posted on soundcloud is experimentation from different musical genres. There is no style there, and the equipment I created on left a lot to be desired, making some bands (especially those between 400 Hz and 1.2 kHz) potentially over-represented. Publication dates do not coincide with production dates. This was mainly because health problems prevented me from making music for many years, which greatly affected my entire life. Productions that are reasonably fresh will be found directly on this page. I hope they will not harm you at all. :)</p>
+      <br>
+
+
+    <div class="panel panel-default">
+      <div class="panel-body"><iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/99144750&color=%235d5d5d&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/tomektomasik" title="TomekT" target="_blank" style="color: #cccccc; text-decoration: none;">TomekT</a> · <a href="https://soundcloud.com/tomektomasik/sunrise-at-stella" title="Sunrise At Stella" target="_blank" style="color: #cccccc; text-decoration: none;">Sunrise At Stella</a></div></div>
+      <div class="panel-footer"></div>
+    </div>
+    
+    
+    <div class="panel panel-default">
+      <div class="panel-body"><iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/99144761&color=%235d5d5d&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/tomektomasik" title="TomekT" target="_blank" style="color: #cccccc; text-decoration: none;">TomekT</a> · <a href="https://soundcloud.com/tomektomasik/oasis" title="Oasis" target="_blank" style="color: #cccccc; text-decoration: none;">Oasis</a></div></div>
+      <div class="panel-footer"></div>
+    </div>
+    
+    
+    <div class="panel panel-default">
+      <div class="panel-body"><iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/99144763&color=%235d5d5d&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/tomektomasik" title="TomekT" target="_blank" style="color: #cccccc; text-decoration: none;">TomekT</a> · <a href="https://soundcloud.com/tomektomasik/moose-swirl" title="Moose Swirl" target="_blank" style="color: #cccccc; text-decoration: none;">Moose Swirl</a></div></div>
+      <div class="panel-footer"></div>
+    </div>
+    
+  </div>
+
+
+
+
+
+
+
+
+
+ 
+

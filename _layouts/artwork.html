@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% include head.html %}
+</head>
+<script type="text/javascript">
+
+    setTimeout(function() {
+      if (location.hash) {
+        window.scrollTo(0, 0);
+      }
+    }, 1);
+    
+    
+    </script>
+<body>
+    {% include navbar.html %}
+
+    <!--Main Section-->
+    <section class="hero is-fullheight" id="artwork">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="section">
+                    <h1 class="title is-1 is-uppercase has-text-weight-bold">Gallery</h1>
+                </div>
+                <div id="myBtnContainer">
+                    
+  <!-- <button class="btn active" onclick= "filter('all')"> Show all</button>-->
+
+  
+            </div>
+
+
+                {% include artwork-card.html %}
+            
+
+            
+            </div>
+        </div>
+    </section>
+   
+
+    <!--Footer-->
+    {% include footer.html %}
+
+</body>
+</html>
+
+
+
+<script src="{{ base.url | prepend: site.url }}/assets/js/gallery.js"></script>

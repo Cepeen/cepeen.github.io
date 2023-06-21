@@ -1,0 +1,1296 @@
+---
+---
+
+@import "main.scss";
+
+#navbar {
+  scroll-snap-align: center;
+    color: #ffffff!important; 
+    background-color: #000;
+    opacity: 1;
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.2);
+    z-index: 3;
+}
+
+.navbar-item {
+ 
+  text-align: center;
+  font-weight: 400;
+  transition: 0.3s;
+  transition: all .2s ease-in-out;
+  z-index: 3; 
+  color: #dadada !important; 
+}
+
+.navbar-link {
+  background-color: #000 !important;  
+  color: #dadada;
+  z-index: 3;
+}
+
+
+.is-active { 
+  z-index: 3;
+  color: #dadada;
+}
+
+.navbar-dropdown {
+  
+    background-color: #000!important; 
+    border: none;
+    right: 0;
+    left: auto;
+}
+
+a.navbar-item:hover,
+.navbar-link:hover {
+  
+  background-color: #000!important; 
+  color: #ffffff !important; 
+  text-align: center;
+}
+
+a.navbar-item.is-active {
+  z-index: 4;
+  color: #000000!important;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+
+    &:hover {
+      z-index: 4;
+      color: #fff;
+      text-align: center;
+      animation: glow 1s ease-in-out infinite alternate;
+    }
+}
+
+.navbar-link:not(.is-arrowless)::after {
+    z-index: 4;
+    border-color: rgb(255, 255, 255);
+}
+
+
+#hero {
+    perspective: 10px;
+    background: rgba(0, 0, 0, 100);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#000000", GradientType=1);
+
+    &::before {
+        filter: blur(0.15rem);
+        background-image: url({{site.heroimage}});
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        position: absolute;
+        opacity: 0.25;
+        content: "";
+    }
+}
+.title {
+    margin: auto 0.75rem!important;
+}
+.subtitle {
+    letter-spacing: 0.25rem;
+}
+
+#about {
+  scroll-snap-align: center;
+  background-image: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%, rgba(255,255,255,1) 100%), url("https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/earth.jpg"); /* The image used */
+  background-color: #ffffff; /* Used if the image is unavailable */
+  height: 500px; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  perspective: 10px;
+  
+    .image {
+        max-width: 20vmax;
+        margin: auto;
+
+        img {
+            border: 0.25rem dotted black;
+        }
+    }
+
+    a {
+        min-width: 25vmax;
+        margin: 0.5rem;
+    }
+}
+
+#contact {
+  scroll-snap-align: center;
+    #contact-button {
+      align-items: center;
+      background-color: #fff;
+      border: 2px solid #000;
+      box-sizing: border-box;
+      color: #000;
+      cursor: pointer;
+      display: inline-flex;
+      fill: #000;
+      font-family: sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      height: 48px;
+      justify-content: center;
+      letter-spacing: -.8px;
+      line-height: 24px;
+      min-width: 140px;
+      outline: 0;
+      padding: 0 17px;
+      text-align: center;
+      text-decoration: none;
+      transition: all .3s;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    svg {
+        transition: all 0.15s ease-in-out;
+        margin: auto 0.75vmax;
+
+        &:hover {
+            transform: scale(1.10);
+            filter: opacity(0.75);
+        }
+    }
+
+    hr {
+        background-color: black;
+    }
+}
+
+
+
+#blog {
+    .hero-body {
+        padding: 3rem 0.25rem 1rem 0.25rem;
+        background-color: white ;
+    }
+
+    .container {
+        margin: 1.5rem auto;
+    }
+
+    #blog-card {
+        transition: all 0.25s ease;
+        margin-bottom: 0.5vmax;
+        transform: scale(0.85);
+        margin-right: 2.5vmax;
+        margin-left: 2.5vmax;
+        line-height: normal;
+        border-radius: 2rem;
+        -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+            transform: scale(0.875);
+            -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        @media (max-width: 768px) {
+            transform: scale(1);
+            margin-bottom: 5vmax !important;
+
+            &:hover {
+                transform: scale(1.025);
+                margin-bottom: 5vmax !important;
+                -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.25);
+                box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.25);
+                box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.25);
+            }
+
+            .image {
+                padding-top: 50% !important;
+            }
+        }
+
+        .title {
+            margin: 0.5rem !important;
+        }
+
+        .content {
+            margin: 0.5rem;
+        }
+
+        .column {
+            display: grid;
+
+            .image {
+                border-radius: 2rem;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+}
+
+#search {
+    border-bottom: 0.15rem solid;
+
+    input {
+        border: none;
+        outline: none;
+        font-weight: 500 !important;
+
+        &::placeholder {
+            font-weight: 500;
+            color: grey;
+            letter-spacing: 0.25rem;
+        }
+    }
+
+    .button {
+        transition: all 0.25s ease;
+        &:focus {
+            outline: 0.25rem solid white;
+        }
+
+        border: none;
+    }
+}
+
+
+#footer {
+  scroll-snap-align: center;
+    #backtotop {
+        transition: all 0.25s ease;
+        width: 10rem;
+        padding: 0.25rem;
+        margin: auto auto 1rem auto;
+        border-radius: 5px;
+        z-index: 99 ;
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    .container {
+        margin: auto;
+        padding: 1.5rem;
+        line-height: 1.45;
+
+        .column {
+            display: grid;
+            justify-content: center;
+
+            li {
+                list-style: circle;
+                list-style-position: outside;
+            }
+
+            a {
+                color: #bdbdbd;
+
+                &:hover {
+                    color: white;
+                }
+            }
+
+            figure {
+                justify-content: center;
+                margin: auto;
+                transition: all 0.25s ease;
+                &:hover{
+                    transform: scale(1.15);
+                }
+            }
+        }
+    }
+
+    #credits {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+
+        a {
+            text-decoration: underline;
+            font-weight: bolder;
+            color: white;
+        }
+    }
+}
+
+
+#artwork-card{
+  scroll-snap-align: center;
+
+   .fbox{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start; 
+    max-height: 1300px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    }
+
+    .artworks {
+      background-color: #f7f8f8;
+      border: 1px solid #555555;
+      padding: 15px;
+      color: #fff;
+      display: none;
+      width: 30%;
+      color: white;
+      margin: auto;
+      margin-bottom: 40px; 
+    }
+
+    .image {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
+
+
+.artworks:hover {
+    position: relative;
+    transition: all 300ms ease-in-out;
+    transform: scale(1.1); z-index: 2;  
+    transition-delay: 0.05s;
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 1);
+    
+}
+
+.show {
+    display: block;
+  }
+}
+
+
+    .card {
+
+    &:hover {
+
+    .card-content {
+    transition-delay: 0.5s;
+    transition: all 0.5s ease;
+    z-index: 2;
+
+    
+            }
+         }
+    }
+
+
+.artwname
+{
+  color: white;
+  font-size:2vw;
+}
+
+.artwdesc
+{
+  color: white;
+  font-size:1vw;
+}
+
+
+.horizontal {
+   grid-row-end: span 1;
+}
+.vertical {
+   grid-row-end: span 2;
+}
+
+
+
+
+
+
+#post {
+    @media (min-width: 768px) {
+        margin: auto 2.5vmax;
+    }
+    a {
+        text-decoration: underline;
+    }
+    #title {
+        text-decoration: none;
+    }
+    .title {
+        margin: auto;
+    }
+    #post-image {
+        border-radius: 0.25rem;
+    }
+    .subtitle {
+        letter-spacing: 0.05rem;
+    }
+
+    #description {
+        margin-bottom: 1.25vmax;
+    }
+
+    .tag {
+        margin: 0.15rem auto;
+    }
+    .content {
+        ol, ul, blockquote {
+            display: inline-block;
+        }
+        hr{
+            background-color: grey;
+        }
+        img, iframe {
+            max-width: calc(100% - 25vw);
+            margin: 0.25rem auto;
+            @media (max-width: 768px) {
+                max-width: calc(100% - 5vw);
+            }
+        }
+        ul, ol {
+            display: inline-block;
+        }
+    }
+
+    .container {
+        margin: 2.5rem auto;
+        word-break: break-word;
+        max-width: -webkit-fill-available;
+    }
+
+    #disqus_thread {
+        margin-top: 5vmax;
+    }
+}
+
+#page-section {
+    .content {
+        scroll-snap-align: center;
+        ul, ol, blockquote {
+            overflow: scroll;
+            display: inline-block;
+        }
+    }
+}
+
+
+.btn-group button {
+    background-color: #000000; 
+    border: 0px solid rgb(0, 0, 0);
+    color: white;
+    cursor: pointer; 
+    padding: 10px 24px; 
+    float: left; 
+    width: 33.33%;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+  
+  
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+    
+  }
+
+  .btn-group button:focus {
+    background-color: #4b4b4b;
+  }
+  
+  .btn-group button:not(:last-child) {
+    border-right: none; 
+  }
+  
+  .btn-group button:hover {
+    background-color: #4b4b4b;
+  }
+  
+
+
+
+
+
+
+// lightbox sec
+
+
+/*! PhotoSwipe main CSS by Dmytro Semenov | photoswipe.com */
+
+.pswp {
+    --pswp-bg: #000;
+    --pswp-placeholder-bg: #222;
+    
+  
+    --pswp-root-z-index: 100000;
+    
+    --pswp-preloader-color: rgba(79, 79, 79, 0.4);
+    --pswp-preloader-color-secondary: rgba(255, 255, 255, 0.9);
+    
+    /* defined via js:
+    --pswp-transition-duration: 333ms; */
+    
+    --pswp-icon-color: #fff;
+    --pswp-icon-color-secondary: #4f4f4f;
+    --pswp-icon-stroke-color: #4f4f4f;
+    --pswp-icon-stroke-width: 2px;
+  
+    --pswp-error-text-color: var(--pswp-icon-color);
+  }
+  
+  
+  /*
+      Styles for basic PhotoSwipe (pswp) functionality (sliding area, open/close transitions)
+  */
+  
+  .pswp {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: var(--pswp-root-z-index);
+      display: none;
+      touch-action: none;
+      outline: 0;
+      opacity: 0.003;
+      contain: layout style size;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  
+  /* Prevents focus outline on the root element,
+    (it may be focused initially) */
+  .pswp:focus {
+    outline: 0;
+  }
+  
+  .pswp * {
+    box-sizing: border-box;
+  }
+  
+  .pswp img {
+    max-width: none;
+  }
+  
+  .pswp--open {
+      display: block;
+  }
+  
+  .pswp,
+  .pswp__bg {
+      transform: translateZ(0);
+      will-change: opacity;
+  }
+  
+  .pswp__bg {
+    opacity: 0.005;
+      background: var(--pswp-bg);
+  }
+  
+  .pswp,
+  .pswp__scroll-wrap {
+      overflow: hidden;
+  }
+  
+  .pswp__scroll-wrap,
+  .pswp__bg,
+  .pswp__container,
+  .pswp__item,
+  .pswp__content,
+  .pswp__img,
+  .pswp__zoom-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+  
+  .pswp__img,
+  .pswp__zoom-wrap {
+      width: auto;
+      height: auto;
+  }
+  
+  .pswp--click-to-zoom.pswp--zoom-allowed .pswp__img {
+      cursor: -webkit-zoom-in;
+      cursor: zoom-in;
+      cursor: zoom-in;
+  }
+  
+  .pswp--click-to-zoom.pswp--zoomed-in .pswp__img {
+      cursor: move;
+      cursor: -webkit-grab;
+      cursor: grab;
+      cursor: grab;
+  }
+  
+  .pswp--click-to-zoom.pswp--zoomed-in .pswp__img:active {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+    cursor: grabbing;
+  }
+  
+  /* :active to override grabbing cursor */
+  .pswp--no-mouse-drag.pswp--zoomed-in .pswp__img,
+  .pswp--no-mouse-drag.pswp--zoomed-in .pswp__img:active,
+  .pswp__img {
+      cursor: -webkit-zoom-out;
+      cursor: zoom-out;
+      cursor: zoom-out;
+  }
+  
+  
+  /* Prevent selection and tap highlights */
+  .pswp__container,
+  .pswp__img,
+  .pswp__button,
+  .pswp__counter {
+      -webkit-user-select: none;
+      user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+  }
+  
+  .pswp__item {
+      /* z-index for fade transition */
+      z-index: 1;
+      overflow: hidden;
+  }
+  
+  .pswp__hidden {
+      display: none !important;
+  }
+  
+  /* Allow to click through pswp__content element, but not its children */
+  .pswp__content {
+    pointer-events: none;
+  }
+  .pswp__content > * {
+    pointer-events: auto;
+  }
+  
+  
+  /*
+  
+    PhotoSwipe UI
+  
+  */
+  
+  /*
+      Error message appears when image is not loaded
+      (JS option errorMsg controls markup)
+  */
+  .pswp__error-msg-container {
+    display: grid;
+  }
+  .pswp__error-msg {
+      margin: auto;
+      font-size: 1em;
+      line-height: 1;
+      color: var(--pswp-error-text-color);
+  }
+  
+  /*
+  class pswp__hide-on-close is applied to elements that
+  should hide (for example fade out) when PhotoSwipe is closed
+  and show (for example fade in) when PhotoSwipe is opened
+   */
+  .pswp .pswp__hide-on-close {
+      opacity: 0.005;
+      will-change: opacity;
+      transition: opacity var(--pswp-transition-duration) cubic-bezier(0.4, 0, 0.22, 1);
+      z-index: 10; /* always overlap slide content */
+      pointer-events: none; /* hidden elements should not be clickable */
+  }
+  
+  /* class pswp--ui-visible is added when opening or closing transition starts */
+  .pswp--ui-visible .pswp__hide-on-close {
+      opacity: 1;
+      pointer-events: auto;
+  }
+  
+  /* <button> styles, including css reset */
+  .pswp__button {
+      position: relative;
+      display: block;
+      width: 50px;
+      height: 60px;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      cursor: pointer;
+      background: none;
+      border: 0;
+      box-shadow: none;
+      opacity: 0.85;
+      -webkit-appearance: none;
+      -webkit-touch-callout: none;
+  }
+  
+  .pswp__button:hover,
+  .pswp__button:active,
+  .pswp__button:focus {
+    transition: none;
+    padding: 0;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    opacity: 1;
+  }
+  
+  .pswp__button:disabled {
+    opacity: 0.3;
+    cursor: auto;
+  }
+  
+  .pswp__icn {
+    fill: var(--pswp-icon-color);
+    color: var(--pswp-icon-color-secondary);
+  }
+  
+  .pswp__icn {
+    position: absolute;
+    top: 14px;
+    left: 9px;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  
+  .pswp__icn-shadow {
+    stroke: var(--pswp-icon-stroke-color);
+    stroke-width: var(--pswp-icon-stroke-width);
+    fill: none;
+  }
+  
+  .pswp__icn:focus {
+      outline: 0;
+  }
+  
+  /*
+      div element that matches size of large image,
+      large image loads on top of it,
+      used when msrc is not provided
+  */
+  div.pswp__img--placeholder,
+  .pswp__img--with-bg {
+      background: var(--pswp-placeholder-bg);
+  }
+  
+  .pswp__top-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+      z-index: 10;
+  
+      /* allow events to pass through top bar itself */
+      pointer-events: none !important;
+  }
+  .pswp__top-bar > * {
+    pointer-events: auto;
+    /* this makes transition significantly more smooth,
+       even though inner elements are not animated */
+    will-change: opacity;
+  }
+  
+  
+  /*
+  
+    Close button
+  
+  */
+  .pswp__button--close {
+    margin-right: 6px;
+  }
+  
+  
+  /*
+  
+    Arrow buttons
+  
+  */
+  .pswp__button--arrow {
+    position: absolute;
+    top: 0;
+    width: 75px;
+    height: 100px;
+    top: 50%;
+    margin-top: -50px;
+  }
+  
+  .pswp__button--arrow:disabled {
+    display: none;
+    cursor: default;
+  }
+  
+  .pswp__button--arrow .pswp__icn {
+    top: 50%;
+    margin-top: -30px;
+    width: 60px;
+    height: 60px;
+    background: none;
+    border-radius: 0;
+  }
+  
+  .pswp--one-slide .pswp__button--arrow {
+    display: none;
+  }
+  
+  /* hide arrows on touch screens */
+  .pswp--touch .pswp__button--arrow {
+    visibility: hidden;
+  }
+  
+  /* show arrows only after mouse was used */
+  .pswp--has_mouse .pswp__button--arrow {
+    visibility: visible;
+  }
+  
+  .pswp__button--arrow--prev {
+    right: auto;
+    left: 0px;
+  }
+  
+  .pswp__button--arrow--next {
+    right: 0px;
+  }
+  .pswp__button--arrow--next .pswp__icn {
+    left: auto;
+    right: 14px;
+    /* flip horizontally */
+    transform: scale(-1, 1);
+  }
+  
+  /*
+  
+    Zoom button
+  
+  */
+  .pswp__button--zoom {
+    display: none;
+  }
+  
+  .pswp--zoom-allowed .pswp__button--zoom {
+    display: block;
+  }
+  
+  /* "+" => "-" */
+  .pswp--zoomed-in .pswp__zoom-icn-bar-v {
+    display: none;
+  }
+  
+  
+  /*
+  
+    Loading indicator
+  
+  */
+  .pswp__preloader {
+    position: relative;
+    overflow: hidden;
+    width: 50px;
+    height: 60px;
+    margin-right: auto;
+  }
+  
+  .pswp__preloader .pswp__icn {
+    opacity: 0;
+    transition: opacity 0.2s linear;
+    animation: pswp-clockwise 600ms linear infinite;
+  }
+  
+  .pswp__preloader--active .pswp__icn {
+    opacity: 0.85;
+  }
+  
+  @keyframes pswp-clockwise {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  
+  /*
+  
+    "1 of 10" counter
+  
+  */
+  .pswp__counter {
+    display: none;
+    height: 30px;
+    margin-top: 15px;
+    margin-inline-start: 20px;
+    font-size: 14px;
+    line-height: 30px;
+    color: var(--pswp-icon-color);
+    text-shadow: 1px 1px 3px var(--pswp-icon-color-secondary);
+    opacity: 0.85;
+  }
+  
+  .pswp--one-slide .pswp__counter {
+    display: none;
+  }
+
+
+
+  .glow {
+
+    color: #fff;
+    text-align: center; 
+    transition: transform .2s; /* Animation */
+  }
+  .glow:hover {
+
+
+    color: #fff;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #b96161, 0 0 40px #e60000, 0 0 50px #e60000, 0 0 60px #e60000, 0 0 70px #e60000;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ffa9a9, 0 0 40px #ffbebe, 0 0 50px #f8d3d3, 0 0 60px #ffe7e7, 0 0 70px #fff7f7, 0 0 80px #f8eaea;
+    }
+  }
+
+
+
+
+#model {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  top: calc(50% - 250px);
+  right: 7%;
+}
+
+#model model-viewer {
+  height: 300px;
+  width: 300px;
+  position: relative;
+  top: 0;
+  left: 0;
+  border: none;
+}
+
+
+.horizontally {
+  width: 100vw;
+  height: 100vh;
+
+}
+
+.vertically {
+  padding: 1rem;
+  display: flex;
+}
+
+.scroll-tracker 
+{
+position: fixed;
+inset: 0 0 auto;
+height: 5rem;
+background-color:var(--clr-primary-400);
+transform-origin: center;
+}
+
+
+
+h1 {
+  font-size: 25px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+
+//audio player 
+
+.mplayer
+{
+  scroll-snap-align: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  height: 800px;
+}
+
+audio {
+  position: relative;
+  width: 100%;
+  height: 50px;
+}
+
+.soundcloud
+{
+scroll-snap-align: center;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+
+.wrapper{
+
+  border: 5px solid #360000;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  align-items: left;
+}
+
+
+.headers 
+{
+height: 35px;
+display:flex;
+flex-direction: row;
+justify-content: space-between;
+width: 100%;
+}
+
+.hd_playlist
+{
+  margin-left: -25px;
+  width: 20%;
+}
+
+.hd_analyser
+{
+  width: 60%;
+}
+
+.hd_details
+{
+  margin-right: -25px;
+  width: 25%;
+}
+
+.hd_playlist .hd_analyser .hd_details 
+{
+  flex: 1;
+}
+
+.modules {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.playlist .list .canvas .info {
+  flex: 1; 
+}
+
+
+.playlist  { 
+  height: 200px;
+  display: flex;
+  margin-left: -25px;
+  max-width: 20%;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+#canvas {
+  position: relative;
+  height: 300px;
+  width: 60%;
+  z-index: 10;
+  border: 2px solid #360000;
+  border-radius: 20px;
+
+}
+
+.info {
+  font-size: 1rem;
+  width: 20%;
+}
+
+
+
+.listButton
+{
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    height: 30px;
+    width: 200px;
+}
+
+
+.listButton:focus
+{
+    background: rgb(255, 55, 72);
+    color: #fff !important;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    height: 30px;
+    width: 200px;
+}
+
+
+
+#memories{
+  color: grey;
+  }
+
+
+#change{
+  color: grey;
+}
+
+
+.now-playing {
+font-size: 1rem;
+}
+
+.track-name {
+font-size: 2rem;
+}
+
+
+.track-artist {
+margin-top: 5px;
+font-size: 1.5rem;
+}
+
+.buttons {
+display: flex;
+flex-direction: row;
+align-items: center;
+margin-bottom: 30px;
+color: rgb(29, 0, 0);
+}
+
+
+.active{
+    color: rgb(94, 94, 94);
+}
+.repeat-track,
+.random-track,
+.playpause-track,
+.prev-track,
+.next-track,
+.bars,
+.osciloscope
+{
+padding: 25px;
+opacity: 0.8;
+transition: opacity .2s;
+}
+
+.repeat-track:hover,
+.random-track:hover,
+.playpause-track:hover,
+.prev-track:hover,
+.next-track:hover ,
+.bars:hover,
+.osciloscope:hover
+{
+opacity: 1.0;
+}
+
+.slider_container {
+margin-left: auto; 
+margin-right: auto;
+display: flex;
+justify-content: center;
+align-items: center;
+width: auto;
+}
+
+.slider_container_vol {
+  margin-left: auto;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  }
+  
+
+.slider_seek, .slider_volume {
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+height: 10px;
+background: #310000;
+-webkit-transition: .2s;
+transition: opacity .2s;
+}
+
+.slider_seek::-webkit-slider-thumb,
+.slider_volume::-webkit-slider-thumb {
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+width: 15px;
+height: 15px;
+background: white;
+border: 10px solid #000000;
+cursor: grab;
+border-radius: 100%;
+}
+
+.slider_seek:hover,
+.slider_volume:hover {
+opacity: 1.0;
+}
+
+.slider_seek {
+width: 100%;
+}
+
+.slider_volume {
+width: 50%;
+}
+
+.current-time,
+.total-duration {
+  padding: 10px;
+  width:150px; 
+  max-width:150px;  
+  display: inline-block;
+  font-size: 20;
+
+}
+
+i.fa-volume-down,
+i.fa-volume-up {
+padding: 15px;
+}
+
+
+.download
+{
+  border: none;
+}

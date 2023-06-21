@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    {% include head.html %}
+    
+</head>
+
+<body>
+
+    {% include navbar.html %}
+
+    <!--Main Section-->
+    <section class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="section">
+                    <h1 class="title is-1 is-uppercase has-text-weight-bold">Music</h1>
+          
+            </div>
+
+                {% include music-card.html %}
+    
+            
+            </div>
+        </div>
+    </section>
+   
+
+    <!--Footer-->
+    {% include footer.html %}
+
+
+    <script src="{{ base.url | prepend: site.url }}/assets/js/audio-player.js"></script>

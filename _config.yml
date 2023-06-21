@@ -1,0 +1,78 @@
+
+# Reminder - compressed files can be problematic!
+
+markdown: kramdown
+url: ''
+# Repository
+baseurl:
+title: Tomek Tomasik
+description: My second name is Curiosity.
+site-image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/TT%20logo.png?t=2023-03-03T17%3A42%3A48.525Z
+site-keywords: Tomek Tomasik, Tomek Tomasik portfolio, 3D artist, Tomek Tomasik 3D artist, Tomek Tomasik music, freelance, 3D, clue notepad,  
+favicon-url: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/TT%20logo.png?t=2023-03-03T17%3A42%3A48.525Z
+heroimage: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/hi.jpg?t=2023-03-11T19%3A20%3A05.226Z
+logoimage: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/TT%20logo.png?t=2023-03-03T17%3A42%3A48.525Z 
+
+# Social Media
+email: kontakt@tomaktomasik.pl
+artstation_username: tomekt
+github_username: cepeen
+gitlab_username: cepeen
+sketchfab_username: tomekt 
+soundcloud_username: tomektomasik
+
+# It's here but I will not track You.
+# google-analytics: G-8JHNVV1GC7
+
+disqus-shortname: 
+
+author-name: Tomek Tomasik
+author-about: I am a jelly enthusiast. Meaningful to me is that which contains a bit of space bounded by a piece of sponge made of ossein fibers and a bit of salt. This is the most delicious kind of jelly for me. To judge its quality, I observe the behavior of its owner, so for cooperation, I look for open-minded people who try to break the established patterns in their lives. Yes, I'm crazy, that's a fact, I hope you are too. 
+author-url: https://github.com/Cepeen
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+  - jekyll-admin
+  - jekyll-feed
+
+permalink: "blog/:title"
+
+compress_html:
+  clippings: all
+
+defaults:
+  -
+    scope:
+      type: 'posts'
+    values:
+      layout: post
+      post-image: ""
+      description: ""
+      tags:
+        - ""
+  -
+    scope:
+      type: 'pages'
+    values:
+      layout: page
+
+include:
+  - _static
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+
+
