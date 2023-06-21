@@ -1,4 +1,4 @@
-//audio player created in pain there are some problems with chromium browsers 
+//audio player created in pain, there are some problems with chromium browsers 
 
 
 //Variables
