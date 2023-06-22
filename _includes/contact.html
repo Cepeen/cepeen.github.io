@@ -1,6 +1,6 @@
 <section class="hero is-fullheight has-text-centered" id="contact">
     <div class="hero-body">
-        <div class="container">
+        <div class="container" style=" height: 200px;">
 
             {% unless site.email == %}
             <a id="contact-button" href="mailto:{{site.email}}"
@@ -10,28 +10,28 @@
             </a>
             {% endunless %}
 
-            <div class="container">
+            <div class="container" style=" height: 80px;">
                 {% unless site.github_username == %}
                 <a href="http://www.github.com/{{site.github_username}}" target="_blank" class="has-text-black"><i
-                        class="fab fa-github"></i></a>
+                        class="fab fa-github fa-2x"></i></a>
                         
                 {% endunless %}
 
                 {% unless site.sketchfab_username == %}
                 <a href="http://www.sketchfab.com/{{site.sketchfab_username}}" target="_blank" class="has-text-black"><i
-                   class="fa fa-sketchfab" aria-hidden="true"></i>
+                   class="fa fa-sketchfab fa-2x" aria-hidden="true"></i>
 
                 {% endunless %}
 
                 {% unless site.soundcloud_username == %}
                 <a href="https://soundcloud.com/{{site.soundcloud_username}}" target="_blank" class="has-text-black"><i
-                        class="fa fa-soundcloud" aria-hidden="true"></i>
+                        class="fa fa-soundcloud fa-2x" aria-hidden="true"></i>
 
                     {% endunless %}
 
                     {% unless site.artstation_username == %}
                     <a href="https://artstation.com/{{site.artstation_username}}" target="_blank"
-                        class="has-text-black"><i class="fa fa-artstation" aria-hidden="true"></i>
+                        class="has-text-black"><i class="fa fa-artstation fa-2x" aria-hidden="true"></i>
 
                         {% endunless %}
 
