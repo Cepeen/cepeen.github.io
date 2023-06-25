@@ -161,6 +161,7 @@ a.navbar-item.is-active {
       user-select: none;
       -webkit-user-select: none;
       touch-action: manipulation;
+      margin-bottom: 5px;
     }
 
     svg {
@@ -371,6 +372,7 @@ a.navbar-item.is-active {
 
     @media (max-width: 800px) {
       .fbox {
+        display: flex; 
         margin-top: 0.5rem !important;
         margin-bottom: 0.5rem !important;
         margin-left: 0;
@@ -400,8 +402,9 @@ a.navbar-item.is-active {
 
   @media (max-width: 1024px) {
     .artworks {
+      display: none;
       width: 40% !important;
-      margin: 0 auto;
+      margin: auto;
       margin-top: 0.5rem !important;
       height: auto;
     }
@@ -409,11 +412,11 @@ a.navbar-item.is-active {
 
   @media (max-width: 800px) {
     .artworks {
+      display: none;
       margin-top: 0.5rem !important;
       margin-bottom: 0.5rem !important;
       margin-left: 0;
       margin-right: 0;
-      display: inline-table;
       width: 100% !important;
       margin: 0 auto;
       height: auto;
@@ -443,6 +446,30 @@ a.navbar-item.is-active {
     display: block;
   }
 }
+
+@media (max-width: 800px) {
+  .show {
+    display: block;
+  }
+}
+
+@media (max-width: 1024px) {
+  .show {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .show {
+    display: block;
+  }
+}
+
+
+
+
+
+
 
 
     .card {
@@ -1226,16 +1253,18 @@ display: none;
   position: absolute;
   z-index: 9999;
   display: flex;
-margin-top: 5px;
-margin-bottom: 5px;
-margin-left: 0%;
-margin-right: 0px;
-  max-width: 80%;
+  left: 0; 
+  right: 0; 
+  margin-top: 5px;
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 160px; /* Need a specific value to work */
+  max-width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
-  justify-content: space-between;
+  align-items: center;
 }}
 
 ::-webkit-scrollbar {
@@ -1271,14 +1300,29 @@ margin-right: 0px;
 
 .listButton
 {
-    margin: auto;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
     background: none;
     border: none;
-    padding: 0;
     font: inherit;
     cursor: pointer;
     height: 30px;
     width: 160px;
+    align-items: center;
+}
+
+
+@media (max-width: 1000px) {
+  .listButton
+{
+  display: flex;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 160px;
+}
 }
 
 
@@ -1294,6 +1338,23 @@ margin-right: 0px;
     height: 30px;
     width: 160px;
 }
+
+@media (max-width: 1000px) {
+.listButton:focus
+{
+    margin: auto;
+    background: rgb(255, 55, 72);
+    color: #fff !important;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    height: 30px;
+    width: 160px;
+}
+}
+
+
 
 
 #memories{
@@ -1333,6 +1394,7 @@ color: rgb(29, 0, 0);
     margin: 0 px;
     width: 100%;
     justify-content: space-between;
+    
   }}
 
 .active{
