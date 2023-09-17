@@ -1,9 +1,9 @@
 ---
 title: Clue Notepad Privacy Policy
-layout: page
+layout: privacy
 ---
 
-*PRIVACY NOTICE*
+**PRIVACY NOTICE**
 
 *Last updated June 06, 2022,*
 
@@ -14,131 +14,147 @@ This privacy notice for tomektomasik("*Company*," "*we*," "*us*," or
 share ("*process*") your information when you use our services
 ("*Services*"), such as when you:
 
-  * Visit our website at tomektomasik.pl, or any website of ours that
+   Visit our website at tomektomasik.pl, or any website of ours that
     links to this privacy notice
 
-  * Download and use our mobile application(clue notepad),or any other
+   Download and use our mobile application(clue notepad),or any other
     application of ours that links to this privacy notice
 
-  * Engage with us in other related ways, including any sales,
-    marketing, or events
+   Engage with us in other related ways, including any sales,
+   marketing, or events
 
 *Questions or concerns? *Reading this privacy notice will help you
 understand your privacy rights and choices. If you do not agree with our
 policies and practices, please do not use our Services. If you still
 have any questions or concerns, please contact us at
-kontakt@tomektomasik.pl.
+
+privacy@tomektomasik.pl.
 
 
 *SUMMARY OF KEY POINTS*
 
-*/This summary provides key points from our privacy notice, but you can
-find out more details about any of these topics by clicking the link
-following each key point or by using our table of contents below to find
-the section you are looking for. You can also click /**/here/*
-<#toc>*/ to go directly to our table of contents./*
+This summary provides key points from our privacy notice.
 
-*What personal information do we process?* When you visit, use, or
-navigate our Services, we may process personal information depending on
+
+*What personal information do we process?* 
+
+When you visit, use, or navigate our Services, we may process personal information depending on
 how you interact with tomektomasik and the Services, the choices you
-make, and the products and features you use. Click here
-<#personalinfo> to learn more.
+make, and the products and features you use. 
 
-*Do we process any sensitive personal information?* We do not process
-sensitive personal information.
 
-*Do we receive any information from third parties?* We may receive
-information from public databases, marketing partners, social media
-platforms, and other outside sources. Click here <#othersources> to
-learn more.
+*Do we process any sensitive personal information?* 
+
+We do not process sensitive personal information.
+
+*Do we receive any information from third parties?* 
+We may receive information from public databases, marketing partners, social media
+platforms, and other outside sources.
 
 *How do we process your information?* We process your information to
 provide, improve, and administer our Services, communicate with you, for
 security and fraud prevention, and to comply with the law. We may also
 process your information for other purposes with your consent. We
 process your information only when we have a valid legal reason to do
-so. Click here <#infouse> to learn more.
+so. 
+
 
 *In what situations and with which parties do we share personal
-information?* We may share information in specific situations and with
-specific third parties. Click here <#whoshare> to learn more.
+information?*
 
-*How do we keep your information safe?* We have organizational and
+We may share information in specific situations and with
+specific third parties.
+
+
+*How do we keep your information safe?* 
+
+We have organizational and
 technical processes and procedures in place to protect your personal
 information. However, no electronic transmission over the internet or
 information storage technology can be guaranteed to be 100% secure, so
 we cannot promise or guarantee that hackers, cybercriminals, or other
 unauthorized third parties will not be able to defeat our security and
 improperly collect, access, steal, or modify your information.
-Click here <#infosafe> to learn more.
 
-*What are your rights?* Depending on where you are located
+
+*What are your rights?*
+
+Depending on where you are located
 geographically, the applicable privacy law may mean you have certain
-rights regarding your personal information. Click here
-<#privacyrights> to learn more.
+rights regarding your personal information. 
 
-*How do I exercise my rights?* The easiest way to exercise your rights
-is by filling out our data subject request form available here
-<https://app.termly.io/notify/a60ed753-6daf-4eba-a94e-f52ed8f53be8>, or
-by contacting us. We will consider and act upon any request in
+
+*How do I exercise my rights?* 
+
+The easiest way to exercise your rights is by contacting us. 
+We will consider and act upon any request in
 accordance with applicable data protection laws.
 
 Want to learn more about what tomektomasik does with any information we
-collect? Click here <#toc> to review the notice in full.
+collect?
 
 
 *TABLE OF CONTENTS*
-    What information do we collect? <#infocollect>
-    How do we process your information? <#infouse>
-    What legal bases do we rely on to process your personal information? <#legalbases>
-    When and with whom do we share your personal information? <#whoshare>
-    Do we use cookies and other tracking technologies? <#cookies>
-    How do we handle your social logins? <#sociallogins>
-    How long do we keep your information? <#inforetain>
-    How do we keep your information safe? <#infosafe>
-    What are your privacy rights? <#privacyrights>
-    Controls for do-not-track features <#DNT>
-    Do California residents have specific privacy rights? <#caresidents>
-    Do we make updates to this notice? <#policyupdates>
-    How can you contact us about this notice? <#contact>
+    What information do we collect? 
+    How do we process your information?
+    What legal bases do we rely on to process your personal information? 
+    When and with whom do we share your personal information? 
+    Do we use cookies and other tracking technologies?
+    How do we handle your social logins? 
+    How long do we keep your information? 
+    How do we keep your information safe? 
+    What are your privacy rights? 
+    Controls for do-not-track features
+    Do California residents have specific privacy rights? 
+    Do we make updates to this notice? 
+    How can you contact us about this notice? 
     How can you review, update, or delete the data we collect from you?
-<#request>
+
+
+
 
 *1. WHAT INFORMATION DO WE COLLECT?*
 
+
 *Personal information you disclose to us*
 
-*/In Short:/**/ /*/We collect personal information that you provide to us./
+We collect personal information that you provide to us.
 
 We collect personal information that you voluntarily provide to us when
 you express an interest in obtaining information about us or our
 products and Services, when you participate in activities on the
 Services, or otherwise when you contact us.
 
-*Personal Information Provided by You.* The personal information that we
-collect depends on the context of your interactions with us and the
+*Personal Information Provided by You.*
+The personal information that we collect depends on the context of your interactions with us and the
 Services, the choices you make, and the products and features you use.
 The personal information we collect may include the following:
 
 
-*   names
-*   mailing addresses
-*   usernames
+names
+mailing addresses
+usernames
 
 
-*Sensitive Information.* We do not process sensitive information.
+
+*Sensitive Information.* 
+
+We do not process sensitive information.
 
 *Social Media Login Data. *We may provide you with the option to
 register with us using your existing social media accounts details, like
 your Facebook, Twitter, or other social media account. If you choose to
 register in this way, we will collect the information described in the
-section called "HOW DO WE HANDLE YOUR SOCIAL LOGINS? <#sociallogins>" below.
+section called "HOW DO WE HANDLE YOUR SOCIAL LOGINS? 
 
 *Application Data.* If you use our application(s), we also may collect
 the following information if you choose to provide us with access or
 permission:
 
-  * /Mobile Device Data./ We automatically collect device information
+
+  Mobile Device Data. 
+	
+	We automatically collect device information
     (such as your mobile device ID, model, and manufacturer), operating
     system, version information, and system configuration information,
     device and application identification numbers, browser type and
@@ -160,13 +176,17 @@ information.
 
 *Information automatically collected*
 
-*/In Short:/**/ /*/Some information — such as your Internet Protocol
+Some information — such as your Internet Protocol
 (IP) address and/or browser and device characteristics — is collected
-automatically when you visit our Services./
+automatically when you visit our Services.
 
 We automatically collect certain information when you visit, use, or
 navigate the Services. This information does not reveal your specific
-identity (like your name or contact information) but may include the device and usage information, such as your IP address, browser, and device characteristics, operating system, language preferences, referring URLs, device name, country, location, information about how and when you use our Services, and other technical information. This information is
+identity (like your name or contact information) but may include the 
+device and usage information, such as your IP address, browser, 
+and device characteristics, operating system, language preferences, referring URLs, 
+device name, country, location, information about how and when you use our Services, 
+and other technical information. This information is
 primarily needed to maintain the security and operation of our Services,
 and for our internal analytics and reporting purposes.
 
@@ -175,7 +195,7 @@ similar technologies.
 
 The information we collect includes:
 
-  * /Log and Usage Data./ Log and usage data is service-related,
+  Log and Usage Data./ Log and usage data is service-related,
     diagnostic, usage, and performance information on our servers
     automatically collect when you access or use our Services and which
     we record in log files. Depending on how you interact with us, this
@@ -187,7 +207,10 @@ The information we collect includes:
     activity, error reports (sometimes called "crash dumps"), and
     hardware settings).
 
-  * /Device Data./ We collect device data such as information about your
+
+		Device Data.
+	
+		We collect device data such as information about your
     computer, phone, tablet, or other devices you use to access the
     Services. Depending on the device used, this device data may include
     information such as your IP address (or proxy server), device and
@@ -195,7 +218,10 @@ The information we collect includes:
     model, Internet service provider and/or mobile carrier, operating
     system, and system configuration information.
 
-  * /Location Data./ We collect location data such as information about
+
+		Location Data.
+		
+		We collect location data such as information about
     your device's location, which can be either precise or imprecise.
     How much information we collect depends on the type and settings of
     the device you use to access the Services. For example, we may use
@@ -206,10 +232,12 @@ The information we collect includes:
     device. However, if you choose to opt-out, you may not be able to
     use certain aspects of the Services.
 
+
+
 *Information collected from other sources*
 
-*/In Short: /*/We may collect limited data from public databases,
-marketing partners, /social media platforms, /and other outside sources./
+
+We may collect limited data from public databases, marketing partners,  social media platforms,  and other outside sources.
 
 To enhance our ability to provide relevant marketing, offers,
 and services to you and update our records, we may obtain information
@@ -226,12 +254,13 @@ email address, and gender. Any personal information that we collect from
 your social media account depends on your social media account privacy
 settings.
 
+
 *2. HOW DO WE PROCESS YOUR INFORMATION?*
 
-*/In Short: /*/We process your information to provide, improve, and
+We process your information to provide, improve, and
 administer our Services, communicate with you, for security and fraud
 prevention, and to comply with the law. We may also process your information
-for other purposes with your consent./
+for other purposes with your consent.
 
 *We process your personal information for a variety of reasons,
 depending on how you interact with our Services, including:*
@@ -247,14 +276,14 @@ depending on how you interact with our Services, including:*
 
 *3. WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR INFORMATION?*
 
-/*In Short: *We only process your personal information when we believe
+We only process your personal information when we believe
 it is necessary and we have a valid legal reason (i.e., legal basis) to
 do so under applicable law, like with your consent, to comply with laws,
 to provide you with services to enter into or fulfill our contractual
 obligations, to protect your rights, or to fulfill our legitimate
-business interests./
+business interests.
 
-/*_If you are located in the EU or UK, this section applies to you._*/
+If you are located in the EU or UK, this section applies to you.
 
 The General Data Protection Regulation (GDPR) and UK GDPR require us to explain the valid legal bases we rely on to process your
 personal information. As such, we may rely on the following legal bases
@@ -262,7 +291,7 @@ to process your personal information:
 
   * *Consent. *We may process your information if you have permitted us (i.e., consent) to use your personal information for a
     specific purpose. You can withdraw your consent at any time.
-    Click here <#withdrawconsent> to learn more.
+
 
   * *Legitimate Interests.* We may process your information when we
     believe it is reasonably necessary to achieve our legitimate
@@ -286,13 +315,12 @@ to process your personal information:
     threats to the safety of any person.
 
 
-*_/If you are located in Canada, this section applies to you./_*
+If you are located in Canada, this section applies to you.
 
 We may process your information if you have given us specific permission
 (i.e., express consent) to use your personal information for a specific
 purpose, or in situations where your permission can be inferred
 (i.e., implied consent). You can withdraw your consent at any time.
-Click here <#withdrawconsent> to learn more.
 
 In some exceptional cases, we may be legally permitted under applicable
 law to process your information without your consent, including, for
@@ -336,8 +364,8 @@ example:
 
 *4. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?*
 
-*/In Short:/*/ We may share information in specific situations described
-in this section and/or with the following third parties./
+We may share information in specific situations described
+in this section and/or with the following third parties.
 
 
 We may need to share your personal information in the following situations:
@@ -350,19 +378,20 @@ We may need to share your personal information in the following situations:
 
 *5. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?*
 
-*/In Short:/*/ We may use cookies and other tracking technologies to
-collect and store your information./
+ We may use cookies and other tracking technologies to
+collect and store your information.
 
 We may use cookies and similar tracking technologies (like web beacons
 and pixels) to access or store information. Specific information about
 how we use such technologies and how you can refuse certain cookies is
 set out in our Cookie Notice.
 
+
 *6. HOW DO WE HANDLE YOUR SOCIAL LOGINS?*
 
-*/In Short: /*/If you choose to register or log in to our services using
+If you choose to register or log in to our services using
 a social media account, we may have access to certain information about
-you./
+you.
 
 Our Services offer you the ability to register and log in using your
 third-party social media account details (like your Facebook or Twitter
@@ -382,9 +411,10 @@ privacy notice to understand how they collect, use, and share your
 personal information, and how you can set your privacy preferences on
 their sites and apps.
 
+
 *7. HOW LONG DO WE KEEP YOUR INFORMATION?*
 
-*/In Short: /*/We keep your information for as long as necessary to
+We keep your information for as long as necessary to
 fulfill purposes outlined in this privacy notice unless otherwise
 required by law./
 
@@ -401,10 +431,11 @@ personal information has been stored in backup archives), then we will
 securely store your personal information and isolate it from any further
 processing until deletion is possible.
 
+
 *8. HOW DO WE KEEP YOUR INFORMATION SAFE?*
 
-*/In Short: /*/We aim to protect your personal information through a
-system of organizational and technical security measures./
+We aim to protect your personal information through a
+system of organizational and technical security measures.
 
 We have implemented appropriate and reasonable technical and
 organizational security measures designed to protect the security of any
@@ -419,12 +450,13 @@ information, the transmission of personal information to and from our
 Services are at your own risk. You should only access the Services within
 a secure environment.
 
+
 *9. WHAT ARE YOUR PRIVACY RIGHTS?*
 
-*/In Short:/*/ //In some regions, such as the European Economic Area
+In some regions, such as the European Economic Area
 (EEA), United Kingdom (UK), and Canada, you have rights that allow you
 greater access to and control over your personal information.// You may
-review, change, or terminate your account at any time./
+review, change, or terminate your account at any time.
 
 In some regions (like the EEA, UK, and Canada), you have certain rights
 under applicable data protection laws. These may include the right (i)
@@ -434,7 +466,7 @@ your personal information; and (iv) if applicable, to data portability.
 In certain circumstances, you may also have the right to object to the
 processing of your personal information. You can make such a request by
 contacting us using the contact details provided in the section "HOW
-CAN YOU CONTACT US ABOUT THIS NOTICE? <#contact>"below.
+CAN YOU CONTACT US ABOUT THIS NOTICE? 
 
 We will consider and act upon any request following applicable
 data protection laws.
@@ -443,19 +475,20 @@ If you are located in the EEA or UK and you believe we are unlawfully
 processing your personal information, you also have the right to
 complain to your local data protection supervisory authority. You can
 find their contact details here:
-https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm <https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm>.
+<https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm >
+
 
 If you are located in Switzerland, the contact details for the data
 protection authorities are available here:
-https://www.edoeb.admin.ch/edoeb/en/home.html
-<https://www.edoeb.admin.ch/edoeb/en/home.html>.
+<https://www.edoeb.admin.ch/edoeb/en/home.html>
+
 
 *_Withdrawing your consent:_* If we are relying on your consent to
 process your personal information, which may be express and/or implied
 consent depending on the applicable law, you have the right to withdraw
 your consent at any time. You can withdraw your consent at any time by
 contacting us using the contact details provided in the section "HOW
-CAN YOU CONTACT US ABOUT THIS NOTICE? <#contact>"below.
+CAN YOU CONTACT US ABOUT THIS NOTICE?
 
 However, please note that this will not affect the lawfulness of the
 processing before its withdrawal, nor when applicable law allows, will it
@@ -467,11 +500,12 @@ accept cookies by default. If you prefer, you can usually choose to set
 your browser to remove or reject cookies. If you choose to
 remove cookies or reject cookies, this could affect certain features or
 services of our Services. To opt out of interest-based advertising by
-advertisers on our Services visit http://www.aboutads.info/choices/
+advertisers on our Services visit
 <http://www.aboutads.info/choices/>.
 
 If you have questions or comments about your privacy rights, you may
-email us at kontakt@tomektomasik.pl.
+email us at privacy@tomektomasik.pl.
+
 
 *10. CONTROLS FOR DO-NOT-TRACK FEATURES*
 
@@ -486,10 +520,11 @@ choice not to be tracked online. If a standard for online tracking is
 adopted that we must follow in the future, we will inform you about that
 practice in a revised version of this privacy notice.
 
+
 *11. DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?*
 
-*/In Short: /*/Yes, if you are a resident of California, you are granted
-specific rights regarding access to your personal information./
+Yes, if you are a resident of California, you are granted
+specific rights regarding access to your personal information.
 
 California Civil Code Section 1798.83, also known as the "Shine The
 Light"law, permits our users who are California residents to request and
@@ -511,10 +546,11 @@ the data is not publicly displayed on the Services, but please be aware
 that the data may not be completely or comprehensively removed from all
 our systems (e.g., backups, etc.).
 
+
 *12. DO WE MAKE UPDATES TO THIS NOTICE?*
 
-/*In Short: *Yes, we will update this notice as necessary to stay
-compliant with relevant laws./
+Yes, we will update this notice as necessary to stay
+compliant with relevant laws.
 
 We may update this privacy notice from time to time. The updated version
 will be indicated by an updated "Revised" date and the updated version
@@ -524,7 +560,8 @@ posting a notice of such changes or by directly sending you a
 notification. We encourage you to review this privacy notice frequently
 to be informed of how we are protecting your information.
 
+
 *13. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?*
 
 If you have questions or comments about this notice, you may email us at
-kontakt@tomektomasik.pl
+privacy@tomektomasik.pl

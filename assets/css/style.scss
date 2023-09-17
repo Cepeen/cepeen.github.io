@@ -1520,3 +1520,22 @@ padding: 15px;
 {
   border: none;
 }
+
+
+
+.privacy{
+    font-size: 100%;
+  }
+
+  @media (max-width: 600px) {
+    .privacy {
+      font-size: 70%;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .privacy {
+      font-size: 50%;
+    }
+  }
+
