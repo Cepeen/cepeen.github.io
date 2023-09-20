@@ -3,7 +3,6 @@ title: Clue Notepad Privacy Policy
 layout: privacy
 ---
 
-**PRIVACY NOTICE**
 
 *Last updated June 06, 2022,*
 

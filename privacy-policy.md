@@ -3,7 +3,6 @@ title: privacy policy
 layout: privacy
 ---
 
-**Privacy Policy**
 
 Last updated: June 06, 2022
 
