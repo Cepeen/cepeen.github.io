@@ -264,11 +264,11 @@ for other purposes with your consent.
 *We process your personal information for a variety of reasons,
 depending on how you interact with our Services, including:*
 
-  * *To request feedback. *We may process your information when
+  *To request feedback. *We may process your information when
     necessary to request feedback and to contact you about your use of
     our Services.
 
-  * *To save or protect an individual's vital interest.* We may process
+  *To save or protect an individual's vital interest.* We may process
     your information when necessary to save or protect an individual’s
     vital interest, such as preventing harm.
 
@@ -288,27 +288,27 @@ The General Data Protection Regulation (GDPR) and UK GDPR require us to explain 
 personal information. As such, we may rely on the following legal bases
 to process your personal information:
 
-  * *Consent. *We may process your information if you have permitted us (i.e., consent) to use your personal information for a
+   *Consent. *We may process your information if you have permitted us (i.e., consent) to use your personal information for a
     specific purpose. You can withdraw your consent at any time.
 
 
-  * *Legitimate Interests.* We may process your information when we
+  *Legitimate Interests.* We may process your information when we
     believe it is reasonably necessary to achieve our legitimate
     business interests and those interests do not outweigh your
     interests and fundamental rights and freedoms. For example, we may
     process your personal information for some of the purposes described
     to:
 
-  * Understand how our users use our products and services so we can
+   Understand how our users use our products and services so we can
     improve user experience
 
-  * *Legal Obligations.* We may process your information where we
+  *Legal Obligations.* We may process your information where we
     believe it is necessary for compliance with our legal obligations,
     such as cooperating with a law enforcement body or regulatory
     agency, exercise or defend our legal rights, or disclose your
     information as evidence in litigation in which we are involved.
 
-  * *Vital Interests.* We may process your information where we believe
+  *Vital Interests.* We may process your information where we believe
     it is necessary to protect your vital interests or the vital
     interests of a third party, such as situations involving potential
     threats to the safety of any person.
@@ -325,39 +325,39 @@ In some exceptional cases, we may be legally permitted under applicable
 law to process your information without your consent, including, for
 example:
 
-* If collection is clearly in the interests of an individual and
+ If collection is clearly in the interests of an individual and
     consent cannot be obtained in a timely way
 
-  * For investigations and fraud detection and prevention
+   For investigations and fraud detection and prevention
 
-  * For business transactions provided certain conditions are met
+   For business transactions provided certain conditions are met
 
-  * If it is contained in a witness statement and the collection is
+   If it is contained in a witness statement and the collection is
     necessary to assess, process, or settle an insurance claim
 
-  * For identifying injured, ill, or deceased persons and communicating
+   For identifying injured, ill, or deceased persons and communicating
     with next of kin
 
-  * If we have reasonable grounds to believe an individual has been, is,
+   If we have reasonable grounds to believe an individual has been, is,
     or may be the victim of financial abuse
 
-  * If it is reasonable to expect collection and use with consent would
+   If it is reasonable to expect collection and use with consent would
     compromise the availability or the accuracy of the information and
     the collection is reasonable for purposes related to investigating a
     breach of an agreement or a contravention of the laws of Canada or a
     province
 
-  * If disclosure is required to comply with a subpoena, warrant, court
+   If disclosure is required to comply with a subpoena, warrant, court
     order, or rules of the court relating to the production of records
 
-  * If it was produced by an individual in the course of their
+   If it was produced by an individual in the course of their
     employment, business, or profession, and the collection is consistent
     with the purposes for which the information was produced
 
-  * If the collection is solely for journalistic, artistic, or literary
+   If the collection is solely for journalistic, artistic, or literary
     purposes
 
-  * If the information is publicly available and is specified by the
+   If the information is publicly available and is specified by the
     regulations
 
 
@@ -369,7 +369,7 @@ in this section and/or with the following third parties.
 
 We may need to share your personal information in the following situations:
 
-  * *Business Transfers.* We may share or transfer your information in
+  *Business Transfers.* We may share or transfer your information in
     connection with, or during negotiations of, any merger, sale of
     company assets, financing, or acquisition of all or a portion of our
     business to another company.
