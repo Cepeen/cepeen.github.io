@@ -28,7 +28,7 @@ Future development:
 <br><br>
 
 * add more localizations<br>
-* taking names of local players (same network) to place their names into the tables automatically,<br>
+* taking names of local players (same network) to place their names into the tables automatically<br>
 * add the possibility to save preferences (low priority)<br>
 <br>
 
