@@ -46,7 +46,7 @@ animatedText.animate(
 // gsap is exciting
 
 gsap.registerPlugin(ScrollTrigger);
-gsap.utils.toArray(".revealUp").forEach(function (elem) {
+gsap.utils.toArray("#author").forEach(function (elem) {
   ScrollTrigger.create({
     trigger: elem,
     start: "top 80%",

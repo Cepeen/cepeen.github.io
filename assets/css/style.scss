@@ -387,6 +387,7 @@ a.navbar-item.is-active {
 
     @media (min-width: 1024px){
     .artworks {
+      scroll-snap-align: center;
       background-color: #f7f8f8;
       border: 1px solid #555555;
       padding: 15px;
@@ -401,7 +402,8 @@ a.navbar-item.is-active {
   }
 
   @media (max-width: 1024px) {
-    .artworks {
+    .artworks {  
+      scroll-snap-align: center;
       display: none;
       width: 40% !important;
       margin: auto;
@@ -411,7 +413,8 @@ a.navbar-item.is-active {
   }
 
   @media (max-width: 800px) {
-    .artworks {
+    .artworks {  
+      scroll-snap-align: center;
       display: none;
       margin-top: 0.5rem !important;
       margin-bottom: 0.5rem !important;
@@ -1114,7 +1117,7 @@ height: 5rem;
 background-color:var(--clr-primary-400);
 transform-origin: center;
 }
-
+ 
 
 
 h1 {
@@ -1539,3 +1542,20 @@ padding: 15px;
     }
   }
 
+#author
+{
+  font-size: 30px !important;
+}
+
+@media (max-width: 1024px) {
+  #author {
+    font-size: 25px !important;
+  }
+  }
+
+@media (max-width: 800px) {
+  #author {
+    font-size: 20px !important;
+  }
+  }
+  
