@@ -19,19 +19,11 @@ const animatedTextTimeline = new ScrollTimeline({
   ],
 });
 
-scrollTracker.animate(
-  { transform: ["scaleX(0)", "scaleX(1)"] },
-  {
-    duration: 1,
-    timeline: scrollTrackingTimeline,
-  }
-);
 
 animatedText.animate(
   {
     transform: [
       "perspective(1000px) rotateZ(-360deg)",
-      "perspective(1000px rotate(0)",
     ],
 
     scale: (1, 0.01),

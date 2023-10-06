@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    {% include head.html %}
+    
+
+</head>
+
+<body>
+    {% include navbar.html %}
+
+    <section class="hero is-fullheight" id="blog">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-1 is-uppercase has-text-weight-bold has-text-centered">APPS</h1>
+                <p style="text-align: center; padding: 20px;">Apps published here are AD free.</p>
+
+
+
+                <a href="{{site.url}}{{site.baseurl}}/clue-notepad">
+                <div class="columns has-text-centered" id="app-card">
+                     <div class="column is-marginless is-paddingless is-one-third-desktop is-one-third-fullhd is-one-third-tablet">
+                        <div class="image-container">
+                            <div class="image is-128x128">
+                                <img src="https://github.com/Cepeen/ClueNotepad/blob/master/assets/logo.png?raw=true" alt="Clue Notepad Logo">
+                            </div>
+                            <div class="text-container">
+                                <h1 class="title">Clue Notepad</h1>
+                            </a>
+                                <p class="description">Clue games notepad.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+           
+
+
+            <a href="{{site.url}}{{site.baseurl}}/wakey-wakey">
+                <div class="columns has-text-centered" id="app-card">
+                    <div class="column is-marginless is-paddingless is-one-third-desktop is-one-third-fullhd is-one-third-tablet">
+                        <div class="image-container">
+                            <div class="image is-128x128">
+                                <img src="https://github.com/Cepeen/ClueNotepad/blob/master/assets/logo.png?raw=true" alt="Clue Notepad Logo">
+                            </div>
+                            <div class="text-container">
+                                <h1 class="title">Wakey! Wakey!</h1>
+                                 </a>
+                                <p class="description">Simple WOL (wake on lan) solution.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+    
+            </div>
+        </div>
+    </section>
+    <br>
+    {% include footer.html %}
+
+</body>
+</html>
