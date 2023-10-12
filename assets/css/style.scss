@@ -1515,23 +1515,20 @@ padding: 15px;
   border: none;
 }
 
-
+//about, privacy etc.
 
 .privacy{
     font-size: 100%;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     .privacy {
-      font-size: 70%;
+      font-size: 50%;
+      margin: auto;
     }
   }
 
-  @media (max-width: 400px) {
-    .privacy {
-      font-size: 50%;
-    }
-  }
+
 
 #author
 {
