@@ -356,7 +356,7 @@ a.navbar-item.is-active {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        max-height: 1600px;
+        max-height: 1500px;
         
       }
     }
@@ -385,15 +385,16 @@ a.navbar-item.is-active {
       padding: 15px;
       color: #fff;
       display: none;
-      width: 30%;
+      width: 33%;
       color: white;
       margin: 0 -1px;
-      margin-bottom: 40px; 
+      margin-bottom: 0px; 
       max-height: 1300px;
+      margin-top: 0.5rem !important;
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (min-width: 768px) and (max-width: 1215px) {
     .artworks {  
       scroll-snap-align: none;
       display: none;
