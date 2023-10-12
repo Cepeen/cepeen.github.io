@@ -1,8 +1,7 @@
 ---
-title: Clue Notepad Privacy Policy
+title: Application Privacy Policy
 layout: privacy
 ---
-
 
 *Last updated June 06, 2022,*
 
@@ -16,7 +15,7 @@ share ("*process*") your information when you use our services
    Visit our website at tomektomasik.pl, or any website of ours that
     links to this privacy notice
 
-   Download and use our mobile application(clue notepad),or any other
+   Download and use our mobile application,or any other
     application of ours that links to this privacy notice
 
    Engage with us in other related ways, including any sales,

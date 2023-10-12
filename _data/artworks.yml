@@ -46,3 +46,11 @@
   description: attempt to portrait friend
   width: 1480;
   height: 1920;
+- name: Living room
+  category: render
+  type: horizontal
+  image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/room.png?t=2023-10-12T10%3A25%3A01.391Z
+  link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/room.png?t=2023-10-12T10%3A25%3A01.391Z
+  description: Simple interior scene.
+  width: 1920;
+  height: 1080;
