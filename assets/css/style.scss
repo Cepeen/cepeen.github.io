@@ -1650,3 +1650,47 @@ padding: 15px;
 
   }
 }
+
+//DCoder
+
+#message{
+  height: 100%;
+  margin: 0;
+}
+
+@media (max-width: 768px)
+{  
+  #message  {
+    height: 100%;
+    max-width: 300px;
+    margin: auto;
+ }}
+
+#output {
+  height: 100%;
+  margin: 0;
+}
+
+@media (max-width: 768px)
+{  
+  #output  {
+    height: 100%;
+    max-width: 300px;
+    margin: auto;
+ }}
+
+ #keyword
+{
+  height: 100%;
+  margin: 0;
+  max-width: 300px;
+  margin: auto;
+}
+
+@media (max-width: 768px)
+{  
+  #keyword  {
+    height: 100%;
+    max-width: 300px;
+    margin: auto;
+ }}
