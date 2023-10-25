@@ -12,7 +12,7 @@
 
 <script src="assets\js\photoswipe.umd.min.js"></script>
 <script src="assets\js\photoswipe-lightbox.umd.min.js"></script>
-
+<div class="test-gallery">
 <div class="fbox">
   {% for artwork in site.data.artworks %}
   {% if artwork.category == "render" %}
@@ -50,6 +50,7 @@
 {% endif %}
 {% endfor %}
 
+</div>
 </div>
 </section>
 
