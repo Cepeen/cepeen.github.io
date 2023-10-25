@@ -1,43 +1,27 @@
-// gsap is boring
 
-import "https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js";
 
-const scrollTracker = document.querySelector(".scroll-tracker");
+gsap.registerPlugin(ScrollTrigger);
 
 const animatedText = document.querySelector(".rotate-text");
 
-const scrollTrackingTimeline = new ScrollTimeline({
-  source: document.scrollingElement,
-  orientation: "block",
-  scrollOffsets: [CSS.percent(0), CSS.percent(100)],
-});
-
-const animatedTextTimeline = new ScrollTimeline({
-  scrollOffsets: [
-    { target: animatedText, edge: "end", treshold: "1" },
-    { target: animatedText, edge: "start", treshold: "1" },
-  ],
-});
-
-
-animatedText.animate(
-  {
-    transform: [
-      "perspective(1000px) rotateZ(-360deg)",
-    ],
-
-    scale: (1, 0.01),
-    translate: (120, 50),
+const animationTimeline = gsap.timeline({
+  scrollTrigger: {
+    start: 'top top',
+    end: "bottom end",
+    scrub: true, 
   },
-  {
-    duration: 1,
-    timeline: animatedTextTimeline,
-  }
-);
+});
 
-// gsap is exciting
+animationTimeline.to(animatedText, {
 
-gsap.registerPlugin(ScrollTrigger);
+  rotation:360,
+  duration:1, ease:'none',
+  scale: 0.01,
+  x: -120,
+  y: -200,
+});
+
+
 gsap.utils.toArray("#author").forEach(function (elem) {
   ScrollTrigger.create({
     trigger: elem,
@@ -78,3 +62,5 @@ gsap.utils.toArray("#author").forEach(function (elem) {
     },
   });
 });
+
+
