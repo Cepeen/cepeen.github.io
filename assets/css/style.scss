@@ -17,8 +17,7 @@
 }
 
 
-    
-
+  
 
 .navbar-item {
  
@@ -83,6 +82,24 @@ a.navbar-item.is-active {
     z-index: 4;
     border-color: rgb(255, 255, 255);
 }
+
+
+//title animation
+
+.rotate-text{
+
+    }
+  
+    #heading {
+      span {
+        display: inline-block;
+        margin: auto;
+        text-align: center;
+      }
+    }
+    
+
+
 
 
 #hero {
@@ -1023,9 +1040,6 @@ a.navbar-item.is-active {
     100% { transform: rotate(360deg); }
   }
   
-  .rotate-text{
-    
-  }
 
 
 
@@ -1122,7 +1136,7 @@ transform-origin: center;
 h1 {
   font-size: 35px !important;
   line-height: 1.2;
-  margin: 0;
+  margin: auto;
 }
 
 
@@ -1700,4 +1714,7 @@ padding: 15px;
     height: 100%;
     max-width: 300px;
     margin: auto;
- }}
+ }
+}
+
+
