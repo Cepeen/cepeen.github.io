@@ -11,7 +11,7 @@ layout: page
 </head>
 <body>
     <label for="message">Enter Text:</label><br>
-    <textarea id="message" rows="6" cols="70"></textarea><br>
+    <textarea id="message" rows="6" cols="70"></textarea><br><br>
     <label for="keyword">Enter Keyword:</label>
     <input id="keyword" type="text" id="keyword"><br><br>
     <button onclick="process('encrypt')">Encrypt</button>
