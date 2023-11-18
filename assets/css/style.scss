@@ -164,7 +164,7 @@ a.navbar-item.is-active {
   scroll-snap-type: mandatory !important; 
     #contact-button {
       align-items: center;
-      background-color: #fff;
+      background-color: transparent;
       border: 2px solid #000;
       box-sizing: border-box;
       color: #000;
@@ -1718,3 +1718,23 @@ padding: 15px;
 }
 
 
+//background color change
+:root {
+	--light: #fff;
+	--dark: #000;
+}
+.wrap{
+	background:var(--dark);
+}
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+h1 {
+	text-align: center;
+}
+
+.color-dark{
+	color:#fff;
+}

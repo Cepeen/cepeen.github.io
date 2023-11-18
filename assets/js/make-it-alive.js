@@ -111,3 +111,16 @@ window.onscroll = function() {
   prevScrollpos = currentScrollPos;
 } 
 
+//background color change
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.fromTo( ".wrap", {
+	backgroundColor: gsap.getProperty("html", "--dark")
+}, {
+	scrollTrigger: {
+		trigger: ".color-light",
+		scrub: true,
+		end: "bottom bottom",
+	},
+	backgroundColor: gsap.getProperty("html", "--light")
+});
