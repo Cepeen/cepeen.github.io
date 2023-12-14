@@ -1,40 +1,39 @@
 <section class="hero is-fullheight has-text-centered" id="contact">
     <div class="hero-body color-light">
-        <div class="container" style=" height: 200px;">
+        <div class="container" style="height: 200px;">
 
             {% unless site.email == %}
-            <a id="contact-button" href="mailto:{{site.email}}"
-                class="glow"
-                target="_blank">
-                <i class="fas fa-envelope"></i>&nbsp Send me an Email
+            <a id="contact-button" href="mailto:{{site.email}}" class="glow" target="_blank">
+                <i class="fas fa-envelope" aria-hidden="true"></i>&nbsp; Send me an Email
             </a>
             {% endunless %}
 
-            <div class="container" style=" height: 80px;">
+            <div class="container" style="height: 80px;">
+
                 {% unless site.github_username == %}
-                <a href="http://www.github.com/{{site.github_username}}" target="_blank" class="has-text-black"><i
-                        class="fab fa-github fa-2x"></i></a>
-                        
+                <a href="http://www.github.com/{{site.github_username}}" target="_blank" class="has-text-black">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
                 {% endunless %}
 
                 {% unless site.sketchfab_username == %}
-                <a href="http://www.sketchfab.com/{{site.sketchfab_username}}" target="_blank" class="has-text-black"><i
-                   class="fa fa-sketchfab fa-2x" aria-hidden="true"></i>
-
+                <a href="http://www.sketchfab.com/{{site.sketchfab_username}}" target="_blank" class="has-text-black">
+                    <i class="fa fa-sketchfab fa-2x" aria-hidden="true"></i>
+                </a>
                 {% endunless %}
 
                 {% unless site.soundcloud_username == %}
-                <a href="https://soundcloud.com/{{site.soundcloud_username}}" target="_blank" class="has-text-black"><i
-                        class="fa fa-soundcloud fa-2x" aria-hidden="true"></i>
+                <a href="https://soundcloud.com/{{site.soundcloud_username}}" target="_blank" class="has-text-black">
+                    <i class="fa fa-soundcloud fa-2x" aria-hidden="true"></i>
+                </a>
+                {% endunless %}
 
-                    {% endunless %}
-
-                    {% unless site.artstation_username == %}
-                    <a href="https://artstation.com/{{site.artstation_username}}" target="_blank"
-                        class="has-text-black"><i class="fa fa-artstation fa-2x" aria-hidden="true"></i>
-
-                        {% endunless %}
-
+                {% unless site.artstation_username == %}
+                <a href="https://artstation.com/{{site.artstation_username}}" target="_blank" class="has-text-black">
+                    <i class="fa fa-artstation fa-2x" aria-hidden="true"></i>
+                </a>
+                {% endunless %}
+                
             </div>
         </div>
     </div>
