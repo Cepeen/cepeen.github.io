@@ -1,34 +1,4 @@
-//heading letters animation
-var $heading = $('#heading');
-var chars = $heading.text().split('');
-var wrappedChars = '';
-for (var i = 0; i < chars.length; i++) {
-  var char = (chars[i] == ' ') ? '&nbsp;' : chars[i];
-  wrappedChars += '<span>' + char +  '</span>';
-}
-$heading.html(wrappedChars+'&nbsp;'+'&nbsp;');
-
-var timeline = new TimelineMax();
-var $chars = $heading.find('span');
-
-$chars.each(function (index) {
-  var charWidth = $(this).width();
-  var containerWidth = $heading.width();
-  var initialX = -charWidth;
-
-  timeline.add(
-    TweenMax.fromTo(this, 1, {
-      x: initialX,
-      y: getRandom(100, 200),
-      opacity: 0
-    }, {
-      x: index * 0, 
-      y: 0,
-      opacity: 1,
-      ease: Power2.easeInOut
-    }), 0.1 * index 
-  );
-});
+if (window.innerWidth >= 1024) {
 
 function getRandom(min, max) {
   return Math.random() * (max - min) + min;
@@ -55,6 +25,42 @@ animationTimeline.to(animatedText, {
   x: -120,
   y: -200,
 });
+
+
+
+
+  //heading letters animation
+  var $heading = $('#heading');
+  var chars = $heading.text().split('');
+  var wrappedChars = '';
+  for (var i = 0; i < chars.length; i++) {
+    var char = (chars[i] == ' ') ? '&nbsp;' : chars[i];
+    wrappedChars += '<span>' + char +  '</span>';
+  }
+  $heading.html(wrappedChars+'&nbsp;'+'&nbsp;');
+  
+  var timeline = new TimelineMax();
+  var $chars = $heading.find('span');
+  
+  $chars.each(function (index) {
+    var charWidth = $(this).width();
+    var containerWidth = $heading.width();
+    var initialX = -charWidth;
+  
+    timeline.add(
+      TweenMax.fromTo(this, 1, {
+        x: initialX,
+        y: getRandom(100, 200),
+        opacity: 0
+      }, {
+        x: index * 0, 
+        y: 0,
+        opacity: 1,
+        ease: Power2.easeInOut
+      }), 0.1 * index 
+    );
+  });
+
 
 
 //author info animation
@@ -98,7 +104,7 @@ gsap.utils.toArray("#author").forEach(function (elem) {
     },
   });
 });
-
+}
 
 var prevScrollpos = window.scrollY;
 window.onscroll = function() {

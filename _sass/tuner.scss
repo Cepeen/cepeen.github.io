@@ -1,0 +1,171 @@
+
+//tuner
+
+
+* {
+    font-family: sans-serif;
+  }
+  
+  .tuner {
+  /*   opacity: 0.2; */
+    position: relative;
+    margin-top: 250px;
+    left: 50%;
+    width: var(--tuner-size);
+    height: var(--tuner-size);
+    background: var(--color-bg);
+    color: var(--color-text);
+    transform: translate(-50%, -50%);
+  }
+  
+  
+  
+  .tuner__panel {
+    z-index: 1;
+    width:250px;
+    border-radius:500px 500px 0 0;
+    background:
+       /* a linear gradient to control the progress. Adjust the angle from 0deg to 180deg*/
+       linear-gradient(180deg,transparent 50%,#fff 0) top/100% 200%,
+       /* a radial gradient to show only a part of the gradient (20px here)*/
+       radial-gradient(farthest-side at bottom,#fff calc(100% - 20px),transparent 0),
+       /* the main gradient */
+       linear-gradient(to right, rgb(255, 74, 2) , rgb(22, 156, 17) , rgb(255, 74, 2));
+  }
+  .tuner__panel::before {
+    content:"";
+    display:block;
+    padding-top:50%;
+  }
+  
+  
+  
+  .tuner__pointer {
+    z-index: 99;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 140px;
+    transition: transform .3s ease;
+    transform: rotate(0deg) translate(-50%, -50%);
+  }
+  
+  .tuner__pointer::before {
+    z-index: 99;
+    display: block;
+    content: '';
+    width: 4px;
+    height: 0;
+    border-style: solid;
+    border-width: 0 4px 140px 4px;
+    border-color: transparent transparent rgb(0, 0, 0) transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .tuner__pointer::after {
+    z-index: 99;
+    position: absolute;
+    display: block;
+    content: '';
+    width: 140px;
+    height: 140px;
+    top: 50%;
+    left: 50%;
+    background: gradient(
+      circle at center, var(--color-bg) 0, transparent 100%
+    );
+    transform: translate(-50%, -50%);
+  }
+  
+  .tuner__data-wrapper {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .tuner__data {
+    position: relative;
+    top: -140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .tuner__note {
+    font-size: 2.5em;
+    font-weight: 300;
+    margin-bottom: 5px;
+  }
+  
+  .tuner__freq {
+    font-size: 1em;
+    font-weight: 100;
+  }
+  
+  .labels {
+    font-size: 0.8em;
+    font-weight: 100;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .labels-0 {
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+  }
+  
+  .labels-20 {
+    position: absolute;
+    left: 50%;
+    top: 80px;
+    transform: translateX(-50%);
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  
+  .tuner__panel-record {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-top: 100px;
+  }
+  
+  .tuner__panel-record button {
+    border: 0;
+    background: #000000;
+    border-radius: 2px;
+    font-size: 1em;
+    padding: 0.2em 0.8em;
+    margin-bottom: 30px;
+  }
+  
+  #record {
+    margin-bottom: auto;
+    color: #ffffff;
+  }

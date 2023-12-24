@@ -1,0 +1,42 @@
+
+//background color change
+
+:root {
+	--light: #fff;
+	--dark: #000;
+}
+.wrap{
+	background:var(--dark);
+}
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+h1 {
+	text-align: center;
+}
+
+.color-dark{
+	color:#fff;
+}
+
+
+//title animation
+
+.rotate-text{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+    }
+  
+    #heading {
+      span {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        display: inline-block;
+        margin: auto;
+        text-align: center;
+      }
+    }
+    
+
