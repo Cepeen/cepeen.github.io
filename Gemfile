@@ -15,8 +15,9 @@ gem "rack"
 # gem "github-pages", group: :jekyll_plugins
 # If you have any plugins, put them here!
 group :jekyll_plugins do
+  # gem "jekyll-content-security-policy-generator"
   gem "jekyll-feed"
-  gem 'jekyll-admin'
+  gem "jekyll-admin"
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem

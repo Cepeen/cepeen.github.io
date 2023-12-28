@@ -1,3 +1,8 @@
+
+
+
+
+//Beaufort
 const beaufortAutokey = (key) => {
     const ascii = () => Array.from({ length: 256 }, (_, i) => String.fromCharCode(i)).join('');
     const shift = (text) => text.length <= 1 ? text : text.slice(1) + text[0];
@@ -39,13 +44,25 @@ const beaufortAutokey = (key) => {
     return { encrypt, decrypt };
 };
 
+
+
 const process = (operation) => {
     const inputText = document.getElementById('message').value;
     const keyword = document.getElementById('keyword').value;
+    const selectedCipher = document.getElementById('cipherSelection').value;
 
-    const cipher = beaufortAutokey(keyword);
+    let cipher;
+
+    if (selectedCipher === 'Beaufort') {
+        cipher = beaufortAutokey(keyword);
+    } else if (selectedCipher === 'Vigenere') {
+        cipher = vigenere(keyword);
+    } else {
+        console.error('Unknown algorithm');
+        return;
+    }
+
     const result = (operation === 'encrypt') ? cipher.encrypt(inputText) : cipher.decrypt(inputText);
 
     document.getElementById('output').value = result;
 };
-

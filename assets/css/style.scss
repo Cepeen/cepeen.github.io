@@ -64,6 +64,8 @@
 .title {
   margin: auto 0.75rem!important;
 }
+
+
 .subtitle {
   letter-spacing: 0.25rem;
 }
@@ -316,5 +318,60 @@ scroll-snap-type: mandatory !important;
       }
   }
 }
-
 }
+
+//sidebar
+
+
+
+
+  #sidebar {
+    position: fixed;
+    top: 0;
+    right: -350px; /* Sidebar initially hidden */
+    width: 350px;
+    height: 100%;
+    background-color: #333;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease;
+  }
+  #sidebar h2 {
+    color: white;
+  }
+
+    //controlls for future playground
+  #controls {
+    list-style: none;
+    padding: 0;
+  }
+
+  #controls li {
+    margin-bottom: 15px;
+  }
+
+  #controls label {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+  }
+
+  #controls input {
+    width: 100%;
+  }
+
+  #toggleBtn {
+    position: fixed;
+    top: 60px;
+    right: 40px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+  }
+
+  #sidebar_text 
+  {
+    color: #ffffff;
+    margin-top: 70px;
+  }
+

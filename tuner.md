@@ -6,7 +6,7 @@ layout: page
 
 
 
-<body>
+
 <div class="tuner">
 
   <div
@@ -27,16 +27,14 @@ layout: page
     <div class="tuner__panel">
     </div>
     <div class="labels-20">
-
-    </div>
   </div>
   <div class="tuner__panel-record">
     <button id=record onclick="drawBarsAnalyser()">start</button>
   </div>
-  
+      <script src="assets/js/tuner.js"></script>
 </div>
 
 
-         <script src="assets/js/tuner.js"></script>
+     
 
-</body>
+
