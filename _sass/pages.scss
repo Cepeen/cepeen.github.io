@@ -3,7 +3,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 250px;
+    height: auto;
+    padding: 5px;
   }
   
   .image-container img {
@@ -32,11 +33,11 @@
   }}
   
   
-  
   .description {
     display: block;
-    margin-top: 20px; 
+    margin-top: 10px; 
     padding-top: 10px;
+    padding-bottom: 10px;
     text-align: center;
     max-width: 300px;
   }
@@ -61,9 +62,9 @@
   }
   
   @media (max-width: 768px) {
-      transform: scale(0.60);
+      transform: scale(0.70);
       margin: auto;
-      margin-bottom: 5vmax !important;
+
   
   
       &:hover {
@@ -78,7 +79,7 @@
   
   .title {
       margin: 0.2rem !important;
-      width: 250px;
+      width: 300px;
   }
   
   @media (max-width: 768px)
