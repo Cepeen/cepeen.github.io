@@ -140,6 +140,7 @@
   
   
   #footer {
+    z-index: 1;
     scroll-snap-align: center;
       #backtotop {
           transition: all 0.25s ease;
@@ -147,7 +148,6 @@
           padding: 0.25rem;
           margin: auto auto 1rem auto;
           border-radius: 5px;
-          z-index: 99 ;
           &:hover {
               transform: scale(1.05);
           }

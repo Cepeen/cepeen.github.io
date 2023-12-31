@@ -13,7 +13,7 @@
   .tuner {
   /*   opacity: 0.2; */
     position: relative;
-    margin-top: 250px;
+    margin-top: 200px;
     left: 50%;
     width: var(--tuner-size);
     height: var(--tuner-size);
@@ -22,9 +22,8 @@
     transform: translate(-50%, -50%);
   }
   
-  
-  
   .tuner__panel {
+ 
     z-index: 1;
     width:250px;
     border-radius:500px 500px 0 0;
@@ -32,7 +31,7 @@
        /* a linear gradient to control the progress. Adjust the angle from 0deg to 180deg*/
        linear-gradient(180deg,transparent 50%,#fff 0) top/100% 200%,
        /* a radial gradient to show only a part of the gradient (20px here)*/
-       radial-gradient(farthest-side at bottom,#fff calc(100% - 20px),transparent 0),
+       radial-gradient(farthest-side at bottom,#fff calc(100% - 15px),transparent 0),
        /* the main gradient */
        linear-gradient(to right, rgb(255, 74, 2) , rgb(22, 156, 17) , rgb(255, 74, 2));
   }
@@ -40,8 +39,8 @@
     content:"";
     display:block;
     padding-top:50%;
+    margin: auto;
   }
-  
   
   
   .tuner__pointer {
@@ -49,8 +48,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 10px;
-    height: 140px;
+    width: 0px;
+    height: 143px;
     transition: transform .3s ease;
     transform: rotate(0deg) translate(-50%, -50%);
   }
@@ -59,16 +58,32 @@
     z-index: 99;
     display: block;
     content: '';
-    width: 4px;
-    height: 0;
+    width: 0px;
+    height: 150px;
     border-style: solid;
-    border-width: 0 4px 140px 4px;
+    border-width: 0px 4px 150px 4px;
     border-color: transparent transparent rgb(0, 0, 0) transparent;
     position: absolute;
     top: 0;
-    left: 0;
+    left: -4px;
+    bottom: 10px;
+    transform: rotate(0deg) translate(-0%, -0%);
   }
-  
+
+  .tuner__pointer-dot {
+    z-index: 100; 
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #000000;
+    border-radius: 50%;
+    bottom: -80px; 
+    margin: auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
   .tuner__pointer::after {
     z-index: 99;
     position: absolute;
@@ -172,4 +187,5 @@
   #record {
     margin-bottom: auto;
     color: #ffffff;
+    z-index: 999;
   }

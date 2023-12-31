@@ -93,6 +93,7 @@ perspective: 10px;
   a {
       min-width: 25vmax;
       margin: 0.5rem;
+      
   }
 }
 
@@ -327,6 +328,7 @@ scroll-snap-type: mandatory !important;
 
   #sidebar {
     position: fixed;
+    z-index: 2;
     top: 0;
     right: -350px; /* Sidebar initially hidden */
     width: 350px;
@@ -373,5 +375,8 @@ scroll-snap-type: mandatory !important;
   {
     color: #ffffff;
     margin-top: 70px;
+    a {
+      color: #af5959;
+    }
   }
 
