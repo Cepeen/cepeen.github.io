@@ -16,7 +16,7 @@
                             </figure>
                         </div>
                         <div class="column is-marginless">
-                            <h5 class="has-text-grey-lighter">{{site.author-name}}</h5>
+                            <div class="fheader">{{site.author-name}}</div>
                             <div class="content has-text-grey">
                                 <p>Only one side, at the same time.</p>
                             </div>
@@ -27,7 +27,7 @@
 
 
             <div class="column has-text-white">
-                <h3>More Links</h3>
+                <div class="fheader">More Links</div>
 <ul>
                 <li>
                     <a href="{{site.url}}{{site.baseurl}}/privacy-policy">Privacy Policy</a>
@@ -41,12 +41,14 @@
 
 
             <div class="column has-text-white">
-                <h3>Recent Posts</h3>
+                <div class="fheader">Recent Posts</div>
+                <ul>
                 {% for post in site.posts offset: 0 limit:3 %}
                 <li>
                     <a href="{{post.url | absolute_url}}">{{post.title}}</a>
                 </li>
                 {% endfor %}
+            </ul>
             </div>
         </div>
     </div>
