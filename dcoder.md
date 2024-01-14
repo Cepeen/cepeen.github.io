@@ -12,10 +12,10 @@ Enter Text:
 Enter Keyword:
 <input id="keyword" type="text"><br><br>
 
-<!-- Selected cipher: <select id="cipherSelection">
+Selected cipher: <select id="cipherSelection">
     <option value="Beaufort">Beaufort</option>
-    <option value="Vigenere">Vigenere</option>
-</select> -->
+    <!-- <option value="Vigenere">Vigenere</option> -->
+</select>
 
 <button onclick="process('encrypt')">Encrypt</button>
 <button onclick="process('decrypt')">Decrypt</button>
