@@ -42,6 +42,6 @@ For now, I have implemented here one of the most popular algorithms, the so-call
 
 
 <script src="assets/js/decoder.js"></script>
-
+<script src="assets/js/sidebar.js"></script>
 
 
