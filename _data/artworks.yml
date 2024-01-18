@@ -6,12 +6,12 @@
   description: Classic electric guitar.
   width: 1480;
   height: 1920;
-- name: The Bulp
+- name: The Bulb
   category: render
   type: horizontal
   image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/bulp.png?t=2023-03-02T23%3A43%3A00.983Z  
   link: https://drive.google.com/uc?id=1achXh6QGDQ1X-PLXsKY56JJ2owoMx32Q
-  description: Simple bulp.
+  description: Simple bulb.
   width: 1632;
   height: 918;
 - name: ATH m40x
