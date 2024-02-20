@@ -31,7 +31,7 @@ layout: page
     <div class="tuner__pointer-dot"></div>
   <div class="tuner__panel-record">
 
-    <button id=record onclick="drawBarsAnalyser()">start</button>
+    <button id=record>start</button>
 
   </div>
       <script src="assets/js/tuner.js"></script>

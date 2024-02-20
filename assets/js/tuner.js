@@ -1,11 +1,10 @@
-let data, analyzer, sampleRate;
+let data, analyzer, sampleRate, isTunerRunning = false;
 const fftSize = 2**15;
 const $canvas = window.canvas;
 const $note = window.note;
 const $freq = window.freq;
 const $button = window.record;
 const $pointer = window.pointer;
-
 
 async function getMedia(constraints) {
   try {
@@ -16,7 +15,7 @@ async function getMedia(constraints) {
 }
 
 function initEventListeners() {
-  $button.addEventListener('click', init);
+  $button.addEventListener('click', toggleTuner);
 }
 
 function closestNote(freq) {
@@ -49,7 +48,6 @@ function closestNotes(freq) {
   return { prevNote, currentNote, nextNote };
 }
 
-
 function getHighestFrequency() {
   const largest = Array.from(data)
     .map((val, idx) => ({
@@ -67,33 +65,49 @@ function getHighestFrequency() {
   return largest;
 }
 
-
 function read() {
   analyser.getByteFrequencyData(data);
   const largest = getHighestFrequency();
-  // debug(largest);
-
   window.requestAnimationFrame(read);
 }
 
-async function init() {
-  $button.innerText = 'comparing...';
-
+async function startTuner() {
   const ctx = new AudioContext();
-  sampleRate = ctx.sampleRate; // 44100
-  analyser = ctx.createAnalyser();
-  const stream = await getMedia({ audio: true });
+  sampleRate = ctx.sampleRate; 
+  analyser = ctx.createAnalyser(); 
+  stream = await getMedia({ audio: true }); 
   const source = ctx.createMediaStreamSource(stream);
   source.connect(analyser);
 
   analyser.fftSize = fftSize;
-  data = new Uint8Array(analyser.frequencyBinCount)
-
+  data = new Uint8Array(analyser.frequencyBinCount);
+  
   read();
 }
 
-window.onload = initEventListeners;
 
+function stopTuner() {
+  const streamTracks = stream.getTracks(); 
+  streamTracks.forEach(track => track.stop()); 
+
+  $pointer.style.transform = 'rotate(0deg) translate(-50%, -50%)';
+
+  isTunerRunning = false;
+}
+
+function toggleTuner() {
+  if(!isTunerRunning) {
+    $button.innerText = 'stop';
+    startTuner();
+    isTunerRunning = true;
+  } else {
+    $button.innerText = 'start';
+    stopTuner();
+    isTunerRunning = false;
+  }
+}
+
+window.onload = initEventListeners;
 
 const notes = [];
 
@@ -113,6 +127,3 @@ for (let octave = 0; octave <= 8; octave++) {
 }
 
 console.log(notes); 
-
-
-

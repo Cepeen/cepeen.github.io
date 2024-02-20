@@ -1,15 +1,17 @@
-<section class="hero is-fullheight has-text-centered" id="contact">
+  <section class="hero is-fullheight has-text-centered" id="contact">
     <div class="hero-body color-light">
         <div class="container" style="height: 200px;">
+        
+   
 
             {% unless site.email == %}
             <a id="contact-button" href="mailto:{{site.email}}" class="glow" target="_blank">
                 <i class="fas fa-envelope" aria-hidden="true"></i>&nbsp; Send me an Email
             </a>
             {% endunless %}
-
+     
             <div class="container" style="height: 80px;">
-
+           
                 {% unless site.github_username == %}
                 <a href="http://www.github.com/{{site.github_username}}" target="_blank" class="has-text-black" aria-label="GitHub">
                     <i class="fab fa-github fa-2x" aria-hidden="true"></i>
@@ -39,3 +41,8 @@
         </div>
     </div>
 </section>
+<div id="info">Physics threejs demo with convex objects breaking in real time<br />Press mouse to throw balls and move the camera.</div>
+<div id="container"></div>
+
+
+

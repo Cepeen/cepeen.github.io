@@ -141,6 +141,7 @@ display: none;
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
   align-items: center;
+  z-index: 3;
 }}
 
 ::-webkit-scrollbar {
@@ -186,6 +187,7 @@ margin-right: 0px;
     height: 30px;
     width: 160px;
     align-items: center;
+    z-index: 3;
 }
 
 
