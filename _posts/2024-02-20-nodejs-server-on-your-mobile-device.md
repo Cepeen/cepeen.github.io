@@ -60,7 +60,7 @@ This is how we learn the default username.
 
 To connect, we will also need the IP address of the host, i.e., our phone. If we don't know it, we run in Termux the command:
 
-`pkg install iproute2`
+`ifconfig`
 
 
 and look for our local address in a form similar to 192.168.0.136. We save ourselves the necessary data and proceed to install OpenSSH. We run the command:
