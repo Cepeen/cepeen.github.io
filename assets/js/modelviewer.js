@@ -87,9 +87,10 @@ if (object && objToRender === "asteroid") {
 
 }
 // Render distance
+  camera.aspect = window.innerWidth / window.innerHeight;
   camera.far = 5000; 
   camera.updateProjectionMatrix();
-  // Rotate the object
+  
   if (object && objToRender === "asteroid") {
     object.rotation.y += 0.0008;
     object.rotation.z -= 0.002; // Rotation speed
