@@ -8,7 +8,6 @@ const limit = 10;
 const targetURL = 'https://lastfmfiddler.tomektomasik.pl';
 
 
-
 // Taking and sending token to the server
 localStorage.setItem('authToken', token);
 
@@ -31,7 +30,6 @@ async function sendTokenToBackend(token) {
     console.error('Error while sending token to backend:', error);
   }
 }
-
 
 // Taking basic informations from user account.
 const recentButton = document.getElementById('recentbutton');
@@ -57,7 +55,6 @@ recentButton.addEventListener('click', async () => {  event.preventDefault();
       usernameLink.textContent = userData.name;
       usernameLink.href = userData.url;
       usernameLink.target = '_blank'; 
-
 
       userInfo.appendChild(usernameLabel);
       userInfo.appendChild(usernameLink);
@@ -100,7 +97,6 @@ recentButton.addEventListener('click', async () => {  event.preventDefault();
   }
 });
 
-
 //  Taking data and counting pages.
 async function fetchData(page) {
   const username = document.getElementById('username').value;
@@ -114,7 +110,7 @@ async function fetchData(page) {
       const userInfoResponse = await axios.get(`${targetURL}/userInfo?user=${username}`);
       const userInfoData = userInfoResponse.data;
 
-      // Count nr of pages
+      // Count number of pages
       const totalScrobbles = userInfoData.user.playcount;
       const totalPages = Math.ceil(totalScrobbles / tracksPerPage);
 
@@ -183,7 +179,6 @@ fetchByDateButton.addEventListener('click', async () => {
   }
 });
 
-
 // Fetching data by date
 async function fetchDataByDate(username, date) {
   try {
@@ -244,7 +239,6 @@ function updatePageData(recentTracksData, currentPage, totalPages) {
     textLinkCell.id = 'textLinkCell'; 
 
 
-
     const textLink = document.createElement('button');
 
     textLink.textContent = 'Lyrics';
@@ -252,7 +246,7 @@ function updatePageData(recentTracksData, currentPage, totalPages) {
     textLink.onclick = async () => {
     
       try {
-        const response = await fetch(`${targetURL}/searchGenius`, {
+        const response = await fetch(`${targetURL}/searchLyrics`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -278,7 +272,6 @@ function updatePageData(recentTracksData, currentPage, totalPages) {
         artistContainer.textContent = track.artist['#text'];
         searchResultsContainer.appendChild(artistContainer);
     
-    
         // Display lyrics
         const lyricsContainer = document.createElement('div');
         lyricsContainer.style.whiteSpace = 'pre-wrap'; // 
@@ -291,7 +284,7 @@ function updatePageData(recentTracksData, currentPage, totalPages) {
     
         // Add event listener to sidebar to hide it when clicked
         sidebar.addEventListener('click', () => {
-          sidebar.style.right = '-450px'; // Hide sidebar by moving it out of view
+          sidebar.style.right = '-450px'; 
         });
         
       } catch (error) {
@@ -300,9 +293,7 @@ function updatePageData(recentTracksData, currentPage, totalPages) {
         searchResultsContainer.innerHTML = '<p>Something went wrong during the search.</p>';
       }
     };
-    
-
-    
+  
     const playButtonCell = document.createElement('td');
     const playButton = document.createElement('button');
 
@@ -317,15 +308,10 @@ function updatePageData(recentTracksData, currentPage, totalPages) {
       iframe.src += "&autoplay=1";  });
     
     playButtonCell.appendChild(playButton);
-    
-    // Append the play button cell to the track row
     trackRow.appendChild(playButtonCell);
-    // Append the play button to its cell
     playButtonCell.appendChild(playButton);
-
-
     textLinkCell.appendChild(textLink);
-    
+  
     trackRow.appendChild(imageCell);
     trackRow.appendChild(titleCell);
     trackRow.appendChild(artistCell);
@@ -366,6 +352,7 @@ if (!playerContainer) {
     playerContainer.innerHTML = '';
 }
 
+// this is creative ;)
 const iframe = document.createElement('iframe');
 iframe.src = `https://cdpn.io/pen/debug/oNPzxKo?v=${videoId}`;
 iframe.id = "youtube";
