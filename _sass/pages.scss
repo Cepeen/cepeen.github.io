@@ -12,6 +12,7 @@
     max-height: 256px;
     object-fit: contain;
     padding-left: 10%;
+    padding-top: 5%;
   }
   
   .text-container {
@@ -99,7 +100,30 @@
   }
   }
   
-  
+
+#software{
+  display: flex;
+  flex-direction: column;
+  margin: left 20%;
+  margin-right: 20%;
+
+}
+
+#mobileapps, #webbaps{
+  flex-direction: column;
+}
+
+
+@media screen and (min-width: 768px) {
+  #software {
+    flex-direction: row; 
+  }
+  #software > div {
+    width: 50%;
+  }
+}
+
+
   
   //about, privacy etc.
 

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% include head.html %}
+</head>
+
+<body>
+    {% include navbar.html %}
+
+    <!--Main Section-->
+    <section class="hero" style="scroll-snap-type: none;">
+        <div class="hero-body" id="lastfmfiddlerbody">
+            <div class="container">
+                <div class="section" style="width: 100%;">
+                    <div class="lastfm"></div>
+                    <h1 class="title is-1 is-uppercase has-text-weight-bold" id="lastfmfiddler"></h1>
+                    
+                </div>
+                <div class="daddy">
+               <div id="scrobbleContainer">
+
+                <div id="avatarContainer"></div>
+                <div id="userInfo">   </div>
+                <form id="scrobbleForm">
+                 
+                    <label for="username" id="usernameLabel">Enter Last.fm Username:</label>
+                    <input type="text" id="username" name="username">
+                    <button type="submit" id="recentbutton">Get recent tracks</button>
+                    <select id="tracksPerPage">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                    </select>
+
+                </form>
+                <div class="scrobbleDatecontainer">
+                <label for="date" id="scrobbleDateLabel">Select Date:</label>
+                <input type="date" id="scrobbleDate" name="scrobbleDate">
+                <button type="submit" id="fetchByDateButton">Get tracks</button>
+                </div>
+               <!-- <div id="loggedInUser"></div> -->
+        
+            </div class="table&lyrics">
+                <table id="scrobbleTable">
+                    <tbody id="dataContainer">
+                    </tbody>
+                </table>
+                <div id="fiddlerPagination" style="display: none;">
+                <div id="paginationButtonsContainer">
+                <button id="prevPage">Prev</button>
+                <span id="currentPage">1</span> / <span id="totalPages"></span>
+                <button id="nextPage">Next</button>
+                </div>
+                <div id="pageInputContainer">
+                <input type="number" id="pageInput" min="1" max="15"> 
+                <button id="goToPage">Go to Page</button> 
+            </div>
+            
+         </div>
+            </div>
+        </div>
+       <div id="fiddlersidebar">
+<p id="sidebar_text"> 
+    <div id="searchResultsContainer"></div>
+  </p>
+
+                
+                
+
+                <!-- Button for Last.fm login wbh -->
+    
+
+                <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+                <script src="assets/js/lastfmfiddler.js"></script>
+            
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!--Footer-->
+    {% include footer.html %}
+
+</body>
+</html> 
