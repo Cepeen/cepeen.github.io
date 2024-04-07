@@ -3,7 +3,6 @@
 
 .mplayer
 {
-  scroll-snap-align: center;
   margin-left: 100px;
   margin-right: 100px;
   height: 600px;
@@ -11,7 +10,7 @@
 
 @media (max-width: 768px) {
   .mplayer{
-scroll-snap-align: center;
+
 width: 100%;
 margin-left: 0px;
 margin-right: 0px;
@@ -42,7 +41,6 @@ margin-right: 0px;
 
 
 .wrapper{
-  scroll-snap-align: center;
   margin: auto;
   border: 5px solid #360000;
   padding: 15px;

@@ -7,6 +7,7 @@
 }
 .wrap{
 	background:var(--dark);
+  height: 300vh;
 }
 * {
 	padding: 0;
@@ -40,3 +41,12 @@ h1 {
     }
     
 
+    @media (max-width: 768px) {
+      #heading span {
+      overflow-wrap: break-word;
+        word-wrap: break-word;
+        display: inline-block;
+        margin: auto;
+        text-align: center;
+      }
+    }

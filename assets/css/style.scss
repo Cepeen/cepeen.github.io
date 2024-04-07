@@ -12,7 +12,11 @@
 @import "navbarfooterbtn.scss";
 @import "lastfmfiddler.scss";
 
+
+
 #hero {
+  scroll-snap-align: center;
+  height: 100vh;
   perspective: 10px;
   background: rgba(0, 0, 0, 100);
   background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 100%);
@@ -38,7 +42,8 @@
 
 @media (max-width: 1024px) {
 #hero {
-
+  scroll-snap-align: center;
+  scroll-snap-type: mandatory !important; 
   background: none;
   filter: none;
 
@@ -78,9 +83,9 @@
 #about {
 scroll-snap-align: center;
 scroll-snap-type: mandatory !important; 
+height: 100vh;
 background-image: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%, rgba(255,255,255,1) 100%), url("https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/earth.jpg"); /* The image used */
 background-color: #ffffff; /* Used if the image is unavailable */
-height: 500px; 
 background-position: center; 
 background-repeat: no-repeat; 
 background-size: cover; 
@@ -103,52 +108,39 @@ perspective: 10px;
 }
 
 #contact {
-scroll-snap-align: center;
-scroll-snap-type: mandatory !important; 
-  #contact-button {
-    align-items: center;
-    background-color: transparent;
-    border: 2px solid #000;
-    box-sizing: border-box;
-    color: #000;
-    cursor: pointer;
-    display: inline-flex;
-    fill: #000;
-    font-family: sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    height: 48px;
-    justify-content: center;
-    letter-spacing: -.8px;
-    line-height: 24px;
-    min-width: 140px;
-    outline: 0;
-    padding: 0 17px;
-    text-align: center;
-    text-decoration: none;
-    transition: all .3s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    margin-bottom: 5px;
-  }
-
-  svg {
-      transition: all 0.15s ease-in-out;
-      margin: auto 0.75vmax;
-
-      &:hover {
-          transform: scale(1.10);
-          filter: opacity(0.75);
-      }
-  }
-
-  hr {
-      background-color: black;
-  }
+  height: 100vh;
+  scroll-snap-align: center;
+  scroll-snap-type: mandatory !important; 
 }
 
 
+#contact-button {
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 140px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-bottom: 5px;
+}
 
 #blog {
   .hero-body {
@@ -293,7 +285,6 @@ scroll-snap-type: mandatory !important;
   .container {
       margin: 2.5rem auto;
       word-break: break-word;
-      max-width: -webkit-fill-available;
   }
 
   #disqus_thread {
@@ -301,10 +292,12 @@ scroll-snap-type: mandatory !important;
   }
 }
 
-#page-section {
+
+#page-section { 
   .content {
-      scroll-snap-align: center;
+
       ul, ol, blockquote {
+        scroll-snap-align: center;
           overflow: scroll;
           display: inline-block;
       }
@@ -317,7 +310,7 @@ scroll-snap-type: mandatory !important;
   margin: 0px;
   .content {
 
-      scroll-snap-align: center;
+
       ul, ol, blockquote {
           overflow: scroll;
           display: inline-block;

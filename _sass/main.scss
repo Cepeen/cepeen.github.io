@@ -7,14 +7,13 @@ html,
     
 body {
     height: 100%;
-    margin: 0;
-    scroll-snap-align: start;
-    scroll-behavior: smooth !important;
-    scroll-snap-type: y proximity;
-    scroll-padding-block-start: 0px;
+    margin: 0;   
     font-family: 'Poppins', sans-serif;
     transition: all 0.75s ease;
-    scroll-margin: 8px;
+
+    scroll-behavior: smooth !important;
+    scroll-snap-type: y proximity;
+
 }
 
 

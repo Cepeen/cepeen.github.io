@@ -118,7 +118,8 @@ window.onscroll = function() {
 } 
 
 //background color change
-gsap.registerPlugin(ScrollTrigger);
+
+
 
 gsap.fromTo( ".wrap", {
 	backgroundColor: gsap.getProperty("html", "--dark")
@@ -130,7 +131,6 @@ gsap.fromTo( ".wrap", {
 	},
 	backgroundColor: gsap.getProperty("html", "--light")
 });
-
 
 
 

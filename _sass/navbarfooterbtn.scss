@@ -141,8 +141,20 @@
   
   
   #footer {
-    z-index: 1;
     scroll-snap-align: center;
+    z-index: 1;
+
+
+    transform: translateY(100%);
+
+  
+  #footer.footer-hidden {
+    transform: translateY(0);
+    visibility: visible;
+  }
+  
+
+
       #backtotop {
           transition: all 0.25s ease;
           width: 10rem;
@@ -160,6 +172,7 @@
           line-height: 1.45;
     
           .column {
+              margin-top: 20px;
               display: grid;
               justify-content: center;
     
@@ -177,8 +190,8 @@
               }
     
               figure {
+                  margin-top: -20px;
                   justify-content: center;
-                  margin: auto;
                   transition: all 0.25s ease;
                   &:hover{
                       transform: scale(1.15);
@@ -198,3 +211,76 @@
           }
       }
     }
+
+
+
+    #footer_no_scroll_snap {
+        
+    z-index: 1;
+    transform: translateY(100%);
+
+  
+  #footer_no_scroll_snap.footer-hidden {
+    transform: translateY(0);
+    visibility: visible;
+  }
+  
+
+
+      #backtotop {
+          transition: all 0.25s ease;
+          width: 10rem;
+          padding: 0.25rem;
+          margin: auto auto 1rem auto;
+          border-radius: 5px;
+          &:hover {
+              transform: scale(1.05);
+          }
+      }
+    
+      .container {
+          margin: auto;
+          padding: 1.5rem;
+          line-height: 1.45;
+    
+          .column {
+              margin-top: 20px;
+              display: grid;
+              justify-content: center;
+    
+              li {
+                  list-style: circle;
+                  list-style-position: outside;
+              }
+    
+              a {
+                  color: #bdbdbd;
+    
+                  &:hover {
+                      color: white;
+                  }
+              }
+    
+              figure {
+                  margin-top: -20px;
+                  justify-content: center;
+                  transition: all 0.25s ease;
+                  &:hover{
+                      transform: scale(1.15);
+                  }
+              }
+          }
+      }
+    
+      #credits {
+          padding: 0.75rem;
+          font-size: 0.85rem;
+    
+          a {
+              text-decoration: underline;
+              font-weight: bolder;
+              color: white;
+          }
+      }
+    }
+    

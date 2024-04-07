@@ -314,11 +314,6 @@ function drawOscAnalyser() {
 }
 
 
-
-
-
-
-
     // Function to toggle scrolling
     
 
@@ -377,5 +372,5 @@ function toggleScroll() {
 }
 
 // Example usage with a button
-const toggleButton = document.getElementById('scrollButton'); // Replace with the actual ID of your button
+const toggleButton = document.getElementById('scrollButton');
 toggleButton.addEventListener('click', toggleScroll);

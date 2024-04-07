@@ -125,7 +125,7 @@ width: 100%;
 
 #tracksPerPage {
   margin: auto;
-  width: 40px;
+  width: 45px;
 }
 
 
@@ -354,7 +354,7 @@ background-image: url(https://www.last.fm/static/images/logo_static.adb61955725c
   display: flex;
   flex-direction: row;
   width:200px;
-margin: auto;
+  margin: auto;
 }
 
 #pageInput {
@@ -382,9 +382,6 @@ margin: auto;
       transform: scale(0.95);
 }
 }
-
-
-
 
 //fiddler sidebar
 
@@ -415,8 +412,6 @@ margin: auto;
   text-align: center; 
   margin-bottom: 25px;
 }
-
-
 
 #fiddlertoggleBtn {
   position: fixed;
@@ -454,7 +449,7 @@ margin: auto;
 
     #username{
       display: flex;
-      width: 90%;
+      width: 100%;
     }
 
     #scrobbleContainer {
@@ -475,30 +470,25 @@ margin: auto;
       align-items: center;
       margin-top: 20px;
       margin-bottom: 0px;
-      width: 230px;
+      width: 250px;
       height: 100px;
       justify-content: center; /* Wyrównanie poziome */
-  
+      text-align: center;
   }
   
   #tracksPerPage {
+    flex-direction: column;
     margin: auto;
-    width: 40px;
+    width: 45px;
   }
   
-  
-  #username{
-    width: 90%;
-  }
-  
+
   #usernameLabel{  
     display: flex;
     justify-content: center; 
     align-items: center; 
-    width: 90%;
+    width: 100%;
   }
-  
-
 
   #recentbutton {
     color: #ffffff;
@@ -506,7 +496,7 @@ margin: auto;
     transition: all 0.25s ease;
     width: 9rem;
     padding: 0.25rem;
-    margin: 0.5rem auto auto 0.5rem;
+
     border-radius: 15px;
     &:hover {
         transform: scale(0.95);
@@ -538,7 +528,7 @@ margin: auto;
     background-size: cover; 
     background-position: center;   
     border-radius:  50%;
-    margin-left: 0%;
+    margin: auto;
     margin-top: 5px;
   }
   
@@ -752,25 +742,31 @@ margin: auto;
     width: 230px;
     height: 100px;
     justify-content: center; 
+    text-align: center;
 
 }
 
   
 #tracksPerPage {
+  margin-right: 15px;
   margin: auto;
-  width: 40px;
+  width: 45px;
 }
 
 
 #username{
-  width: 90%;
+  display: flex;
+  width: 100%;
+  text-align: center;
 }
 
 #usernameLabel{  
   display: flex;
   justify-content: center; 
   align-items: center; 
-  width: 90%;
+  width: 100%;
+
+
 }
 
 
