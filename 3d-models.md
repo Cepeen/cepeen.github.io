@@ -2,7 +2,7 @@
 title: 3D models
 ---
 
-<div class="panel panel-default" style="> 
+<div class="panel panel-default"> 
   <div class="panel-heading" style="background-color: lightgrey">Audio interface</div>
   <div class="panel-body"><div class="sketchfab-embed-wrapper"> <iframe title="K25 UH-60" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="100%" height="480" src="https://sketchfab.com/models/ccbed13673c04ef2b32d0d29388ccec1/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/motu-m4-audio-interface-ccbed13673c04ef2b32d0d29388ccec1?utm_medium=embed&utm_campaign=share-popup&utm_content=ccbed13673c04ef2b32d0d29388ccec1" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> MOTU M4 audio interface </a> by <a href="https://sketchfab.com/TomekT?utm_medium=embed&utm_campaign=share-popup&utm_content=ccbed13673c04ef2b32d0d29388ccec1" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> TomekT </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=ccbed13673c04ef2b32d0d29388ccec1" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div></div>
 </div>
