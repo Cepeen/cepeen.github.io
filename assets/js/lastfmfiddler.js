@@ -212,39 +212,33 @@ function updatePageData(recentTracksData, currentPage, totalPages) {
   const MAX_TITLE_LENGTH = 20;
   const MAX_ARTIST_LENGTH = 20;
 
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
   recentTracksData.recenttracks.track.forEach((track) => {
     const trackRow = document.createElement('tr');
 
     const imageCell = document.createElement('td');
-    imageCell.id = 'imageCell'; 
     const trackImage = document.createElement('img');
     trackImage.src = track.image.find((img) => img.size === 'small')['#text'];
     imageCell.appendChild(trackImage);
 
     const titleCell = document.createElement('td');
-    titleCell.id = 'titleCell'; 
     titleCell.textContent = track.name.length > MAX_TITLE_LENGTH ? track.name.substring(0, MAX_TITLE_LENGTH) + '...' : track.name;
     titleCell.title = track.name;
+    
 
     const artistCell = document.createElement('td');
-    artistCell.id = 'artistCell'; 
     artistCell.textContent = track.artist['#text'].length > MAX_ARTIST_LENGTH ? track.artist['#text'].substring(0, MAX_ARTIST_LENGTH) + '...' : track.artist['#text'];
     artistCell.title = track.artist['#text'];
 
     const dateCell = document.createElement('td');
-    dateCell.id = 'dateCell'; 
     dateCell.textContent = track.date ? track.date['#text'] : 'scrobbling now';
 
     const textLinkCell = document.createElement('td');
-    textLinkCell.id = 'textLinkCell'; 
-
-
     const textLink = document.createElement('button');
-
     textLink.textContent = 'Lyrics';
     textLink.id = "LyricsButton";
     textLink.onclick = async () => {
-    
       try {
         const response = await fetch(`${targetURL}/searchLyrics`, {
           method: 'POST',
@@ -258,35 +252,28 @@ function updatePageData(recentTracksData, currentPage, totalPages) {
         });
         const data = await response.json();
         const lyrics = data.lyrics;
-    
         const searchResultsContainer = document.getElementById('searchResultsContainer');
         searchResultsContainer.innerHTML = '';
-    
         // Display song title
         const titleContainer = document.createElement('h2');
         titleContainer.textContent = track.name;
         searchResultsContainer.appendChild(titleContainer);
-    
         // Display artist name
         const artistContainer = document.createElement('h3');
         artistContainer.textContent = track.artist['#text'];
         searchResultsContainer.appendChild(artistContainer);
-    
         // Display lyrics
         const lyricsContainer = document.createElement('div');
-        lyricsContainer.style.whiteSpace = 'pre-wrap'; // 
+        lyricsContainer.style.whiteSpace = 'pre-wrap';
         lyricsContainer.textContent = lyrics;
         searchResultsContainer.appendChild(lyricsContainer);
-    
         // Expand sidebar
         const sidebar = document.getElementById('fiddlersidebar');
         sidebar.style.right = '0'; 
-    
         // Add event listener to sidebar to hide it when clicked
         sidebar.addEventListener('click', () => {
           sidebar.style.right = '-450px'; 
         });
-        
       } catch (error) {
         console.error('Error during search:', error);
         // Error handling
@@ -296,26 +283,43 @@ function updatePageData(recentTracksData, currentPage, totalPages) {
   
     const playButtonCell = document.createElement('td');
     const playButton = document.createElement('button');
-
     playButton.id = "playButton";
-    
     // Add event listener to each play button
     playButton.addEventListener('click', async () => {
         await playSongOnYouTube(track.artist['#text'], track.name);
     });
 
     playButton.addEventListener('click', function() {
-      iframe.src += "&autoplay=1";  });
+      iframe.src += "&autoplay=1";  
+    });
     
-    playButtonCell.appendChild(playButton);
-    trackRow.appendChild(playButtonCell);
     playButtonCell.appendChild(playButton);
     textLinkCell.appendChild(textLink);
   
     trackRow.appendChild(imageCell);
-    trackRow.appendChild(titleCell);
-    trackRow.appendChild(artistCell);
-    trackRow.appendChild(dateCell);
+    
+    if (isMobile) {
+      const infoCell = document.createElement('td');
+      infoCell.className = 'infoCell';
+      const infoDiv = document.createElement('div');
+      const titleInfo = document.createElement('p');
+      titleInfo.textContent = track.name;
+      titleInfo.style.fontWeight = 'bold'; 
+      const artistInfo = document.createElement('p');
+      artistInfo.textContent = track.artist['#text'];
+      const dateInfo = document.createElement('p');
+      dateInfo.textContent = track.date ? track.date['#text'] : 'scrobbling now';
+      infoDiv.appendChild(titleInfo);
+      infoDiv.appendChild(artistInfo);
+      infoDiv.appendChild(dateInfo);
+      infoCell.appendChild(infoDiv);
+      trackRow.appendChild(infoCell);
+    } else {
+      trackRow.appendChild(titleCell);
+      trackRow.appendChild(artistCell);
+      trackRow.appendChild(dateCell);
+    }
+    
     trackRow.appendChild(textLinkCell);
     trackRow.appendChild(playButtonCell);
     
@@ -323,9 +327,7 @@ function updatePageData(recentTracksData, currentPage, totalPages) {
     
     document.getElementById('currentPage').textContent = currentPage;
     document.getElementById('totalPages').textContent = totalPages;
-    
-}
-  );
+  });
 }
 
 
