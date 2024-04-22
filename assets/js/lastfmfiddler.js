@@ -213,26 +213,28 @@ function updatePageData(recentTracksData, currentPage, totalPages) {
   const MAX_ARTIST_LENGTH = 20;
 
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
-
   recentTracksData.recenttracks.track.forEach((track) => {
     const trackRow = document.createElement('tr');
 
     const imageCell = document.createElement('td');
+    imageCell.id = 'imageCell'; 
     const trackImage = document.createElement('img');
     trackImage.src = track.image.find((img) => img.size === 'small')['#text'];
     imageCell.appendChild(trackImage);
 
     const titleCell = document.createElement('td');
+    titleCell.id = 'titleCell'; 
     titleCell.textContent = track.name.length > MAX_TITLE_LENGTH ? track.name.substring(0, MAX_TITLE_LENGTH) + '...' : track.name;
     titleCell.title = track.name;
-    
 
     const artistCell = document.createElement('td');
+    artistCell.id = 'artistCell'; 
     artistCell.textContent = track.artist['#text'].length > MAX_ARTIST_LENGTH ? track.artist['#text'].substring(0, MAX_ARTIST_LENGTH) + '...' : track.artist['#text'];
     artistCell.title = track.artist['#text'];
 
-  
     const dateCell = document.createElement('td');
+    dateCell.id = 'dateCell'; 
+    dateCell.textContent = track.date ? track.date['#text'] : 'scrobbling now';
 
     //time and date correction
     const scrobbleTime = track.date ? new Date(track.date['#text']) : new Date(); 
@@ -244,8 +246,13 @@ function updatePageData(recentTracksData, currentPage, totalPages) {
    
     
 
+
     const textLinkCell = document.createElement('td');
+    textLinkCell.id = 'textLinkCell'; 
+
+
     const textLink = document.createElement('button');
+
     textLink.textContent = 'Lyrics';
     textLink.id = "LyricsButton";
     textLink.onclick = async () => {
