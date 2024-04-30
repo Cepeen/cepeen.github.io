@@ -234,7 +234,7 @@ function updatePageData(recentTracksData, currentPage, totalPages) {
 
     const dateCell = document.createElement('td');
     dateCell.id = 'dateCell'; 
-    dateCell.textContent = track.date ? track.date['#text'] : 'scrobbling now';
+
 
     //time and date correction
     const scrobbleTime = track.date ? new Date(track.date['#text']) : new Date(); 
@@ -242,10 +242,10 @@ function updatePageData(recentTracksData, currentPage, totalPages) {
     const formattedDate = correctedTime.toLocaleDateString();
     const formattedTime = correctedTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); 
     
-    dateCell.textContent = formattedDate + ' ' + formattedTime;
+    dateCell.textContent = track.date ? formattedDate + ' ' + formattedTime : 'scrobbling now';
+
    
     
-
 
     const textLinkCell = document.createElement('td');
     textLinkCell.id = 'textLinkCell'; 
@@ -325,7 +325,8 @@ function updatePageData(recentTracksData, currentPage, totalPages) {
       const artistInfo = document.createElement('p');
       artistInfo.textContent = track.artist['#text'];
       const dateInfo = document.createElement('p');
-      dateInfo.textContent = track.date ? track.date['#text'] : 'scrobbling now';
+      dateInfo.textContent = track.date ? formattedDate + ' ' + formattedTime : 'scrobbling now';
+
       infoDiv.appendChild(titleInfo);
       infoDiv.appendChild(artistInfo);
       infoDiv.appendChild(dateInfo);
