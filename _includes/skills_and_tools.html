@@ -1,0 +1,22 @@
+
+
+
+<div id="htmlContainer"></div>
+
+<script>
+fetch('')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('response error');
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById('htmlContainer').innerHTML = html;
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+    });
+  </script>
+
+

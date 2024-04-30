@@ -3,7 +3,7 @@
     <div class="navbar-dropdown has-background-black is-left">
         {% for sitepage in site.html_pages %}
         {% unless sitepage.url == '/' or sitepage.url == '/404' or sitepage.url == '/artwork' or sitepage.url ==
-        '/3d-models' or sitepage.url == '/music' or sitepage.url == '/cluenotepadpp' or sitepage.url == '/tuner' or sitepage.url == '/dcoder' or sitepage.url == '/lastfmfiddler'  or sitepage.url == '/privacy-policy' or sitepage.url == '/clue-notepad' or sitepage.url == '/wakey-wakey' or sitepage.url == '/apps' or sitepage.url == '/apppp'    %}
+        '/3d-models' or sitepage.url == '/music' or sitepage.url == '/cluenotepadpp' or sitepage.url == '/tuner' or sitepage.url == '/dcoder' or sitepage.url == '/lastfmfiddler'  or sitepage.url == '/privacy-policy' or sitepage.url == '/clue-notepad' or sitepage.url == '/wakey-wakey' or sitepage.url == '/apps' or sitepage.url == '/apppp' or sitepage.url == '/skills_and_tools'    %}
         <a href="{{sitepage.url | absolute_url}}"
             class="navbar-item has-text-grey-light {% if page.url == sitepage.url | absolute_url  %}is-active{% endif %}">
             {{sitepage.title}}
