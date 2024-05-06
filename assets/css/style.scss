@@ -397,6 +397,7 @@ perspective: 10px;
     cursor: pointer;
     z-index: 9999;
   }
+
   
 
 //external
@@ -407,4 +408,46 @@ width: auto;
 height: auto;
   }
 
+
+
+  .row23 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+  }
+
+  .column23 {
+      flex: 1;
+      margin-right: 20px;
+      margin-top: 10px;
+  }
+
+  .column24 {
+      flex: 1;
+      margin: 0px;
+   
+  }
+
+
+  .skcategory {
+      font-weight: bold;
+      margin-top: 30px;
+      /* Dodaj margines na dole */
+  }
+
+
+  .bitmore {
+      margin-top: 60px;
+  }
+
+  .skillcard {
+      background-color: #f4f4f4;
+      /* Gray background color */
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      /* Add margin between cards */
+  }
 
