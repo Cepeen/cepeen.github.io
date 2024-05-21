@@ -1,5 +1,5 @@
 //audio player created in pain, there are some problems with chromium browsers 
-
+//I'm writing new node based version, capable of playing multiple tracks from storage 
 
 //Variables
 var btn_playpause = document.querySelector(".playpause-track");
@@ -42,6 +42,19 @@ const playlist = [
     artist: "Tomek Tomasik",
     music: "assets/sounds/Change.mp3",
   },
+  
+  {
+    name: "Questions",
+    artist: "Tomek Tomasik",
+    music: "assets/sounds/Questions.mp3",
+  },
+
+  {
+    name: "Fortress",
+    artist: "Tomek Tomasik",
+    music: "assets/sounds/Fortress.mp3",
+  },
+
 ];
 
 
@@ -54,6 +67,12 @@ function downloadFile(track_index) {
     path = "assets/sounds/";
   } else if (track_index === 0) {
     filename = "Memories.mp3";
+    path = "assets/sounds/";
+  } else if (track_index === 2) {
+    filename = "Questions.mp3";
+    path = "assets/sounds/";
+  }else if (track_index === 3) {
+    filename = "Fortress.mp3";
     path = "assets/sounds/";
   }
   const fileUrl = path + filename;
@@ -99,11 +118,22 @@ function forcePlay() {
     track_index = 0;
     loadTrack(track_index);
     playTrack();
+
   } else if (event.target.id === "change") {
     track_index = 1;
     loadTrack(track_index);
     playTrack();
-  }
+
+  } else if (event.target.id === "questions") {
+    track_index = 2;
+    loadTrack(track_index);
+    playTrack();
+
+  } else if (event.target.id === "fortress") {
+    track_index = 3;
+    loadTrack(track_index);
+    playTrack();
+}
 }
 
 function reset() {

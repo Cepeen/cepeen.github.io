@@ -4,6 +4,7 @@
 <div class="btn-group" > 
 <button class="btn" onclick="filterSelect('all')"> Show all</button>
 <button class="btn" onclick="filterSelect('render')"> Render</button>
+<button class="btn" onclick="filterSelect('sculpture')"> Sculpture</button>
 <button class="btn" onclick="filterSelect('sketch')"> Sketch</button>
 </div>
 
@@ -49,6 +50,27 @@
 
 {% endif %}
 {% endfor %}
+
+
+{% for artwork in site.data.artworks %}
+{% if artwork.category == "sculpture" %}
+<div class="artworks sculpture" >
+  <div class="has-background-black card">
+<a href= "{{artwork.image}}" data-pswp-width="{{ artwork.width }}" data-pswp-height="{{ artwork.height }}">
+  <img src= "{{artwork.image}}" alt="{{ artwork.name }}" width=100%/>
+  <div class="card-content has-background-black">
+  <h1 class="title has-text-white is-size-4">{{ artwork.name }}</h1>
+  <p class="has-text-white has-text-weight-light content">{{ artwork.description | truncate: 80}}</p>
+</div>
+</div>
+</a>
+</div>
+
+
+{% endif %}
+{% endfor %}
+
+
 
 </div>
 </div>
