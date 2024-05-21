@@ -54,3 +54,19 @@
   description: Simple interior scene.
   width: 1920;
   height: 1080;
+- name: Orc
+  category: sculpture
+  type: vertical
+  image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/sculptures/orcBW.png
+  link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/sculptures/orcBW.png
+  description: Orc sculptrure
+  width: 1480;
+  height: 1920;
+- name: Sci-fi helmet
+  category: render
+  type: horizontal
+  image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/HM.png?t=2024-05-20T19%3A58%3A17.277Z
+  link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/HM.png?t=2024-05-20T19%3A58%3A17.277Z
+  description: Hard surface helmet.
+  width: 1920;
+  height: 1080;
