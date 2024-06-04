@@ -409,3 +409,8 @@ playerContainer.appendChild(iframe);
           console.error('Error fetching or embedding YouTube video:', error);
       }
     }
+
+
+    window.addEventListener('load', async () => {
+      await isServerOnline();
+    });
