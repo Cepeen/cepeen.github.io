@@ -31,6 +31,20 @@ async function sendTokenToBackend(token) {
   }
 }
 
+async function isServerOnline() {
+  try {
+    const response = await fetch(`${targetURL}/ping`);
+    if (response.ok) {
+      console.log('server online');
+    } else {
+      throw new Error('Server returned non-OK status');
+    }
+  } catch (error) {
+    console.error('server is unavailable');
+  }
+}
+
+
 // Taking basic informations from user account.
 const recentButton = document.getElementById('recentbutton');
 
