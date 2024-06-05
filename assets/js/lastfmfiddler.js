@@ -1,12 +1,15 @@
 
-const searchResultsContainer = document.getElementById('searchResultsContainer');
-const scrobbleForm = document.getElementById('scrobbleForm');
-const dataContainer = document.getElementById('dataContainer');
+
 const urlParams = new URLSearchParams(window.location.search);
 const token = urlParams.get('token');
 const limit = 10;
 const targetURL = 'https://lastfmfiddler.tomektomasik.pl';
 
+
+const searchResultsContainer = document.getElementById('searchResultsContainer');
+const scrobbleForm = document.getElementById('scrobbleForm');
+const dataContainer = document.getElementById('dataContainer');
+const serverStatus = document.getElementById('serverStatus');
 
 // Taking and sending token to the server
 localStorage.setItem('authToken', token);
@@ -35,12 +38,14 @@ async function isServerOnline() {
   try {
     const response = await fetch(`${targetURL}/ping`);
     if (response.ok) {
-      console.log('server online');
+      console.log('Server online');
+      serverStatus.textContent = '';  
     } else {
       throw new Error('Server returned non-OK status');
     }
   } catch (error) {
-    console.error('server is unavailable');
+    console.error('Server is unavailable');
+    serverStatus.textContent = 'Server is unavailable';  
   }
 }
 
