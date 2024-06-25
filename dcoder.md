@@ -2,7 +2,7 @@
 title: DCoder
 layout: page
 ---
-
+<script src="\assets\js\decoder.js" type="module" defer></script>
 
 Enter Text:
 
