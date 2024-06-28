@@ -12,7 +12,9 @@
                     <h1 class="title is-1 is-uppercase has-text-weight-bold">
                         {{page.title}}
                     </h1>
+                    {% unless page.title == "The Tuner" %}
                     <hr class="has-background-black">
+                    {% endunless %}
                     <div class="content is-marginless">
                         {{ content }}
                     </div>
