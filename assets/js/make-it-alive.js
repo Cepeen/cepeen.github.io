@@ -5,26 +5,26 @@ function getRandom(min, max) {
 }
 
 //heading rotating text
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
-const animatedText = document.querySelector(".rotate-text");
+// const animatedText = document.querySelector(".rotate-text");
 
-const animationTimeline = gsap.timeline({
-  scrollTrigger: {
-    start: 'top top',
-    end: "bottom end",
-    scrub: true, 
-  },
-});
+// const animationTimeline = gsap.timeline({
+//   scrollTrigger: {
+//     start: 'top top',
+//     end: "bottom end",
+//     scrub: true, 
+//   },
+// });
 
-animationTimeline.to(animatedText, {
+// animationTimeline.to(animatedText, {
 
-  rotation:360,
-  duration:1, ease:'none',
-  scale: 0.01,
-  x: -120,
-  y: -200,
-});
+//   rotation:360,
+//   duration:1, ease:'none',
+//   scale: 0.01,
+//   x: -120,
+//   y: -200,
+// });
 
 
 

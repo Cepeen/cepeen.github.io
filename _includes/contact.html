@@ -10,36 +10,44 @@
             </a>
             {% endunless %}
      
-            <div class="container" style="height: 80px;">
+            <div class="container" style="height: 80px; margin: 20px;">
            
                 {% unless site.github_username == %}
                 <a href="http://www.github.com/{{site.github_username}}" target="_blank" class="has-text-black" aria-label="GitHub">
-                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                    <i class="fab fa-github fa-3x glow" aria-hidden="true" style="color: black;"></i>
+                </a>
                   </a>
                 
                 {% endunless %}
 
                 {% unless site.sketchfab_username == %}
                 <a href="http://www.sketchfab.com/{{site.sketchfab_username}}" target="_blank" class="has-text-black" aria-label="sketchfab">
-                    <i class="fa fa-sketchfab fa-2x" aria-hidden="true"></i>
+                    <i class="fa fa-sketchfab fa-3x glow" aria-hidden="true" style="color: black;"></i>
                 </a>
                 {% endunless %}
 
                 {% unless site.soundcloud_username == %}
                 <a href="https://soundcloud.com/{{site.soundcloud_username}}" target="_blank" class="has-text-black" aria-label="soundcloud">
-                    <i class="fa fa-soundcloud fa-2x" aria-hidden="true"></i>
+                    <i class="fa fa-soundcloud fa-3x glow" aria-hidden="true" style="color: black;"></i>
+                </a>
                 </a>
                 {% endunless %}
 
                 {% unless site.artstation_username == %}
                 <a href="https://artstation.com/{{site.artstation_username}}" target="_blank" class="has-text-black" aria-label="artstation">
-                    <i class="fa fa-artstation fa-2x" aria-hidden="true"></i>
+                    <i class="fa fa-artstation fa-3x glow" aria-hidden="true" style="color: black;"></i>
+                </a>
                 </a>
                 {% endunless %}
                 
             </div>
+            <div class="container has-text-centered" id="backtotop" >
+                <a class="btn glow" onclick="window.scroll(0,0)" style="color: black; font-weight: 700;">BACK TO TOP</a>
+            </div>
         </div>
+        
     </div>
+    
 </section>
 
 
