@@ -106,16 +106,37 @@ gsap.utils.toArray("#author").forEach(function (elem) {
 });
 }
 
+
 var prevScrollpos = window.scrollY;
-window.onscroll = function() {
-  var currentScrollPos = window.scrollY;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("navbar").style.top = "0";
-  } else {
-    document.getElementById("navbar").style.top = "-50px";
-  }
-  prevScrollpos = currentScrollPos;
-} 
+var navbar = document.getElementById("navbar");
+
+// Function to detect mobile devices or small screens
+function isMobileOrSmallScreen() {
+  return window.innerWidth < 1024 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+if (!isMobileOrSmallScreen()) {
+  window.onscroll = function() {
+    var currentScrollPos = window.scrollY;
+    if (prevScrollpos > currentScrollPos) {
+      navbar.style.top = "0";
+    } else {
+      navbar.style.top = "-50px";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
+  window.addEventListener('mousemove', function(e) {
+    if (e.clientY < 150) {
+      navbar.style.top = "0";
+    } else if (window.scrollY > 50) {
+      navbar.style.top = "-50px";
+    }
+  });
+} else {
+  navbar.style.top = "0"; // Ensure navbar is visible on mobile devices and small screens
+}
+
 
 //background color change
 
