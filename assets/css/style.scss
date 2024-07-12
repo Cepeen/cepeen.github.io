@@ -451,3 +451,11 @@ height: auto;
       /* Add margin between cards */
   }
 
+  .fade-out {
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+  }
+  
+  .fade-out.hide {
+    opacity: 0;
+  }

@@ -28,7 +28,7 @@
   }
   
   .btn-group button:hover {
-    background-color: #4b4b4b;
+  
   }
   
   
@@ -40,7 +40,6 @@
   }
   .glow:hover {
     z-index: 999;
-    color: #fff;
     text-align: center;
     animation: glow 1s ease-in-out infinite alternate;
   }
@@ -85,7 +84,8 @@
   transition: 0.3s;
   transition: all .2s ease-in-out;
   z-index: 3; 
-  color: #f3f3f3 !important; // navbar font color
+  color: #f3f3f3 !important;
+  background-color: transparent !important; 
   }
   
   .navbar-menu {
