@@ -28,8 +28,9 @@
   }
   
   .btn-group button:hover {
-  
+    background-color: #4b4b4b;
   }
+  
   
   
   .glow {
@@ -40,6 +41,7 @@
   }
   .glow:hover {
     z-index: 999;
+    color: #fff;
     text-align: center;
     animation: glow 1s ease-in-out infinite alternate;
   }
