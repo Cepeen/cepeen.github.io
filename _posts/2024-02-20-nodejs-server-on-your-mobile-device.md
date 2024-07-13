@@ -17,6 +17,9 @@ Recall your first PC, and compare it to an average mobile phone. There is a good
 
 Node, however, has several features to consider. First of all, it is asynchronous, so it does not allow us to use all the cores of our processor. When we host one application, we will not use the full potential of our processor, but only the core that was loaded with it. However, nothing prevents us from running more servers on a single device. Yes, but here it is necessary to take a feature of modern ARM processors. Their cores are not the same and differ in clocking, for example. However, these are not factors that should discourage us. The prospect of having a home server with a UPS (battery), and backup internet connection is encouraging. Below, I will outline some steps to get Node.js up and running and manage it on our phone. 
 
+
+---
+
 ### Installing Termux
 
 First of all, you need to download and install Termux. As of the date of writing this article, downloading Termux from the store is not the best option. Visit the official repository on GitHub:
@@ -37,8 +40,6 @@ I also don't want to rewrite all the documentation here, so I'll limit myself to
 <p align="center">
 <img src="https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/post%20images/nodetermux.jpg?t=2024-02-14T12%3A06%3A42.182Z" alt="Node on termux" width="300"/>
 </p>
----
-
 ---
 
 ### Remote Access
@@ -154,12 +155,10 @@ and proceed to create the application :)
 <img src="https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/post%20images/node%20app.png?t=2024-02-14T10%3A11%3A31.564Z" alt="example Node.js app" width="700"/>
 </p>
 
-
-
+---
 ### Conclusion
 
 Congratulations, You have just become the owner of a pretty decent server, with a backup connection and an emergency power source. You can now hide your API keys and use the server, for example, to enhance the capabilities of your static pages. You can create a home automation management application based on additional microcontrollers, create a bot for Discord, or any other application that uses an external API.
 Good luck!
 
----
 
