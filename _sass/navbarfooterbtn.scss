@@ -1,5 +1,6 @@
 
 .btn-group button {
+    font-size: 1.2rem;
     background-color: #000000; 
     border: 0px solid rgb(0, 0, 0);
     color: white;
@@ -10,8 +11,12 @@
     height: 50px;
     margin-bottom: 20px;
   }
-  
-  
+  @media screen and (max-width: 768px) {
+    .btn-group button {
+      font-size: 0.7rem;
+  }
+}
+
   .btn-group:after {
     content: "";
     clear: both;
