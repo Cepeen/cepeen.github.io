@@ -47,6 +47,8 @@
     document.addEventListener('DOMContentLoaded', function () {
         /* Get all "navbar-burger" elements */
         var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        var $navbarItems = Array.prototype.slice.call(document.querySelectorAll('.navbar-item'), 0);
+        
         /* Check if there are any navbar burgers */
         if ($navbarBurgers.length > 0) {
             /* Add a click event on each of them */
@@ -61,34 +63,45 @@
                 });
             });
         }
+        
+        /* Add a click event on each "navbar-item" element to close the burger */
+        if ($navbarItems.length > 0) {
+            $navbarItems.forEach(function ($el) {
+                $el.addEventListener('click', function () {
+                    var $burger = document.querySelector('.navbar-burger');
+                    var $menu = document.getElementById($burger.dataset.target);
+                    $burger.classList.remove('is-active');
+                    $menu.classList.remove('is-active');
+                });
+            });
+        }
     });
 
- document.addEventListener('DOMContentLoaded', function() {
-    const sections = document.querySelectorAll('section');
-    const navLi = document.querySelectorAll('.navbar-end .navbar-item');
+    document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('section');
+        const navLi = document.querySelectorAll('.navbar-end .navbar-item');
 
-    function setActive() {
-      let current = '';
+        function setActive() {
+            let current = '';
 
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
 
-        if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
-          current = section.getAttribute('id');
+                if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLi.forEach(a => {
+                a.classList.remove('is-active');
+                if (a.getAttribute('href').includes(current)) {
+                    a.classList.add('is-active');
+                }
+            });
         }
-      });
 
-      navLi.forEach(a => {
-        a.classList.remove('is-active');
-        if (a.getAttribute('href').includes(current)) {
-          a.classList.add('is-active');
-        }
-      });
-    }
-
-    window.addEventListener('scroll', setActive);
-    window.addEventListener('resize', setActive);
-  });
-
+        window.addEventListener('scroll', setActive);
+        window.addEventListener('resize', setActive);
+    });
 </script>
