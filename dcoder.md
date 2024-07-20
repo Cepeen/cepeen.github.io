@@ -14,6 +14,7 @@ Enter Keyword:
 
 Selected cipher: <select id="cipherSelection">
     <option value="Beaufort">Beaufort</option>
+        <option value="Vigenere">Vigenere</option>
     <!-- <option value="Vigenere">Vigenere</option> -->
 </select>
 
@@ -30,7 +31,7 @@ Result:
 
 
 I am experimenting with custom encryption algorithms, which I will publish here.
-For now, I have implemented here one of the most popular algorithms, the so-called <a href = "https://en.wikipedia.org/wiki/Beaufort_cipher">Beaufort cipher</a>. The following version allows you to encode the symbols of the full ASCII table.
+For now, I have implemented here few of the most popular algorithms, the so-called <a href = "https://en.wikipedia.org/wiki/Beaufort_cipher">Beaufort cipher</a> and <a href = "https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher">Vigenere cipher</a>. The following versions allows you to encode the symbols of the full ASCII table.
 
 
  

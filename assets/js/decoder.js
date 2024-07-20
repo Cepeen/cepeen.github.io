@@ -44,6 +44,53 @@ const beaufortAutokey = (key) => {
     return { encrypt, decrypt };
 };
 
+//Vigenere
+
+const vigenere = (key) => {
+    const ascii = () => Array.from({ length: 256 }, (_, i) => String.fromCharCode(i)).join('');
+    const shift = (text) => text.length <= 1 ? text : text.slice(1) + text[0];
+    const rotate = (text, distance) => Array(distance).fill().reduce(result => shift(result), text);
+    const base64Encode = (text) => btoa(text);
+    const base64Decode = (text) => atob(text);
+
+    const table = (() => {
+        const rows = {};
+        const alphabet = ascii();
+
+        return (textChar, keyChar) => {
+            const row = rows[keyChar] || (rows[keyChar] = rotate(alphabet, alphabet.indexOf(keyChar)));
+            const column = alphabet.indexOf(textChar);
+
+            return row[column];
+        };
+    })();
+
+    const encrypt = (message) => {
+        const ciphertext = message.split('').reduce((result, textChar, index) => {
+            const keyChar = key[index % key.length];
+
+            return result + table(textChar, keyChar);
+        }, '');
+
+        return base64Encode(ciphertext);
+    };
+
+    const decrypt = (ciphertext) => {
+        return base64Decode(ciphertext).split('').reduce((result, cipherChar, index) => {
+            const keyChar = key[index % key.length];
+            const row = rotate(ascii(), ascii().indexOf(keyChar));
+            const textChar = ascii()[row.indexOf(cipherChar)];
+
+            return result + textChar;
+        }, '');
+    };
+
+    return { encrypt, decrypt };
+};
+
+
+
+
 
 
 const process = (operation) => {
