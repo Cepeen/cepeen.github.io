@@ -196,6 +196,25 @@ function setUpdate() {
 // Ensure volume is set correctly on load
 current_track.volume = slider_volume.value / 100;
 
+
+
+function downloadFile(trackIndex) {
+  const track = playlist[trackIndex];
+  if (track) {
+      const link = document.createElement('a');
+      link.href = `https://lastfmfiddler.tomektomasik.pl/download/${encodeURIComponent(track.name)}.mp3`;
+      link.download = `${track.name}.mp3`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+  } else {
+      console.error('Track not found');
+  }
+}
+
+const trackIndex = 0;
+
+
 // Drawing functions
 function drawAnalyser(index) {
   if (index === 0) {
