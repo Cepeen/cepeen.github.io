@@ -1,7 +1,4 @@
-//audio player created in pain, there are some problems with chromium browsers 
-//I'm writing new node based version, capable of playing multiple tracks from storage 
-
-//Variables
+// Variables
 var btn_playpause = document.querySelector(".playpause-track");
 var btn_next = document.querySelector(".next-track");
 var btn_prev = document.querySelector(".prev-track");
@@ -15,14 +12,7 @@ var track_artist = document.querySelector(".track-artist");
 
 var current_time = document.querySelector(".current-time");
 var total_duration = document.querySelector(".total-duration");
-var current_track = document.querySelector("audio");
-
-var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-const audio = new Audio();
-
-var source = audioCtx.createMediaElementSource(current_track);
-
-source.connect(audioCtx.destination);
+var current_track = new Audio(); // Use the new Audio object
 
 var track_index = 0;
 var analyser_index = 0;
@@ -30,110 +20,73 @@ var isPlaying = false;
 var isRandom = false;
 var updateTimer;
 
-const playlist = [
-  {
-    name: "Memories",
-    artist: "Tomek Tomasik",
-    music: "assets/sounds/Memories.mp3",
-  },
+var playlist = [];
 
-  {
-    name: "Change",
-    artist: "Tomek Tomasik",
-    music: "assets/sounds/Change.mp3",
-  },
-  
-  {
-    name: "Questions",
-    artist: "Tomek Tomasik",
-    music: "assets/sounds/Questions.mp3",
-  },
+// Create audio context and analyser
+var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+var source = audioCtx.createMediaElementSource(current_track);
+var analyser = audioCtx.createAnalyser();
 
-  {
-    name: "Fortress",
-    artist: "Tomek Tomasik",
-    music: "assets/sounds/Fortress.mp3",
-  },
+// Connect the analyser to the destination
+source.connect(analyser);
+analyser.connect(audioCtx.destination);
 
-];
-
-
-//Some functions
-function downloadFile(track_index) {
-  let filename, path;
-
-  if (track_index === 1) {
-    filename = "Change.mp3";
-    path = "assets/sounds/";
-  } else if (track_index === 0) {
-    filename = "Memories.mp3";
-    path = "assets/sounds/";
-  } else if (track_index === 2) {
-    filename = "Questions.mp3";
-    path = "assets/sounds/";
-  }else if (track_index === 3) {
-    filename = "Fortress.mp3";
-    path = "assets/sounds/";
+// Fetch the playlist from the server
+async function fetchPlaylist() {
+  try {
+    const response = await fetch('https://lastfmfiddler.tomektomasik.pl/playlist');
+    playlist = await response.json();
+    loadTrack(track_index);
+    generateTrackButtons();
+  } catch (error) {
+    console.error('Error fetching playlist:', error);
   }
-  const fileUrl = path + filename;
-
-  // Create a temporary anchor element
-  const downloadLink = document.createElement("a");
-  downloadLink.href = fileUrl;
-  downloadLink.download = filename;
-
-  // Trigger the download
-  downloadLink.click();
 }
 
-loadTrack(track_index);
+fetchPlaylist();
 
+// Load and play the track
 function loadTrack(track_index) {
   clearInterval(updateTimer);
   reset();
 
   current_track.src = playlist[track_index].music;
+  current_track.crossOrigin = "anonymous"; // Ensure the crossorigin attribute is set
   current_track.load();
   track_name.textContent = playlist[track_index].name;
   track_artist.textContent = playlist[track_index].artist;
-  track_playing.textContent =
-    "Tune " + (track_index + 1) + " of " + playlist.length;
+  track_playing.textContent = `Tune ${track_index + 1} of ${playlist.length}`;
 
   updateTimer = setInterval(setUpdate, 1000);
 
   current_track.addEventListener("ended", nextTrack);
+}
 
-  function populate(a) {
-    for (var i = 0; i < 6; i++) {
-      var x = Math.round(Math.random() * 14);
-      var y = hex[x];
-      a += y;
-    }
-    return a;
+function forcePlay(event) {
+  const trackId = event.target.id;
+  track_index = playlist.findIndex(track => track.id === trackId);
+  if (track_index !== -1) {
+    loadTrack(track_index);
+    playTrack();
   }
 }
 
-function forcePlay() {
-  if (event.target.id === "memories") {
-    track_index = 0;
-    loadTrack(track_index);
-    playTrack();
+// Generate buttons for each track in the playlist
+function generateTrackButtons() {
+  const buttonsContainer = document.querySelector('.buttons-container');
+  buttonsContainer.innerHTML = ''; 
+  playlist.forEach(track => {
+    const listItem = document.createElement('li'); 
+    const button = document.createElement('button'); 
 
-  } else if (event.target.id === "change") {
-    track_index = 1;
-    loadTrack(track_index);
-    playTrack();
+    button.id = track.id;
+    button.textContent = track.name;
+    button.className = 'listButton'; 
+    button.ondblclick = forcePlay; 
 
-  } else if (event.target.id === "questions") {
-    track_index = 2;
-    loadTrack(track_index);
-    playTrack();
-
-  } else if (event.target.id === "fortress") {
-    track_index = 3;
-    loadTrack(track_index);
-    playTrack();
-}
+    listItem.appendChild(button); 
+    buttonsContainer.appendChild(listItem); 
+  });
 }
 
 function reset() {
@@ -141,41 +94,49 @@ function reset() {
   total_duration.textContent = "00:00";
   slider_seek.value = 0;
 }
+
 function randomTrack() {
   isRandom ? pauseRandom() : playRandom();
 }
+
 function playRandom() {
   isRandom = true;
   randomIcon.classList.add("randomActive");
 }
+
 function pauseRandom() {
   isRandom = false;
   randomIcon.classList.remove("randomActive");
 }
+
 function repeatTrack() {
   var current_index = track_index;
   loadTrack(current_index);
   playTrack();
 }
+
 function playpauseTrack() {
   isPlaying ? pauseTrack() : playTrack();
 }
+
 function playTrack() {
   current_track.play();
   isPlaying = true;
   btn_playpause.innerHTML = '<i class="fa fa-pause-circle fa-3x"></i>';
-  draw_Analyser(analyser_index);
+  drawAnalyser(analyser_index);
 }
+
 function pauseTrack() {
   current_track.pause();
   isPlaying = false;
   btn_playpause.innerHTML = '<i class="fa fa-play-circle fa-3x"></i>';
 }
+
 function nextTrack() {
-  if (track_index < playlist.length - 1 && isRandom === false) {
+  if (track_index < playlist.length - 1 && !isRandom) {
     track_index += 1;
-  } else if (track_index < playlist.length - 1 && isRandom === true) {
-    var random_index = Number.parseInt(Math.random() * playlist.length);
+  } else if (track_index < playlist.length - 1 && isRandom) {
+    var random_index = Math.floor(Math.random() * playlist.length);
     track_index = random_index;
   } else {
     track_index = 0;
@@ -183,6 +144,7 @@ function nextTrack() {
   loadTrack(track_index);
   playTrack();
 }
+
 function prevTrack() {
   if (track_index > 0) {
     track_index -= 1;
@@ -192,13 +154,16 @@ function prevTrack() {
   loadTrack(track_index);
   playTrack();
 }
+
 function seekTo() {
   var seekto = current_track.duration * (slider_seek.value / 100);
   current_track.currentTime = seekto;
 }
+
 function setVolume() {
   current_track.volume = slider_volume.value / 100;
 }
+
 function setUpdate() {
   var seekPosition = 0;
   if (!isNaN(current_track.duration)) {
@@ -206,13 +171,9 @@ function setUpdate() {
     slider_seek.value = seekPosition;
 
     var currentMinutes = Math.floor(current_track.currentTime / 60);
-    var currentSeconds = Math.floor(
-      current_track.currentTime - currentMinutes * 60
-    );
+    var currentSeconds = Math.floor(current_track.currentTime - currentMinutes * 60);
     var durationMinutes = Math.floor(current_track.duration / 60);
-    var durationSeconds = Math.floor(
-      current_track.duration - durationMinutes * 60
-    );
+    var durationSeconds = Math.floor(current_track.duration - durationMinutes * 60);
 
     if (currentSeconds < 10) {
       currentSeconds = "0" + currentSeconds;
@@ -227,14 +188,17 @@ function setUpdate() {
       durationMinutes = "0" + durationMinutes;
     }
 
-    current_time.textContent = currentMinutes + ":" + currentSeconds;
-    total_duration.textContent = durationMinutes + ":" + durationSeconds;
+    current_time.textContent = `${currentMinutes}:${currentSeconds}`;
+    total_duration.textContent = `${durationMinutes}:${durationSeconds}`;
   }
 }
 
-//Draing functions
-function draw_Analyser() {
-  if (analyser_index === 0) {
+// Ensure volume is set correctly on load
+current_track.volume = slider_volume.value / 100;
+
+// Drawing functions
+function drawAnalyser(index) {
+  if (index === 0) {
     drawBarsAnalyser();
   } else {
     drawOscAnalyser();
@@ -243,26 +207,23 @@ function draw_Analyser() {
 
 function drawBarsAnalyser() {
   analyser_index = 0;
-  var analyser = audioCtx.createAnalyser();
+  analyser.fftSize = 256;
+  var bufferLength = analyser.frequencyBinCount;
+  var dataArray = new Uint8Array(bufferLength);
 
   var canvas = document.getElementById("canvas");
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight / 2;
   var ctx = canvas.getContext("2d");
 
-  source.connect(analyser);
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight / 2;
 
-  analyser.fftSize = 256;
-
-  var bufferLength = analyser.frequencyBinCount;
-
-  var dataArray = new Uint8Array(bufferLength);
+  
 
   var WIDTH = canvas.width;
   var HEIGHT = canvas.height;
 
   var barWidth = (WIDTH / bufferLength) * 2.5;
-  var barHeight = canvas.height;
+  var barHeight;
   var x = 0;
 
   function draw() {
@@ -293,20 +254,15 @@ function drawBarsAnalyser() {
 
 function drawOscAnalyser() {
   analyser_index = 1;
-  var analyser = audioCtx.createAnalyser();
+  analyser.fftSize = 2048;
+  var bufferLength = analyser.fftSize;
+  var dataArray = new Uint8Array(bufferLength);
 
   var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight / 2;
-  const ctx = canvas.getContext("2d");
-
-  source.connect(analyser);
-
-  analyser.fftSize = 2048;
-
-  const bufferLength = analyser.frequencyBinCount;
-  const dataArray = new Uint8Array(bufferLength);
-  analyser.getByteTimeDomainData(dataArray);
 
   function draw() {
     requestAnimationFrame(draw);
@@ -321,12 +277,12 @@ function drawOscAnalyser() {
 
     ctx.beginPath();
 
-    const sliceWidth = (canvas.width * 1.0) / bufferLength;
-    let x = 0;
+    var sliceWidth = (canvas.width * 1.0) / bufferLength;
+    var x = 0;
 
-    for (let i = 0; i < bufferLength; i++) {
-      const v = dataArray[i] / 128.0;
-      const y = (v * canvas.height) / 2;
+    for (var i = 0; i < bufferLength; i++) {
+      var v = dataArray[i] / 128.0;
+      var y = (v * canvas.height) / 2;
 
       if (i === 0) {
         ctx.moveTo(x, y);
@@ -342,6 +298,7 @@ function drawOscAnalyser() {
   }
   draw();
 }
+
 
 
     // Function to toggle scrolling
