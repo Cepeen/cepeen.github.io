@@ -77,6 +77,7 @@ display: none;
 {
   margin-left: -25px;
   width: 20%;
+  font-weight: 600;
 }
 
 
@@ -89,6 +90,7 @@ display: none;
 {
   margin-right: -25px;
   width: 25%;
+  font-weight: 600;
 }
 
 .hd_playlist .hd_analyser .hd_details 
@@ -119,6 +121,7 @@ display: none;
   overflow-x: hidden;
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
+  min-width: 160px;
 }
 
 @media (max-width: 1000px) {
