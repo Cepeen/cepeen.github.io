@@ -3,8 +3,7 @@
 
 <div class="mplayer">
   <div class="wrapper">
-    <button id="recentPlaylistBtn">Recent Tunes</button>
-    <button id="allPlaylistBtn">All Tunes</button>
+
     <div class="headers">
       <div class="hd_playlist">Playlist:</div>
       <div class="hd_analyser"></div>
@@ -57,9 +56,10 @@
       <div class="repeat-track" onclick="repeatTrack()">
         <i class="fa fa-repeat fa-2x" title="repeat"></i>
       </div>
-      <div>
-        <button id="scrollButton" style="display: flex;">Toggle Scroll</button>
-      </div>
+      <button id="scrollButton" style="display: flex;">Toggle Scroll</button>
+      <button id="recentPlaylistBtn">Recent Tunes</button>
+      <button id="allPlaylistBtn">All Tunes</button>
+ 
       <div class="slider_container_vol">
         <i class="fa fa-volume-down"></i>
         <input type="range" min="1" max="100" value="99" class="slider_volume" onchange="setVolume()">
