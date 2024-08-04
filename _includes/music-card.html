@@ -1,7 +1,10 @@
 <audio></audio>
+
+
 <div class="mplayer">
   <div class="wrapper">
-
+    <button id="recentPlaylistBtn">Recent Tunes</button>
+    <button id="allPlaylistBtn">All Tunes</button>
     <div class="headers">
       <div class="hd_playlist">Playlist:</div>
       <div class="hd_analyser"></div>
@@ -17,7 +20,7 @@
           <div class="track-name">Track Name</div>
           <div class="track-artist">Track Artist</div>
           <div class="now-playing">PLAYING x OF y</div>
-          <div class="download" onclick="downloadFile(track_index)">
+          <div class="download" onclick="downloadFile()">
             <i class="fa fa-download fa-2x" aria-hidden="true"></i>
           </div>
         </div>
@@ -67,7 +70,7 @@
 
 </div>
 
-
+<div id="tree-container" ><h1 class="title">Genres I experimented with:</h1></div>
 <br>
 
 <a href="https://soundcloud.com/{{site.soundcloud_username}}" target="_blank" class="has-text-black"
@@ -84,7 +87,10 @@ reasonably fresh will be found directly on this page. I hope they will not harm 
 
 
 
-<div class="soundcloud">
+
+
+
+<div class="soundcloud" style="margin-top: 50px;">
 
   <div class="panel panel-default">
     <div class="panel-body"><iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
@@ -128,3 +134,7 @@ reasonably fresh will be found directly on this page. I hope they will not harm 
   </div>
 
 </div>
+
+
+
+

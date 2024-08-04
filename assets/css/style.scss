@@ -459,3 +459,67 @@ height: auto;
   .fade-out.hide {
     opacity: 0;
   }
+
+  //node tree
+
+
+  
+
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+#tree-container {
+  width: 100%;
+   background: rgb(255, 255, 255);
+}
+
+@media (max-width: 1024px) {
+  #tree-container {
+display: none;
+  }
+}
+
+.node {
+  cursor: pointer;
+  border-radius: 5px;
+}
+.overlay{
+  background-color:#EEE;
+}
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+
+.node text {
+  font-size:20px; 
+  font-family:sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+
+
+.node-bg {
+  rx: 5;
+  ry: 5;
+}
+
+.node text {
+  font: 12px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #d42626;
+  stroke-width: 2px;
+}

@@ -1,0 +1,98 @@
+{
+    "name": "Genre",
+    "children": [
+        {
+            "name": "Electronic",
+            "children": [
+                {
+                    "name": "Trance",
+                    "children": [
+                        {
+                            "name": "Vocal",
+                            "children": [
+                                {"name": "Change", "size": 3938},
+                                {"name": "Fortress", "size": 3812},
+                                {"name": "Questions", "size": 6714}
+                            ]
+                        },
+                        {
+                            "name": "Progressive",
+                            "children": [
+                                {"name": "Oasis", "size": 5731}
+                            ]
+                        },
+                        {
+                            "name": "Goa",
+                            "children": [
+                                {"name": "Bad Trip", "size": 7074},
+                                {"name": "Mind Control", "size": 7074}
+                            ]
+                        },
+                        {
+                            "name": "Balearic",
+                            "children": [
+                                {"name": "Ocean"},
+                                {"name": "Peaceful Island"}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Techno",
+                    "children": [
+                        {
+                            "name": "Minimal",
+                            "children": [
+                                {"name": "Moose Swirl"}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Breakbeat",
+                    "children": [
+                        {"name": "Severe Severance"}
+                    ]
+                },
+                {
+                    "name": "Industrial",
+                    "children": [
+                        {
+                            "name": "EBM",
+                            "children": [
+                                {"name": "Soulless Machine"}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Drum n Bass",
+                    "children": [
+                        {"name": "Liquid", "children": [
+                            {"name": "Sunrise at Stella", "size": 1983}
+                        ] }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Instrumental",
+            "children": [
+                {
+                    "name": "Orchestral",
+                    "children": [
+                        {"name": "Arrival", "size": 721},
+                        {"name": "Journey", "size": 4294}
+                    ]
+                },
+                {
+                    "name": "Experimental",
+                    "children": [
+                        {"name": "Leeway", "size": 721},
+                        {"name": "Memories", "size": 4294}
+                    ]
+                }
+            ]
+        }
+    ]
+}
