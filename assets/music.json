@@ -10,22 +10,23 @@
                         {
                             "name": "Vocal",
                             "children": [
-                                {"name": "Change", "size": 3938},
-                                {"name": "Fortress", "size": 3812},
-                                {"name": "Questions", "size": 6714}
+                                {"name": "Change"},
+                                {"name": "Fortress"},
+                                {"name": "Questions"}
                             ]
                         },
                         {
                             "name": "Progressive",
                             "children": [
-                                {"name": "Oasis", "size": 5731}
+                                {"name": "Oasis"},
+                                {"name": "Siren's Tear"}
                             ]
                         },
                         {
                             "name": "Goa",
                             "children": [
-                                {"name": "Bad Trip", "size": 7074},
-                                {"name": "Mind Control", "size": 7074}
+                                {"name": "Bad Trip"},
+                                {"name": "Mind Control"}
                             ]
                         },
                         {
@@ -69,7 +70,7 @@
                     "name": "Drum n Bass",
                     "children": [
                         {"name": "Liquid", "children": [
-                            {"name": "Sunrise at Stella", "size": 1983}
+                            {"name": "Sunrise at Stella"}
                         ] }
                     ]
                 }
@@ -81,15 +82,15 @@
                 {
                     "name": "Orchestral",
                     "children": [
-                        {"name": "Arrival", "size": 721},
-                        {"name": "Journey", "size": 4294}
+                        {"name": "Arrival"},
+                        {"name": "Journey"}
                     ]
                 },
                 {
                     "name": "Experimental",
                     "children": [
-                        {"name": "Leeway", "size": 721},
-                        {"name": "Memories", "size": 4294}
+                        {"name": "Leeway"},
+                        {"name": "Memories"}
                     ]
                 }
             ]
