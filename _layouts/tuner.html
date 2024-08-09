@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% include head.html %}
+    
+</head>
+
+<body>
+    {% include navbar.html %}
+
+
+
+    <section class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="section" style="width: 100%;">
+                    <h1 class="title is-1 is-uppercase has-text-weight-bold">The Tuner</h1>
+                </div>
+                {% include tuner.html %}
+    </section>
+
+
+
+    {% include footer_no_scroll_snap.html %}
+    <script src="{{ base.url | prepend: site.url }}/assets/js/tuner.js"></script>
+</body>
+
+</html>

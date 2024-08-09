@@ -438,7 +438,7 @@ var svg = d3.select("#tree-container").append("svg")
 .append("g")
 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.json("/assets/music.json", function(error, genre) {
+d3.json("https://lastfmfiddler.tomektomasik.pl/resources/music.json", function(error, genre) {
   if (error) throw error;
 
   root = genre;
@@ -675,6 +675,11 @@ function foldAll() {
 
   root.children.forEach(collapse);
   collapse(root);
+
+  root.x0 = baseHeight / 2;
+  root.y0 = 0;
+  firstClick = true;  
+
   update(root);
 }
 
