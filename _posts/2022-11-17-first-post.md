@@ -1,7 +1,7 @@
 ---
 title: The purpose.
 layout: post
-post-image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/post%20images/liberty.png?t=2023-05-05T17%3A59%3A33.259Z
+post-image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/post%20images/liberty.avif?t=2024-08-11T13%3A01%3A23.683Z
 description: Hi. Let me introduce myself.
 tags:
 - Me  

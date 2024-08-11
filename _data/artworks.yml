@@ -2,7 +2,7 @@
   category: render
   type: vertical
   image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/dean.png
-  link: https://drive.google.com/uc?id=1ip1lI-iMsNHJQ1SI7O6i39C91ngvqywJ
+  link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/dean.avif?t=2024-08-11T12%3A27%3A07.188Z
   description: Classic electric guitar.
   width: 1480;
   height: 1920;
@@ -10,7 +10,7 @@
   category: render
   type: horizontal
   image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/bulp.png?t=2024-03-27T01%3A20%3A32.564Z  
-  link: https://drive.google.com/uc?id=1achXh6QGDQ1X-PLXsKY56JJ2owoMx32Q
+  link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/bulp.avif?t=2024-08-11T12%3A27%3A38.146Z  
   description: Simple bulb.
   width: 1632;
   height: 918;
@@ -18,15 +18,15 @@
   category: render
   type: vertical
   image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/ATH%20m40x.jpg?t=2024-03-27T01%3A20%3A54.204Z
-  link: https://drive.google.com/uc?id=19gA4Nc3fGzlscsYF3VfOBRsaT4fEg3Cc
+  link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/ATH-m40x.avif?t=2024-08-11T12%3A27%3A59.308Z
   description: Hi poly version.
   width: 1480;
   height: 1920;
 - name: Maverick2
   category: render
   type: horizontal
-  image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/mv.jpg
-  link: https://drive.google.com/uc?id=1DZCcN77-5qA-mvDTDek7PUTgxlCo_fqk
+  image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/maverickY.avif
+  link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/maverickY.avif
   description: Pretty old car
   width: 1920;
   height: 1080;
@@ -34,7 +34,7 @@
   category: render
   type: horizontal
   image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/last%20donut.png
-  link: https://drive.google.com/uc?id=1DZCcN77-5qA-mvDTDek7PUTgxlCo_fqk
+  link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/last-donut.avif
   description: Yes I did it too :(
   width: 1920;
   height: 1080;
@@ -50,7 +50,7 @@
   category: render
   type: horizontal
   image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/room.png
-  link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/room.png?t=2023-10-12T10%3A25%3A01.391Z
+  link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/room.avif
   description: Simple interior scene.
   width: 1920;
   height: 1080;
@@ -66,7 +66,7 @@
   category: render
   type: horizontal
   image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/HM.png?t=2024-05-20T19%3A58%3A17.277Z
-  link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/HM.png?t=2024-05-20T19%3A58%3A17.277Z
+  link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/hm.avif
   description: Hard surface helmet.
   width: 1920;
   height: 1080;
@@ -74,7 +74,11 @@
   category: sketch
   type: vertical
   image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/Ola.jpg?t=2024-06-17T10%3A57%3A59.768Z
-  link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/Ola.jpg?t=2024-06-17T10%3A57%3A59.768Z
+  link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/Ola.avif?t=2024-08-11T13%3A06%3A21.272Z
   description: If I am the South, then this is the North.
   width: 1480;
   height: 1920;
+
+
+
+

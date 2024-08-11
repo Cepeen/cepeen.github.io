@@ -1,7 +1,7 @@
 ---
 title: Node.js server on mobile device.
 layout: post
-post-image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/post%20images/linux.png?t=2024-02-20T16%3A19%3A48.902Z
+post-image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/post%20images/linux.avif
 description: cheap server
 tags:
 - Node.js
