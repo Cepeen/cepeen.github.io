@@ -1,0 +1,5 @@
+---
+title: maze
+layout: maze
+---
+

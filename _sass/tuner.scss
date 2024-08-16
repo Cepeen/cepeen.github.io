@@ -13,7 +13,7 @@
   .tuner {
   /*   opacity: 0.2; */
     position: relative;
-    margin-top: 200px;
+    margin-top: 160px;
     left: 50%;
     width: var(--tuner-size);
     height: var(--tuner-size);
@@ -185,19 +185,35 @@
   }
   
   #record {
+    font: 1.5em sans-serif;
     margin-bottom: auto;
     color: #ffffff;
     z-index: 999;
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
   }
 
 
 
 #visualizer {
   width: 600px;
-  height: 300px;
-  border-bottom: 1px solid rgb(175, 175, 175);
+  height: 280px;
   margin-bottom: 60px;
 }
 
+@media (max-width: 1024px) {
+
+  #tunerheader {
+    margin-top: 10px;
+  }
+  #tunercontainer {
+    margin-top: -200px;
+  }
+  #visualizer {
+ display: none;
+  }
+  
+  }
 
   

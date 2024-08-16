@@ -1,10 +1,12 @@
-let data, analyzer, sampleRate, isTunerRunning = false;
+
+let data, analyser, sampleRate, isTunerRunning = false;
 const fftSize = 2**15;
-const $canvas = window.canvas;
+const $canvas = document.getElementById("visualizer");
 const $note = window.note;
 const $freq = window.freq;
 const $button = window.record;
 const $pointer = window.pointer;
+let stream;
 
 async function getMedia(constraints) {
   try {
@@ -58,10 +60,10 @@ function getHighestFrequency() {
   const found = closestNote(largest.freq);
   $note.innerHTML = found.note;
   $freq.innerHTML = `${largest.freq.toFixed(2)} Hz`;
-  
+
   const deg = diffToDeg(found.diff);
   $pointer.style.transform = `rotate(${deg}deg) translate(-50%, -50%)`;
-  
+
   return largest;
 }
 
@@ -81,10 +83,12 @@ async function startTuner() {
 
   analyser.fftSize = fftSize;
   data = new Uint8Array(analyser.frequencyBinCount);
+
+  // Initialize the visualizer with the same analyser and canvas
+  drawCurveAnalyser(analyser, $canvas);
   
   read();
 }
-
 
 function stopTuner() {
   const streamTracks = stream.getTracks(); 
@@ -126,4 +130,74 @@ for (let octave = 0; octave <= 8; octave++) {
   }
 }
 
-console.log(notes); 
+console.log(notes);
+
+
+
+function drawCurveAnalyser(analyser, canvas) {
+  analyser.fftSize = fftSize;
+  var bufferLength = analyser.frequencyBinCount;
+  var dataArray = new Uint8Array(bufferLength);
+  var ctx = canvas.getContext("2d");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight / 2;
+  var WIDTH = canvas.width;
+  var HEIGHT = canvas.height;
+  var minFrequency = 20.00;
+  var maxFrequency = 20000.00; 
+  var sampleRate = analyser.context.sampleRate;
+  var frequencyResolution = sampleRate / analyser.fftSize;
+
+
+  function frequencyToX(frequency) {
+    return ((Math.log2(frequency) - Math.log2(minFrequency)) / (Math.log2(maxFrequency) - Math.log2(minFrequency))) * WIDTH;
+  }
+
+  
+  function draw() {
+    requestAnimationFrame(draw);
+    analyser.getByteFrequencyData(dataArray);
+    ctx.clearRect(0, 0, WIDTH, HEIGHT);
+
+    // Draw smooth curve
+    ctx.beginPath();
+    ctx.strokeStyle = "rgb(255, 0, 0)";
+    ctx.lineWidth = 2;
+
+    var points = [];
+    for (var i = 0; i < bufferLength; i++) {
+      var frequency = i * frequencyResolution;
+      if (frequency >= minFrequency && frequency <= maxFrequency) {
+        var x = frequencyToX(frequency);
+        var y = HEIGHT - (dataArray[i] / 255) * HEIGHT;
+        points.push({x: x, y: y});
+      }
+    }
+
+    // Draw smooth curve using Bezier curves
+    ctx.moveTo(points[0].x, points[0].y);
+    for (var i = 1; i < points.length - 2; i++) {
+      var xc = (points[i].x + points[i + 1].x) / 2;
+      var yc = (points[i].y + points[i + 1].y) / 2;
+      ctx.quadraticCurveTo(points[i].x, points[i].y, xc, yc);
+    }
+  
+    ctx.quadraticCurveTo(
+      points[points.length - 2].x,
+      points[points.length - 2].y,
+      points[points.length - 1].x,
+      points[points.length - 1].y
+    );
+
+    ctx.stroke();
+
+    // TODO Draw frequency scale
+
+    
+  }
+  draw();
+}
+
+
+
+

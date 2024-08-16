@@ -15,7 +15,6 @@ Enter Keyword:
 Selected cipher: <select id="cipherSelection">
     <option value="Beaufort">Beaufort</option>
         <option value="Vigenere">Vigenere</option>
-    <!-- <option value="Vigenere">Vigenere</option> -->
 </select>
 
 <button onclick="process('encrypt')">Encrypt</button>
