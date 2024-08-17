@@ -1,6 +1,6 @@
 
 let data, analyser, sampleRate, isTunerRunning = false;
-const fftSize = 2**15;
+const fftSize = 32768;
 const $canvas = document.getElementById("visualizer");
 const $note = window.note;
 const $freq = window.freq;
@@ -59,7 +59,7 @@ function getHighestFrequency() {
 
   const found = closestNote(largest.freq);
   $note.innerHTML = found.note;
-  $freq.innerHTML = `${largest.freq.toFixed(2)} Hz`;
+  $freq.innerHTML = `${largest.freq.toFixed(2)/2} Hz`;
 
   const deg = diffToDeg(found.diff);
   $pointer.style.transform = `rotate(${deg}deg) translate(-50%, -50%)`;
@@ -121,14 +121,24 @@ for (let octave = 0; octave <= 8; octave++) {
   const noteNames = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 
   for (const noteName of noteNames) {
+    let actualOctave = octave;
+    
+    // Adjust the octave for E and A in the lowest octaves
+    if (noteName === 'E' && octave > 0) {
+      actualOctave -= 1;
+    } else if (noteName === 'A' && octave > 0) {
+      actualOctave -= 1;
+    }
+
     const note = {
-      note: `${noteName}${octave}`,
+      note: `${noteName}${actualOctave}`,
       freq: octaveBaseFrequency * Math.pow(2, noteNames.indexOf(noteName) / 12)
     };
 
     notes.push(note);
   }
 }
+
 
 console.log(notes);
 
