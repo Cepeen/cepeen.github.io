@@ -84,8 +84,8 @@
   image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/kitchen.jpg
   link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/kitchen.avif?t=2024-09-02T21%3A01%3A58.378Z
   description: Visualization of kitchen.
-  width: 1480;
-  height: 1920;
+  width: 1920;
+  height: 1080;
 
 
 
