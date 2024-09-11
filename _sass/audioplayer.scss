@@ -305,7 +305,7 @@ width: auto;
 
 @media (max-width: 1024px) {
 .slider_container{
-width: 100%;
+width: auto;
 margin-top: 15px;
 margin-left: 0px;
 margin-right: 0px;
@@ -317,10 +317,10 @@ margin-right: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: auto;
+  width: 220px;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 650px) {
     .slider_container_vol  {
   display: none;
     }}
