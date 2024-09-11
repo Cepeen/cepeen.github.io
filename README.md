@@ -1,6 +1,6 @@
 ﻿# Cepeen Personal Portfolio Website
 
-This is my personal portfolio website, built using Jekyll. It showcases my projects, Skills, and provides information about me.
+This is my personal portfolio website, built using Jekyll. It showcases my projects, skills, and provides information about me.
 
 ## Features
 
