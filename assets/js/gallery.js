@@ -14,7 +14,7 @@ function filterSelect(c) {
     if (c === "render") {
         fbox.style.maxHeight = "1500px";
     } else {
-        fbox.style.maxHeight = "2300px";
+        fbox.style.maxHeight = "2800px";
     }
 
     if (c == "all") c = "";

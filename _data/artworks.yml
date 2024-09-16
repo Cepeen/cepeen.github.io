@@ -86,6 +86,27 @@
   description: Visualization of a kitchen.
   width: 1920;
   height: 1080;
-
-
-
+- name: Zieleń i Spółka
+  category: vector
+  type: vertical
+  image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/zielen/zielen.png?t=2024-09-12T17%3A19%3A23.664Z
+  link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/zielen/zielen.png?t=2024-09-12T17%3A19%3A23.664Z
+  description: Company logo. 
+  width: 1480;
+  height: 1920;
+- name: Amperhouse
+  category: vector
+  type: vertical
+  image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/zielen/amperhouse.png
+  link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/zielen/amperhouse.png
+  description: Company logo. 
+  width: 1480;
+  height: 1920;
+- name: Repertoire logo
+  category: vector
+  type: vertical
+  image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/repertoire.png?t=2024-09-16T01%3A12%3A47.426Z
+  link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/repertoire.avif?t=2024-09-16T01%3A10%3A53.229Z
+  description: App logo. 
+  width: 1480;
+  height: 1920;
