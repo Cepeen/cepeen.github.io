@@ -63,7 +63,7 @@
   width: 1480;
   height: 1920;
 - name: Sci-fi helmet
-  category: render
+  category: renderv
   type: horizontal
   image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/HM.png?t=2024-05-20T19%3A58%3A17.277Z
   link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/hm.avif
@@ -92,21 +92,21 @@
   image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/zielen/zielen.png?t=2024-09-12T17%3A19%3A23.664Z
   link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/zielen/zielen.png?t=2024-09-12T17%3A19%3A23.664Z
   description: Company logo. 
-  width: 1480;
-  height: 1920;
+  width: 1920;
+  height: 1080;
 - name: Amperhouse
   category: vector
   type: vertical
   image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/zielen/amperhouse.png
   link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/zielen/amperhouse.png
   description: Company logo. 
-  width: 1480;
-  height: 1920;
+  width: 1920;
+  height: 1080;
 - name: Repertoire logo
   category: vector
   type: vertical
   image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/repertoire.png?t=2024-09-16T01%3A12%3A47.426Z
   link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/repertoire.avif?t=2024-09-16T01%3A10%3A53.229Z
   description: App logo. 
-  width: 1480;
-  height: 1920;
+  width: 1920;
+  height: 1080;
