@@ -26,18 +26,52 @@ var playlist = [];
 var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 var source = audioCtx.createMediaElementSource(current_track);
 var analyser = audioCtx.createAnalyser();
+var gainNode = audioCtx.createGain();  
+
+
+
 
 // Connect the analyser to the destination
 source.connect(analyser);
-analyser.connect(audioCtx.destination);
+analyser.connect(gainNode);
+gainNode.connect(audioCtx.destination);
+
 
 // Fetch the playlist from the server
+
 
 
 document.getElementById("recentPlaylistBtn").addEventListener("click", () => fetchPlaylist('recent'));
 document.getElementById("allPlaylistBtn").addEventListener("click", () => fetchPlaylist('all'));
 fetchPlaylist('recent');
 
+
+
+
+analyser.connect(audioCtx.destination);
+
+
+slider_volume.addEventListener("input", setGain);
+
+
+
+function setGain() {
+  let gainValue = slider_volume.value / 100;
+  gainNode.gain.setValueAtTime(gainValue, audioCtx.currentTime)
+}
+
+
+function playpauseTrack() {
+  if (audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
+  isPlaying ? pauseTrack() : playTrack();
+}
+
+
+document.getElementById("recentPlaylistBtn").addEventListener("click", () => fetchPlaylist('recent'));
+document.getElementById("allPlaylistBtn").addEventListener("click", () => fetchPlaylist('all'));
+fetchPlaylist('recent');
 
 async function fetchPlaylist(directory) {
   try {
@@ -167,10 +201,6 @@ function seekTo() {
   current_track.currentTime = seekto;
 }
 
-function setVolume() {
-  current_track.volume = slider_volume.value / 100;
-}
-
 function setUpdate() {
   var seekPosition = 0;
   if (!isNaN(current_track.duration)) {
@@ -200,11 +230,6 @@ function setUpdate() {
   }
 }
 
-// Ensure volume is set correctly on load
-current_track.volume = slider_volume.value / 100;
-
-
-
 function downloadFile() {
   const currentTrackName = track_name.textContent;
   if (currentTrackName) {
@@ -222,7 +247,13 @@ function downloadFile() {
 const trackIndex = 0;
 
 
-// Drawing functions
+function drawAnalyser(index) {
+  if (index === 0) {
+    drawBarsAnalyser();
+  } else {
+    drawOscAnalyser();
+  }
+}
 function drawAnalyser(index) {
   if (index === 0) {
     drawBarsAnalyser();
@@ -243,40 +274,63 @@ function drawBarsAnalyser() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight / 2;
 
-  
-
   var WIDTH = canvas.width;
   var HEIGHT = canvas.height;
 
-  var barWidth = (WIDTH / bufferLength) * 2.5;
+  const barCount = 100; 
+  var barWidth = WIDTH / barCount; 
   var barHeight;
   var x = 0;
 
+  const nyquist = 44100 / 2; 
+  const freqBinWidth = nyquist / bufferLength;
+
+  // I'm not good at math :(
+  function getFFTIndex(barIndex) {
+    const logMinFreq = Math.log10(40);
+    const logMaxFreq = Math.log10(nyquist);
+    const logRange = logMaxFreq - logMinFreq;
+    const logFreq = logMinFreq + (barIndex / barCount) * logRange;
+    const freq = Math.pow(10, logFreq);
+    return Math.round(freq / freqBinWidth);
+  }
+
   function draw() {
     requestAnimationFrame(draw);
-
     x = 0;
-
     analyser.getByteFrequencyData(dataArray);
-
     ctx.fillStyle = "#ffffff";
     ctx.fillRect(0, 0, WIDTH, HEIGHT);
-
-    for (var i = 0; i < bufferLength; i++) {
-      barHeight = dataArray[i];
-
-      var r = (x / WIDTH) * 255;
-      var g = 0;
-      var b = 0;
-
+  
+   
+    const scaleFactor = 0.4; 
+  
+    for (var i = 0; i < barCount; i++) {
+      const fftIndex = getFFTIndex(i);
+      const dataValue =
+        fftIndex < bufferLength
+          ? (dataArray[fftIndex] +
+              (dataArray[fftIndex - 1] || dataArray[fftIndex]) +
+              (dataArray[fftIndex + 1] || dataArray[fftIndex])) /
+            2
+          : 0;
+      
+      // Adjust bar height
+      barHeight = dataValue * (HEIGHT / 255) * scaleFactor;
+      
+      const r = (x / WIDTH) * 255;
+      const g = 0;
+      const b = 55 - r;
       ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
       ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
-
-      x += barWidth + 1;
+  
+      x += barWidth;
     }
   }
   draw();
 }
+
+
 
 function drawOscAnalyser() {
   analyser_index = 1;
@@ -327,11 +381,7 @@ function drawOscAnalyser() {
 
 
 
-    // Function to toggle scrolling
-    
 
-// left: 37, up: 38, right: 39, down: 40,
-// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
 var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
 function preventDefault(e) {
@@ -345,7 +395,6 @@ function preventDefaultForScrollKeys(e) {
   }
 }
 
-// modern Chrome requires { passive: false } when adding event
 var supportsPassive = false;
 try {
   window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
@@ -356,15 +405,15 @@ try {
 var wheelOpt = supportsPassive ? { passive: false } : false;
 var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
 
-// call this to Disable
+
 function disableScroll() {
-  window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
-  window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-  window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+  window.addEventListener('DOMMouseScroll', preventDefault, false); 
+  window.addEventListener(wheelEvent, preventDefault, wheelOpt); 
+  window.addEventListener('touchmove', preventDefault, wheelOpt); 
   window.addEventListener('keydown', preventDefaultForScrollKeys, false);
 }
 
-// call this to Enable
+
 function enableScroll() {
   window.removeEventListener('DOMMouseScroll', preventDefault, false);
   window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
@@ -406,283 +455,6 @@ async function playTrackFromServer(trackName) {
   }
 
 
-
-
-
-//node tree
-var margin = {
-  top: 20,
-  right: 120,
-  bottom: 20,
-  left: 120
-},
-width = 960 - margin.right - margin.left,
-baseHeight = 240 - margin.top - margin.bottom;
-
-var i = 0,
-duration = 500,
-root,
-firstClick = true;
-
-var tree = d3.layout.tree()
-.size([baseHeight, width]);
-
-var diagonal = d3.svg.diagonal()
-.projection(function(d) {
-  return [d.y, d.x];
-});
-
-var svg = d3.select("#tree-container").append("svg")
-.attr("width", width + margin.right + margin.left)
-.attr("height", baseHeight + margin.top + margin.bottom)
-.append("g")
-.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-d3.json("https://lastfmfiddler.tomektomasik.pl/resources/music.json", function(error, genre) {
-  if (error) throw error;
-
-  root = genre;
-  root.x0 = baseHeight / 2;
-  root.y0 = 0;
-
-  function collapseAll(d) {
-    if (d.children) {
-      d._children = d.children;
-      d._children.forEach(collapseAll);
-      d.children = null;
-    }
-  }
-
-  collapseAll(root);
-  centerNode(root); 
-  update(root);
-});
-
-d3.select(self.frameElement).style("height", "1000px");
-
-function update(source) {
-  centerNode(source);
-
-  var nodes = tree.nodes(root).reverse(),
-      links = tree.links(nodes);
-
-  var node = svg.selectAll("g.node")
-    .data(nodes, function(d) {
-      return d.id || (d.id = ++i);
-    });
-
-  var nodeEnter = node.enter().append("g")
-    .attr("class", "node")
-    .attr("transform", function(d) {
-      return "translate(" + source.y0 + "," + source.x0 + ")";
-    })
-    .on("click", click);
-
-  nodeEnter.append("rect")
-    .attr("class", "node-bg")
-    .attr("y", -15)
-    .attr("x", function(d) {
-      return d === root ? -60 : -5;
-    })
-    .attr("width", 10)
-    .attr("height", 30)
-    .attr("rx", 10)
-    .attr("ry", 10)
-    .style("fill", function(d) {
-      return d.children || d._children ? "#f0f0f0" : "#000000";
-    })
-    .style("stroke", function(d) {
-      return d.children || d._children ? "#f0f0f0" : "#000000";
-    })
-    .style("stroke-width", 1);
-
-  nodeEnter.append("text")
-    .attr("dy", ".35em")
-    .style("fill", function(d) {
-      return d.children || d._children ? "#000000" : "#ffffff";
-    })
-    .attr("x", function(d) {
-      return d === root ? -15 : 0;
-    })
-    .attr("text-anchor", function(d) {
-      return d === root ? "end" : "start";
-    })
-    .text(function(d) {
-      return d.name + ((!d.children && !d._children) ? " ►" : "");
-    })
-    .style("fill-opacity", 1e-6);
-
-  var nodeUpdate = node.transition()
-    .duration(duration)
-    .attr("transform", function(d) {
-      if (firstClick && d === root) {
-        return "translate(" + (d.y + 400) + "," + d.x + ")";
-      } else {
-        return "translate(" + d.y + "," + d.x + ")";
-      }
-    });
-
-  nodeUpdate.select("rect")
-    .attr("width", function(d) {
-      var textLength = this.parentNode.querySelector("text").getComputedTextLength();
-      return d === root ? Math.max(60, textLength + 10) : Math.max(20, textLength + 10);
-    })
-    .style("fill", function(d) {
-      return d.children || d._children ? "#f0f0f0" : "#000000";
-    })
-    .style("stroke", function(d) {
-      return d.children || d._children ? "#f0f0f0" : "#000000";
-    });
-
-  nodeUpdate.select("text")
-    .style("fill-opacity", 1);
-
-  var nodeExit = node.exit().transition()
-    .duration(duration)
-    .attr("transform", function(d) {
-      return "translate(" + source.y + "," + source.x + ")";
-    })
-    .remove();
-
-  nodeExit.select("rect")
-    .attr("width", 1e-6);
-
-  nodeExit.select("text")
-    .style("fill-opacity", 1e-6);
-
-  var link = svg.selectAll("path.link")
-    .data(links, function(d) {
-      return d.target.id;
-    });
-
-  link.enter().insert("path", "g")
-    .attr("class", "link")
-    .attr("d", function(d) {
-      var o = {
-        x: source.x0,
-        y: source.y0
-      };
-      return diagonal({
-        source: o,
-        target: o
-      });
-    });
-
-  link.transition()
-    .duration(duration)
-    .attr("d", diagonal);
-
-  link.exit().transition()
-    .duration(duration)
-    .attr("d", function(d) {
-      var o = {
-        x: source.x,
-        y: source.y
-      };
-      return diagonal({
-        source: o,
-        target: o
-      });
-    })
-    .remove();
-
-  nodes.forEach(function(d) {
-    d.x0 = d.x;
-    d.y0 = d.y;
-  });
-
-  // count number of expanded nodes to calculate new height
-  var expandedNodesCount = nodes.filter(function(d) {
-    return d.children && d.children.length > 0;
-  }).length;
-
-  var newHeight = baseHeight + expandedNodesCount * 0.9 * 67 - 40;
-  tree.size([newHeight, width]);
-
-  d3.select("svg").transition().duration(duration)
-    .attr("height", newHeight + margin.top + margin.bottom);
-
-  svg.transition().duration(duration)
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-}
-
-function click(d) {
-  if (d === root && firstClick) {
-    firstClick = false;
-  }
-
-  if (d.children) {
-    d._children = d.children;
-    d.children = null;
-  } else if (d._children) {
-    d.children = d._children;
-    d._children = null;
-  } else {
-    playTrackFromServer(d.name);
-    return; 
-  }
-
-  update(d);
-}
-
-function centerNode(source) {
-  var nodes = tree.nodes(root);
-  var height = Math.max(100, nodes.length * 30);
-  var depth = Math.max.apply(Math, nodes.map(function(d) { return d.depth; }));
-  var newHeight = Math.max(baseHeight, height);
-
-  tree.size([newHeight, width]);
-
-  var scale = newHeight / height;
-  nodes.forEach(function(d) {
-    d.y = d.depth * 180;
-    d.x = (d.x * scale) + (newHeight - height * scale) / 2;
-  });
-
-  // SVG height update
-  d3.select("svg").transition().duration(duration)
-    .attr("height", newHeight + margin.top + margin.bottom);
-
-  svg.transition().duration(duration)
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-}
-
-function unfoldAll() {
-  function expand(d) {
-    if (d._children) {
-      d.children = d._children;
-      d.children.forEach(expand);
-      d._children = null;
-    }
-  }
-
-  if (firstClick) {
-    firstClick = false;
-  }
-
-  expand(root);
-  update(root);
-}
-
-function foldAll() {
-  function collapse(d) {
-    if (d.children) {
-      d._children = d.children;
-      d.children.forEach(collapse);
-      d.children = null;
-    }
-  }
-
-  root.children.forEach(collapse);
-  collapse(root);
-
-  root.x0 = baseHeight / 2;
-  root.y0 = 0;
-  firstClick = true;  
-
-  update(root);
-}
-
 function playTrackFromServer(trackName) {
   const trackUrl = `https://lastfmfiddler.tomektomasik.pl/all/${encodeURIComponent(trackName)}.mp3`;
   current_track.src = trackUrl;
@@ -693,3 +465,120 @@ function playTrackFromServer(trackName) {
   track_playing.textContent = `Playing: ${trackName}`;
   playTrack();
 }
+
+// EQ 
+
+function toggleEqualizer() {
+  const equalizer = document.querySelector('.equalizer');
+  const minfo = document.querySelector('.minfo'); 
+
+  equalizer.classList.toggle('active');
+
+  if (equalizer.classList.contains('active')) {
+    minfo.style.marginTop = "200px"; 
+  } else {
+    minfo.style.marginTop = "0px"; 
+  }
+}
+
+// create funtion to hide EQ when windows width is less than 1400. This feature is not meant to be used on small screens.
+function handleResize() {
+  const equalizer = document.querySelector('.equalizer');
+  const minfo = document.querySelector('.minfo');
+  
+  if (window.innerWidth < 1400) {
+    equalizer.classList.remove('active');
+    minfo.style.marginTop = "0px"; 
+  }
+}
+
+window.addEventListener('resize', handleResize);
+
+handleResize();
+
+
+// Filters (I need to play with them a little bit more)
+
+var eqSettings = [
+  { freq: 125, type: "lowshelf", Q: 0.100 }, 
+  { freq: 250, type: "peaking", Q: 0.1 },   
+  { freq: 500, type: "peaking", Q: 0.3 },   
+  { freq: 1000, type: "peaking", Q: 0.3 },  
+  { freq: 1500, type: "peaking", Q: 0.5 }, 
+  { freq: 2000, type: "peaking", Q: 0.5 },   
+  { freq: 4000, type: "peaking", Q: 0.5 }, 
+  { freq: 5500, type: "peaking", Q: 0.2 },   
+  { freq: 8000, type: "peaking", Q: 0.1 },  
+  { freq: 16000, type: "highshelf", Q: 2.707 } 
+];
+setFilterValue  = function() {
+};
+
+var filters = eqSettings.map(function(setting) {
+  var filter = audioCtx.createBiquadFilter();
+  filter.type = setting.type;
+  filter.frequency.value = setting.freq;
+ 
+  return filter;
+});
+
+
+filters.reduce(function(prev, curr) {
+  prev.connect(curr);
+  return curr;
+}, source).connect(analyser);
+
+
+filters.forEach(function(filter, index) {
+  document.getElementById("eq-" + eqSettings[index].freq).addEventListener("input", function() {
+    filter.gain.value = this.value;
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const sliders = document.querySelectorAll(".slider");
+  
+
+  const initialValues = {};
+  sliders.forEach(slider => {
+    initialValues[slider.id] = slider.value;
+  });
+
+  function updateFilter(slider) {
+    const frequency = slider.id.split('-')[1];
+    const value = parseFloat(slider.value);
+    
+    const filterIndex = filters.findIndex(filter => 
+      filter.frequency.value === parseFloat(frequency)
+    );
+    
+    if (filterIndex !== -1) {
+      filters[filterIndex].gain.value = value;
+    }
+  }
+
+  sliders.forEach((slider) => {
+    const currentValue = document.createElement("valg");
+    currentValue.textContent = slider.value;
+    slider.parentNode.appendChild(currentValue);
+
+
+    slider.addEventListener("input", function() {
+      currentValue.textContent = slider.value;
+      updateFilter(slider);
+    });
+
+
+    slider.addEventListener("dblclick", function() {
+      const initialValue = initialValues[slider.id];
+      slider.value = initialValue;
+      currentValue.textContent = initialValue;
+      updateFilter(slider);
+    });
+  });
+});
+
+  
+
+console.log("Current track:", current_track);

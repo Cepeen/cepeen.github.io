@@ -414,3 +414,177 @@ display: none;
 }
 
 
+/* EQ style */
+.equalizer {
+  z-index: -1;
+  display: flex;
+  justify-content: space-evenly;
+  width: auto;
+  height: 260px;
+  margin: 100px;
+  margin-top: auto;
+  border: 5px solid #360000;
+  border-radius: 20px;
+  box-shadow: rgba(0,0,0,.3) 0px 19px 38px,rgba(0,0,0,.22) 0px 15px 12px;
+}
+
+.slider-container {
+  margin-top: 90px;
+  text-align: center;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 70px;
+  height: 300px;
+  background: #111; 
+  outline: 2px solid #fff; 
+  transform: rotate(-90deg);
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+
+.slider::-moz-range-thumb {
+  width: 10px;
+  height: 20px;
+  background: #fff;
+  outline: 2px solid #000; 
+  cursor: pointer;
+  border-radius: 50%; 
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); 
+}
+
+
+#eq-125,
+#eq-250,
+#eq-500,
+#eq-1000,
+#eq-1500,
+#eq-2000,
+#eq-4000,
+#eq-5500,
+#eq-8000,
+#eq-16000 {
+  width: 120%;
+  height: 20px;
+}
+
+.label {
+  font-size: 14px;
+  margin-top: 60px;
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.75); 
+}
+
+
+.channelstrip {
+  user-select: none;
+  background: rgb(20, 20, 20); 
+  box-shadow: 0 0 0 2px rgba(100, 100, 100, 1);
+  border-radius: 4px;
+  padding: .25rem;
+  margin: .25rem;
+  width: 4rem;
+  min-height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.channelstrip .label {
+  font-family: 'VT323', monospace;
+  font-size: .75rem;
+  text-transform: uppercase;
+  background: #333; 
+  color: rgba(255, 255, 255, 0.8); 
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
+}
+
+.channelstrip .fader {
+  position: relative;
+  flex-grow: 1;
+  margin: 3rem 0 3rem 0;
+}
+
+.channelstrip .fader .fader-track {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: .25rem;
+  left: 50%;
+  margin-left: -.125rem;
+  background: rgb(0, 0, 0);
+  border-radius: 5px;
+  box-shadow: 0 -1px 0 0 rgba(255, 255, 255, .25) inset;
+}
+
+.channelstrip .fader .fader-thumb {
+  position: absolute;
+  z-index: 1;
+  width: 2rem;
+  height: 4rem;
+  left: 50%;
+  margin-left: -1rem;
+  background: linear-gradient(0deg, #888, #444); 
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+  cursor: move;
+}
+
+.channelstrip .horizontal-meter {
+  height: .5rem;
+  background: #000;
+  border-radius: 1px;
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, .05);
+}
+
+
+.equalizer {
+  margin-top: 10px;
+  display: none;
+  position: absolute;  
+  top: 650px; 
+  left: 0;
+  right: -10;
+  background-color: #ffffff; 
+  padding: 10px;
+  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.5);
+  transition: left 0.3s ease-in-out; 
+  z-index: 100;
+}
+
+.equalizer.active {
+  display: flex;
+  margin-top: 40px;
+}
+
+.valg
+{
+margin-bottom: 55px;
+}
+
+.minfo{
+}
+
+.toggle-equalizer {
+  margin-left: 15px;
+}
+
+@media (max-width: 1024px) {
+  .equalizer.active{
+    bottom: 1200px; 
+    
+  }  }
+
+
+@media (max-width: 1024px) {
+  .toggle-equalizer,
+  .equalizer,
+  .current-time,
+  .total-duration {
+  display: none;
+
+  }
+}
+  
