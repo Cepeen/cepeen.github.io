@@ -257,7 +257,7 @@ function updatePageData(recentTracksData, currentPage, totalPages) {
 
     //time and date correction
     const scrobbleTime = track.date ? new Date(track.date['#text']) : new Date(); 
-    const correctedTime = new Date(scrobbleTime.getTime() + (2 * 60 * 60 * 1000)); 
+    const correctedTime = new Date(scrobbleTime.getTime() + (2 * 60 * 60 * 500)); 
     const formattedDate = correctedTime.toLocaleDateString();
     const formattedTime = correctedTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); 
     
