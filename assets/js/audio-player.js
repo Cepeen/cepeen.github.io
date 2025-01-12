@@ -53,12 +53,16 @@ analyser.connect(audioCtx.destination);
 
 slider_volume.addEventListener("input", setGain);
 
-
+function setAudioDefaultVolume() {
+  gainNode.gain.setValueAtTime(-0.5, audioCtx.currentTime)
+}
 
 function setGain() {
   let gainValue = slider_volume.value / 100;
   gainNode.gain.setValueAtTime(gainValue, audioCtx.currentTime)
 }
+
+setAudioDefaultVolume();
 
 
 function playpauseTrack() {
@@ -579,6 +583,6 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-  
+
 
 console.log("Current track:", current_track);
