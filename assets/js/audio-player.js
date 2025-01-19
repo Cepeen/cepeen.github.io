@@ -542,7 +542,7 @@ filters.forEach(function(filter, index) {
 
 document.addEventListener("DOMContentLoaded", function() {
   const sliders = document.querySelectorAll(".slider");
-  
+
 
   const initialValues = {};
   sliders.forEach(slider => {
@@ -550,30 +550,31 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   function updateFilter(slider) {
-    const frequency = slider.id.split('-')[1];
-    const value = parseFloat(slider.value);
-    
+    const frequency = slider.id.split('-')[1]; 
+    const value = parseFloat(slider.value); 
     const filterIndex = filters.findIndex(filter => 
       filter.frequency.value === parseFloat(frequency)
     );
-    
+
     if (filterIndex !== -1) {
-      filters[filterIndex].gain.value = value;
+      filters[filterIndex].gain.value = value; 
     }
   }
 
+  
   sliders.forEach((slider) => {
+   
     const currentValue = document.createElement("valg");
     currentValue.textContent = slider.value;
     slider.parentNode.appendChild(currentValue);
 
-
+   
     slider.addEventListener("input", function() {
       currentValue.textContent = slider.value;
       updateFilter(slider);
     });
 
-
+ 
     slider.addEventListener("dblclick", function() {
       const initialValue = initialValues[slider.id];
       slider.value = initialValue;
@@ -581,8 +582,25 @@ document.addEventListener("DOMContentLoaded", function() {
       updateFilter(slider);
     });
   });
+
+
+  function resetEq() {
+    sliders.forEach(slider => {
+      const initialValue = initialValues[slider.id];
+      slider.value = initialValue;
+      
+ 
+      const currentValue = slider.parentNode.querySelector("valg");
+      if (currentValue) {
+        currentValue.textContent = initialValue;
+      }
+
+      updateFilter(slider); 
+    });
+  }
+
+ 
+  document.getElementById("resetequalizerbtn").addEventListener("click", resetEq);
 });
-
-
 
 console.log("Current track:", current_track);
