@@ -25,7 +25,7 @@
 - name: Maverick2
   category: render
   type: horizontal
-  image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/maverickY.avif
+  image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/maverickY.png
   link: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/pstorage/renders/maverickY.avif
   description: Pretty old car
   width: 1920;
