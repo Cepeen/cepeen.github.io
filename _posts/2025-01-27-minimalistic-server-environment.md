@@ -32,7 +32,7 @@ The core of my network is a mini PC stack (for example, an HP EliteDesk) running
 -   Home Assistant (a VM with Home Assistant OS),
 -   Random game servers (Zomboid, Minecraft, etc.).
 
-I also run databases (MariaDB and MongoDB) along with phpMyAdmin. I've set up simple storage accessible from a container (a bound disk on Proxmox running Ubuntu) via Samba or FTP if I need to share files with others. The rest of the setup consists of various web applications and websites (using Apache, Nginx, Node, Jekyll, and WordPress).
+I also run databases (MariaDB and MongoDB) along with phpMyAdmin. I've set up simple storage accessible from a container (a bound disk on Proxmox running Ubuntu) via Samba, FTP or JellyFinn if I need to share files with others. The rest of the setup consists of various web applications and websites (using Apache, Nginx, Node, Jekyll, and WordPress).
 
 Everything that could be wired is connected via Ethernet cable. On top of that, I use a basic home router and manageable Zyxel switches. In short, I host about ten to thirty LXC containers per host. Containers hosting minor, isolated services use Alpine Linux. This lightweight, tailored solution keeps each container minimal, with 256–512 MB of RAM and 8 GB of storage space per instance. Each container has a mirror. Greater and more complex applications with more dependencies are hosted on Ubuntu LXC instances. I’ve created my own templates with preinstalled tools such as Midnight Commander, Git, and others.
 
