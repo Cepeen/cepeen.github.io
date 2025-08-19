@@ -4,7 +4,6 @@ layout: post
 post-image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/post%20images/rack.webp
 description: upgrading your ISP’s default setup
 tags:
-- ''
 - Proxmox
 - PPPoE
 - WinBox
