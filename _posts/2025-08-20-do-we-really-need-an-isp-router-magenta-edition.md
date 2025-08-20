@@ -4,13 +4,13 @@ layout: post
 post-image: https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/post%20images/rack.webp
 description: upgrading your ISP’s default setup
 tags:
-- Proxmox
-- PPPoE
-- WinBox
-- Mikrotik
-- Magenta
+- ''
+- ONT
 - ISP
-- VLAN
+- Router
+- MikroTik
+- ZTE
+- PPPoE
 ---
 
 I think that after some years, everyone comes to the conclusion that having a public, static IP is a really nice thing, and it’s worth having one in your home network.  
@@ -27,11 +27,11 @@ We set it to some nice local IP, e.g., 192.168.0.1, and start configuring. First
 In Winbox, we create a new PPPoE client:  
 **Winbox → Interfaces → click `+` → PPPoE Client**
 
-![enter image description here](https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/post%20images//pppoe.webp)
+![Mikrotik interface](https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/post%20images//pppoe.webp)
 
 In the **Dial Out** tab, we enter our ISP login credentials.  
 We tick the “Use peer DNS” checkbox. In theory, this should let us connect—but it turns out that it’s not yet possible. The ISP won’t tell us this, but we can guess it if we know the common practice: the connection goes through a VLAN. In this specific case, it’s VLAN 35.
 
-![enter image description here](https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/post%20images//VLAN.webp)
+![Mikrotik interface](https://pxreyoeukohfhvbwcbgd.supabase.co/storage/v1/object/public/post%20images//VLAN.webp)
 
 After this simple step, everything should work—provided, of course, that we have configured our MikroTik properly, set up forwarding, and correctly configured hairpin NAT so we can see our servers from inside our own network.
