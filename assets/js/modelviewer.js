@@ -1,8 +1,7 @@
-import * as THREE from 
-'https://cdn.jsdelivr.net/npm/three@0.129.0/build/three.module.js';
+import * as THREE from "./three/build/three.module.js";
+import { GLTFLoader } from "./three/examples/jsm/loaders/GLTFLoader.js";
 
-import { GLTFLoader } from 
-'https://cdn.jsdelivr.net/npm/three@0.129.0/examples/jsm/loaders/GLTFLoader.js';
+
 
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
